@@ -50,7 +50,7 @@ export const Header = styled.div`
 
 export const Content = styled.div`
 	padding: 2rem;
-	max-width: 30rem;
+	max-width: 33rem;
 	margin: 0 auto;
 `;
 
@@ -76,15 +76,15 @@ export const Paragraph = styled.p``;
 
 export const Title = styled(Heading1)`
 	font-family: "Vishvaksara Geometric Bold";
-	font-size: 10rem;
-	line-height: 15rem;
+	font-size: 8rem;
+	line-height: 12rem;
 	font-variant-ligatures: discretionary-ligatures;
 	margin-bottom: 0;
-	margin-top: 3rem;
+	margin-top: 1rem;
 `;
 
 export const Subtitle = styled(Heading2)`
-	margin-top: 0;
+	margin-top: -0.5rem;
 `;
 
 export const Etymology = styled.p`
