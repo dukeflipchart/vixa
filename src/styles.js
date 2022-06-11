@@ -72,6 +72,18 @@ export const Heading3 = styled.h3`
 	line-height: 1.875rem;
 `;
 
+export const Heading4 = styled.h4`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.5625rem;
+`;
+
+export const Heading5 = styled.h5`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.10rem;
+	line-height: 1.375rem;
+`;
+
 export const Paragraph = styled.p``;
 
 export const Title = styled(Heading1)`
@@ -86,6 +98,20 @@ export const Title = styled(Heading1)`
 export const Subtitle = styled(Heading2)`
 	margin-top: -0.5rem;
 `;
+
+export const FullSizeImage = styled.img`
+	width: 100%;
+`;
+
+export const ToC = styled.div``;
+
+export const ToCList = styled.div``;
+
+export const ToCTitle = styled(Heading5)`
+	margin-bottom: 0.5rem;
+`;
+
+export const ToCItem = styled.div``;
 
 export const Etymology = styled.p`
 	font-size: 1rem;
