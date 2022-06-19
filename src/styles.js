@@ -49,7 +49,7 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-	padding: 2rem;
+	padding: 2rem 2rem 0;
 	max-width: 33rem;
 	margin: 0 auto;
 `;
@@ -57,25 +57,28 @@ export const Content = styled.div`
 export const Heading1 = styled.h1`
 	font-family: 'Montserrat', sans-serif;
 	font-size: 3rem;
-	line-height: 4rem;
+	line-height: 4.5rem;
 `;
 
 export const Heading2 = styled.h2`
 	font-family: 'Montserrat', sans-serif;
 	font-size: 2rem;
-	line-height: 2.5rem;
+	line-height: 3rem;
+	margin-top: 5rem;
 `;
 
 export const Heading3 = styled.h3`
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.5rem;
-	line-height: 1.875rem;
+	line-height: 2.25rem;
+	margin-top: 3rem;
 `;
 
 export const Heading4 = styled.h4`
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.25rem;
 	line-height: 1.5625rem;
+	margin-top: 3rem;
 `;
 
 export const Heading5 = styled.h5`
@@ -97,6 +100,13 @@ export const Title = styled(Heading1)`
 
 export const Subtitle = styled(Heading2)`
 	margin-top: -0.5rem;
+`;
+
+export const InlineV = styled.span`
+	color: ${colors.purple4};
+	font-size: 135%;
+	font-family: "Vishvaksara Geometric Bold", "Montserrat", sans-serif;
+	font-variant-ligatures: discretionary-ligatures;
 `;
 
 export const FullSizeImage = styled.img`
