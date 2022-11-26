@@ -30,6 +30,7 @@ export const colors = {
     blue4: '#397A84',
     purple4: '#826693',
 	neutral9: `#FFFFFF`,
+	neutral7: `#C4C4C4`,
     neutral4: '#707070',
 	neutral1: `#1C1C1C`
 }
@@ -51,6 +52,11 @@ export const Header = styled.div`
 export const Content = styled.div`
 	padding: 2rem 2rem 0;
 	max-width: 33rem;
+	margin: 0 auto;
+`;
+
+export const ContentFullSize = styled.div`
+	width: 90%;
 	margin: 0 auto;
 `;
 
@@ -103,15 +109,24 @@ export const Subtitle = styled(Heading2)`
 `;
 
 export const InlineV = styled.span`
-	color: ${colors.purple4};
+	color: ${colors.blue4};
 	font-size: 135%;
 	font-family: "Vishvaksara Geometric Bold", "Montserrat", sans-serif;
 	font-variant-ligatures: discretionary-ligatures;
 `;
 
-export const FullSizeImage = styled.img`
+export const Image = styled.img`
 	width: 100%;
 `;
+
+export const ImageWithBorder = styled.img`
+	width: 100%;
+	border: 1px solid ${colors.neutral7};
+`;
+
+export const NumberedList = styled.ol``;
+
+export const NumberedListItem = styled.li``;
 
 export const ToC = styled.div``;
 
