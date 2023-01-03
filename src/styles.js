@@ -24,11 +24,14 @@ const ProtoSemiticAleph = () => {
   }
 
 export const colors = {
-    red4: '#BB4F32',
-    yellow4: '#966800',
-    green4: '#507C34',
-    blue4: '#397A84',
+    red4: '#C34727',
+    yellow4: '#8B7409',
+    green4: '#208058',
+    green5: '#3A9D74',
+    blue4: '#456DC9',
+    blue5: '#628AE6',
     purple4: '#826693',
+    purple5: '#B56DE5',
 	neutral9: `#FFFFFF`,
 	neutral7: `#C4C4C4`,
     neutral4: '#707070',
@@ -45,7 +48,8 @@ export const Canvas = styled.div`
 `;
 
 export const Header = styled.div`
-    background-color: ${colors.purple4};
+	background: ${colors.purple5};
+	background: linear-gradient(120deg, ${colors.purple5} 0%, ${colors.blue5} 67%, ${colors.green5} 100%);
 	color: ${colors.neutral9};
 	font-size: 2rem;
 	line-height: 1.75rem;
@@ -105,24 +109,29 @@ export const Heading5 = styled.h5`
 
 export const Paragraph = styled.p``;
 
+
+export const InlineV = styled.span`
+	color: ${colors.green5};
+	font-size: 135%;
+	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
+	font-variant-ligatures: discretionary-ligatures;
+`;
+
 export const Title = styled(Heading1)`
-	font-family: "Vishvaksara Geometric Bold";
-	font-size: 8rem;
+	color: ${colors.neutral1};
+	font-size: 6rem;
 	line-height: 12rem;
 	font-variant-ligatures: discretionary-ligatures;
 	margin-bottom: 0;
 	margin-top: 1rem;
+
+	${InlineV} {
+		color: white;
+	}
 `;
 
 export const Subtitle = styled(Heading2)`
 	margin-top: 0;
-`;
-
-export const InlineV = styled.span`
-	color: ${colors.blue4};
-	font-size: 135%;
-	font-family: "Vishvaksara Geometric Bold", "Montserrat", sans-serif;
-	font-variant-ligatures: discretionary-ligatures;
 `;
 
 export const Image = styled.img`
@@ -202,9 +211,9 @@ export const BigLetterTable = styled.span`
 `;
 
 export const BigQuoteText = styled.div`
-background: ${colors.blue4};
+background: ${colors.green5};
 color: ${colors.neutral9};
-font-family: "Vishvaksara Geometric Bold", "Montserrat", sans-serif;
+font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
 font-variant-ligatures: discretionary-ligatures;
 font-size: 2.5rem;
 line-height: 3.75rem;
