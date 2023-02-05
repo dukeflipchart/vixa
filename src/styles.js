@@ -118,7 +118,7 @@ export const InlineV = styled.span`
 `;
 
 export const Title = styled(Heading1)`
-	color: ${colors.neutral1};
+	color: ${colors.neutral9};
 	font-size: 6rem;
 	line-height: 12rem;
 	font-variant-ligatures: discretionary-ligatures;

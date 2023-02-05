@@ -311,9 +311,9 @@ class Page extends React.Component {
 							vixa="w"
 						/>
 						<TableRowLetter
-							ipa="x"
+							ipa="ks"
 							description='X as in "explain"'
-							vixa="w"
+							vixa="ks"
 						/>
 						<TableRowLetter
 							ipa="j"
