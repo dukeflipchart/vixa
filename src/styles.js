@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
-import { darken } from 'polished';
+import styled, { keyframes } from 'styled-components';
+import headerPattern from './images/header-pattern.png';
 
 const ProtoSemiticAleph = () => {
 	return (
@@ -23,19 +23,56 @@ const ProtoSemiticAleph = () => {
 	);
   }
 
+const ScrollGradient = keyframes`
+	0% {
+		background-position: 0%
+	}
+	50% {
+		background-position: 100%
+		}
+	100% {
+		background-position: 0%
+		}
+	}
+`
+
+const ScrollImage = keyframes`
+	0% {
+		transform: rotate(0deg) translateX(1.5%) rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg) translateX(1.5%) rotate(-360deg)
+	}
+`
+
 export const colors = {
+	red3: '#9C2F13',
     red4: '#C34727',
+	red8: '#FFB199',
+	red9: '#FFD9CD',
     yellow4: '#8B7409',
     green4: '#208058',
     green5: '#3A9D74',
     blue4: '#456DC9',
     blue5: '#628AE6',
-    purple4: '#826693',
+	blue8: '#D2E2FE',
+	purple3: '#7835A2',
+    purple4: '#984EC7',
     purple5: '#B56DE5',
-	neutral9: `#FFFFFF`,
-	neutral7: `#C4C4C4`,
+	purple8: '#E2B1FF',
+	purple9: '#F3D8FF',
+	neutral9: '#FFFFFF',
+	neutral8: '#C4C4C4',
     neutral4: '#707070',
-	neutral1: `#1C1C1C`
+	neutral2: '#393939',
+	neutral1: '#1C1C1C'
+}
+
+const breakpoints = {
+	first: '35rem',
+	second: '50rem',
+	third: '65rem',
+	fourth: '80rem'
 }
 
 export const Neutral4 = styled.span`
@@ -48,13 +85,42 @@ export const Canvas = styled.div`
 `;
 
 export const Header = styled.div`
+	animation: ${ScrollGradient} 45s ease infinite;
 	background: ${colors.purple5};
-	background: linear-gradient(120deg, ${colors.purple5} 0%, ${colors.blue5} 67%, ${colors.green5} 100%);
-	color: ${colors.neutral9};
+	background: linear-gradient(
+			100deg,
+			${colors.purple5} 0%,
+			${colors.blue5} 67%,
+			${colors.green5} 100%
+		);
+  	background-size: 300% 100%;
+  	color: ${colors.neutral9};
+	display: flex;
+	flex-direction: column;
 	font-size: 2rem;
+	justify-content: center;
+	height: 70vh;
 	line-height: 1.75rem;
 	padding: 1rem;
+	position: relative;
 	text-align: center;
+	overflow: hidden;
+
+	::before {
+		animation: ${ScrollImage} 60s linear infinite;
+		background-image: url(${headerPattern});
+		background-position: center center;
+		background-size: min(100vw, 512px);
+		background-repeat: repeat;
+		content: " ";
+		mix-blend-mode: multiply;
+		opacity: 0.25;
+		position: absolute;
+		left: -10vw;
+		top: -10vw;
+		right: -10vw;
+		bottom: -10vw;
+	}
 `;
 
 export const Content = styled.div`
@@ -119,14 +185,31 @@ export const InlineV = styled.span`
 
 export const Title = styled(Heading1)`
 	color: ${colors.neutral9};
-	font-size: 6rem;
-	line-height: 12rem;
+	font-size: 4rem;
 	font-variant-ligatures: discretionary-ligatures;
+	line-height: 8rem;
 	margin-bottom: 0;
-	margin-top: 1rem;
+	margin-top: 0;
+	text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,0.5);
+	z-index: 2;
 
 	${InlineV} {
 		color: white;
+	}
+
+	@media only screen and (min-width: ${breakpoints.first}) {
+		font-size: 6rem;
+		line-height: 12rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: 9rem;
+		line-height: 18rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.third}) {
+		font-size: 12rem;
+		line-height: 24rem;
 	}
 `;
 
@@ -211,21 +294,21 @@ export const BigLetterTable = styled.span`
 `;
 
 export const BigQuoteText = styled.div`
-background: ${colors.green5};
-color: ${colors.neutral9};
-font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
-font-variant-ligatures: discretionary-ligatures;
-font-size: 2.5rem;
-line-height: 3.75rem;
-margin-top: 2rem;
-padding: 1rem 2rem;
+	background: ${colors.green5};
+	color: ${colors.neutral9};
+	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
+	font-variant-ligatures: discretionary-ligatures;
+	font-size: 2.5rem;
+	line-height: 3.75rem;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
 `;
 
 export const BigQuoteCaption = styled.div`
-color: ${colors.neutral4};
-font-size: 0.75rem;
-margin-top: 0.5rem;
-margin-bottom: 2rem;
+	color: ${colors.neutral4};
+	font-size: 0.75rem;
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
 `;
 
 export const EgyptianCharacter = styled(BigLetter)`
