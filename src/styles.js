@@ -101,13 +101,14 @@ export const Header = styled.div`
 	justify-content: center;
 	height: 70vh;
 	line-height: 1.75rem;
+	mix-blend-mode: multiply;
 	padding: 1rem;
 	position: relative;
 	text-align: center;
 	overflow: hidden;
 
 	::before {
-		animation: ${ScrollImage} 60s linear infinite;
+		animation: ${ScrollImage} 120s linear infinite;
 		background-image: url(${headerPattern});
 		background-position: center center;
 		background-size: min(100vw, 512px);
@@ -120,6 +121,7 @@ export const Header = styled.div`
 		top: -10vw;
 		right: -10vw;
 		bottom: -10vw;
+		z-index: -2;
 	}
 `;
 
