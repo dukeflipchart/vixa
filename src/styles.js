@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import headerPattern from './images/header-pattern.png';
+import headerImage from './images/header.png';
 
 const ProtoSemiticAleph = () => {
 	return (
@@ -38,10 +38,10 @@ const ScrollGradient = keyframes`
 
 const ScrollImage = keyframes`
 	0% {
-		transform: rotate(0deg) translateX(1.5%) rotate(0deg)
+		transform: rotate(0deg) translateX(5%) rotate(0deg)
 	}
 	100% {
-		transform: rotate(360deg) translateX(1.5%) rotate(-360deg)
+		transform: rotate(360deg) translateX(5%) rotate(-360deg)
 	}
 `
 
@@ -72,7 +72,10 @@ const breakpoints = {
 	first: '35rem',
 	second: '50rem',
 	third: '65rem',
-	fourth: '80rem'
+	fourth: '80rem',
+	fifth: '95rem',
+	sixth: '110rem',
+	seventh: '125rem'
 }
 
 export const Neutral4 = styled.span`
@@ -93,7 +96,7 @@ export const Header = styled.div`
 			${colors.blue5} 67%,
 			${colors.green5} 100%
 		);
-  	background-size: 300% 100%;
+	background-size: 300% 100%;
   	color: ${colors.neutral9};
 	display: flex;
 	flex-direction: column;
@@ -101,27 +104,42 @@ export const Header = styled.div`
 	justify-content: center;
 	height: 70vh;
 	line-height: 1.75rem;
-	mix-blend-mode: multiply;
-	padding: 1rem;
 	position: relative;
 	text-align: center;
 	overflow: hidden;
 
 	::before {
 		animation: ${ScrollImage} 120s linear infinite;
-		background-image: url(${headerPattern});
+		background-image: url(${headerImage});
+		background-size: cover;
+		background-color: ${colors.neutral2};
 		background-position: center center;
-		background-size: min(100vw, 512px);
-		background-repeat: repeat;
 		content: " ";
-		mix-blend-mode: multiply;
-		opacity: 0.25;
+		mix-blend-mode: luminosity;
+		opacity: 0.2;
 		position: absolute;
 		left: -10vw;
 		top: -10vw;
 		right: -10vw;
 		bottom: -10vw;
-		z-index: -2;
+		z-index: 1;
+	}
+
+	::after {
+		animation: ${ScrollImage} 120s linear infinite;
+		background-image: url(${headerImage});
+		background-size: cover;
+		background-color: ${colors.neutral2};
+		background-position: center center;
+		content: " ";
+		mix-blend-mode: color;
+		opacity: 0.2;
+		position: absolute;
+		left: -10vw;
+		top: -10vw;
+		right: -10vw;
+		bottom: -10vw;
+		z-index: 2;
 	}
 `;
 
@@ -192,7 +210,7 @@ export const Title = styled(Heading1)`
 	line-height: 8rem;
 	margin-bottom: 0;
 	margin-top: 0;
-	text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,0.5);
+	text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,1);
 	z-index: 2;
 
 	${InlineV} {
@@ -212,7 +230,39 @@ export const Title = styled(Heading1)`
 	@media only screen and (min-width: ${breakpoints.third}) {
 		font-size: 12rem;
 		line-height: 24rem;
+		text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,0.75);
 	}
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		font-size: 14rem;
+		line-height: 28rem;
+		text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,0.5);
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		font-size: 18rem;
+		line-height: 36rem;
+		text-shadow: 0.5rem 0.5rem 10rem rgba(0,0,0,0.25);
+	}
+
+	@media only screen and (min-width: ${breakpoints.sixth}) {
+		font-size: 20rem;
+		line-height: 40rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.seventh}) {
+		font-size: 22rem;
+		line-height: 44rem;
+	}
+`;
+
+export const Etymology = styled.p`
+	font-size: 1rem;
+	position: absolute;
+	bottom: 2rem;
+	z-index: 3;
+	margin: 0 auto;
+	width: 100%;
 `;
 
 export const Subtitle = styled(Heading2)`
@@ -278,10 +328,6 @@ export const ToCTitle = styled(Heading5)`
 `;
 
 export const ToCItem = styled.div``;
-
-export const Etymology = styled.p`
-	font-size: 1rem;
-`;
 
 export const BigLetter = styled.span`
 	font-family: "Montserrat", sans-serif;
