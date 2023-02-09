@@ -128,7 +128,7 @@ class Page extends React.Component {
 							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
 						/>
 						<IntroSectionCell 
-							headingVixa = "ə θán ixperimənt"
+							headingVixa = "ə θán iksperimənt"
 							heading = "A thought experiment"
 							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
 						/>

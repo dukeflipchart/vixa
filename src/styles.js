@@ -74,8 +74,7 @@ const breakpoints = {
 	third: '65rem',
 	fourth: '80rem',
 	fifth: '95rem',
-	sixth: '110rem',
-	seventh: '125rem'
+	sixth: '110rem'
 }
 
 export const Neutral4 = styled.span`
@@ -299,11 +298,6 @@ export const Title = styled(Heading1)`
 	@media only screen and (min-width: ${breakpoints.sixth}) {
 		font-size: 20rem;
 		line-height: 40rem;
-	}
-
-	@media only screen and (min-width: ${breakpoints.seventh}) {
-		font-size: 22rem;
-		line-height: 44rem;
 	}
 `;
 
