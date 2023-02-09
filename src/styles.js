@@ -143,6 +143,53 @@ export const Header = styled.div`
 	}
 `;
 
+export const IntroSection = styled.div`
+	margin-bottom: 4rem;
+	padding: 4rem;
+	position: relative;
+`;
+
+export const IntroSectionGrid = styled.div`
+	border-bottom: 1px solid ${colors.neutral8};
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 4rem;
+	grid-row-gap: 4rem;
+	margin: 0 auto;
+	max-width: 90rem;
+	padding-bottom: 4rem;
+`;
+
+export const IntroSectionCellWrapper = styled.div`
+	margin-top: ${props => props.isBig ? "-1rem;" : ""};
+	grid-area: ${props => props.isBig ? "1 / 1 / 4 / 2;" : ""};
+`;
+
+export const IntroSectionCellHeading = styled.h3`
+	font-size: ${props => props.isBig ? "3rem" : "1.5rem"};
+	line-height: 1.5;
+	margin: 0;
+	position: ${props => props.isBig ? "sticky" : "static"};
+	top: ${props => props.isBig ? "1rem" : "auto"};
+`;
+
+export const IntroSectionCellHeadingLatin = styled.p`
+	margin: 0;
+`;
+
+export const IntroSectionCellHeadingV = styled.p`
+	color: ${colors.purple5};
+	font-family: 'Vixa Geometric Bold', Montserrat, sans-serif;
+	font-size: 110%;
+	font-variant-ligatures: discretionary-ligatures;
+	margin: 0;
+`;
+
+export const IntroSectionCellParagraph = styled.p`
+	margin: 0.6rem 0;
+`;
+
 export const Content = styled.div`
 	padding: 0 2rem;
 	max-width: 33rem;
@@ -171,6 +218,10 @@ export const Heading2 = styled.h2`
 	font-size: 2rem;
 	line-height: 3rem;
 	margin-top: 5rem;
+
+	:first-of-type {
+		margin-top: 0;
+	}
 `;
 
 export const Heading3 = styled.h3`
@@ -197,7 +248,7 @@ export const Paragraph = styled.p``;
 
 
 export const InlineV = styled.span`
-	color: ${colors.green5};
+	color: ${colors.purple5};
 	font-size: 135%;
 	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
 	font-variant-ligatures: discretionary-ligatures;
