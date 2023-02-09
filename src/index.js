@@ -23,6 +23,13 @@ import {
 	Heading4,
 	ImageWithBorder,
 	InlineV,
+	IntroSection,
+	IntroSectionCellHeading,
+	IntroSectionCellHeadingLatin,
+	IntroSectionCellHeadingV,
+	IntroSectionCellWrapper,
+	IntroSectionCellParagraph,
+	IntroSectionGrid,
 	Neutral4,
 	NumberedList,
 	Paragraph,
@@ -35,7 +42,8 @@ import {
 	ToC,
 	ToCList,
 	ToCTitle,
-	NumberedListItem
+	NumberedListItem,
+	IntroSectionCellWrapperBig
 } from './styles.js';
 
 function TableRowLetter(props) {
@@ -57,6 +65,26 @@ function BigQuote(props) {
 	);
 }
 
+function IntroSectionCell(props) {
+	return (
+		<>
+			<IntroSectionCellWrapper isBig={props.isBig}>
+				<IntroSectionCellHeading isBig={props.isBig}>
+					<IntroSectionCellHeadingV>
+						{props.headingVixa}
+					</IntroSectionCellHeadingV>
+					<IntroSectionCellHeadingLatin>
+						{props.heading}
+					</IntroSectionCellHeadingLatin>
+				</IntroSectionCellHeading>
+				<IntroSectionCellParagraph>
+						{props.paragraph}
+				</IntroSectionCellParagraph>
+			</IntroSectionCellWrapper>
+		</>
+	)
+}
+
 class Page extends React.Component {
 
     constructor(props) {
@@ -69,25 +97,49 @@ class Page extends React.Component {
         return (
             <Canvas>
 				<Header>
-					<Title><InlineV>viksa</InlineV>·vixa</Title>
+					<Title><InlineV>viksâ</InlineV>·vixa</Title>
 					<Etymology>From Sanskrit viśva विश्व (universal) <br/>+ akṣara अक्षर (syllable).</Etymology>
 				</Header>
+				<IntroSection>
+					<IntroSectionGrid>
+						<IntroSectionCell 
+							headingVixa = "ə yunivərzəl elfəbet"
+							heading = "A universal alphabet"
+							isBig = "true"
+						/>
+						<IntroSectionCell 
+							headingVixa = "izi tu lərn"
+							heading = "Easy to learn"
+							paragraph = "Each part of Vixa’s letters tells you something about the sound they represent. This internal logic can make learning faster and easier."
+						/>
+						<IntroSectionCell 
+							headingVixa = "izi tu wráyt"
+							heading = "Easy to write"
+							paragraph = "Vixa is super fast to write by hand. The most common sounds have the simplest letters. Consonants can be written without lifting the pen and vowels can be omitted altogether."
+						/>
+						<IntroSectionCell 
+							headingVixa = "sâports meni lengəjiz"
+							heading = "Supports many languages"
+							paragraph = "Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
+						/>
+						<IntroSectionCell 
+							headingVixa = "béyzd án sáyəns"
+							heading = "Based on science"
+							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
+						/>
+						<IntroSectionCell 
+							headingVixa = "ə θán ixperimənt"
+							heading = "A thought experiment"
+							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
+						/>
+						<IntroSectionCell 
+							headingVixa = "tráy it áut!"
+							heading = "Try it out!"
+							paragraph = "Maybe you could use Vixa as a cipher, or for a fictional language? I made a font you can download. It’s free as long as you use it non-commercially and credit me."
+						/>
+					</IntroSectionGrid>
+				</IntroSection>
 				<Content>
-					<Heading2>An alphabet that makes sense <InlineV><br/>ən elfəbet ðet méyks sens</InlineV></Heading2>
-					<Paragraph>Vixa is a <em>featural constructed alphabet,</em> where every part of a letter describes a certain feature of the sound that letter represents. Because of this system, the more similar two letters are, the more similar their sounds are. This makes it easier to learn than Latin.</Paragraph>
-					<Paragraph>One letter in Vixa describes exactly one sound. This makes reading and writing straightforward and easy, and makes it so you can pronounce words even if you don't understand them.</Paragraph>
-					<Paragraph>Letterforms in Vixa were chosen so that the most used sounds have the simplest letter shapes, so that writing is as fast as possible. Consonants can be written in a cursive-like way, without lifting the pen, and vowels can be omitted to make writing even faster, something like a shorthand.</Paragraph>
-					<Paragraph>Vixa is designed to be universal: it can be used to write the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic.</Paragraph>
-					<Paragraph>I designed Vixa as a hobby, for fun. Maybe it could be useful for you as a cipher, or for a fictional language? You're free to use it for your non-commercial hobby projects if you credit me and link back to this page. If you want to use it commercially, contact me!</Paragraph>
-					<ToC>
-						<Heading4>Table of Contents</Heading4>
-						<ToCList>
-							<a href="/"><ToCTitle>Introduction</ToCTitle></a>
-							<a href="/"><ToCTitle>Featural alphabets</ToCTitle></a>
-							<a href="/"><ToCTitle>Design goals</ToCTitle></a>
-							<a href="/"><ToCTitle>Quick summary</ToCTitle></a>
-						</ToCList>
-					</ToC>
 					<Heading2>Introduction <InlineV><br/>intrədákšən</InlineV></Heading2>
 					<Heading3>The origins of the latin alphabet <InlineV><br/>ðə orijənz áf ðə letən elfəbet</InlineV></Heading3>
 					<Paragraph>Have you ever wondered why letters look the way they do? For example, why does the latin letter "A" look like that? The answer sounded surprising to me.</Paragraph>
