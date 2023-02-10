@@ -189,6 +189,8 @@ export const IntroSectionCellParagraph = styled.p`
 	margin: 0.6rem 0;
 `;
 
+export const ChartLabelDescription = styled.div``;
+
 export const Content = styled.div`
 	padding: 0 2rem;
 	max-width: 33rem;
@@ -327,7 +329,35 @@ export const NumberedList = styled.ol``;
 
 export const NumberedListItem = styled.li``;
 
-export const Table = styled.table`
+export const Chart = styled.div``;
+
+export const ChartWrapper = styled.div`
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(11, 1fr);
+	grid-column-gap: 32px;
+	grid-row-gap: 32px;
+`;
+
+export const ChartCellWrapper = styled.div`
+	grid-area: ${props => props.gridArea};
+`;
+
+export const ChartLabelCellWrapper = styled.div`
+	grid-area: ${props => props.gridArea};
+`;
+
+export const Filter = styled.div`
+	display: none;
+`;
+
+export const FilterOption = styled.div``;
+
+export const FilterOptions = styled.div``;
+
+export const FilterTitle = styled.div``;
+
+export const TableOld = styled.table`
 	width: 100%;
 	margin-top: 2rem;
 `;

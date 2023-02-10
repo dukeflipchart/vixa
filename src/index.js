@@ -1,10 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
 
 import ConsonantsChart from './images/chart-consonants.svg';
 import VowelsChart from './images/chart-vowels.svg';
+
+import chartData from './chart.json';
+
+import {
+	Table,
+	Thead,
+	Tbody,
+	Tfoot,
+	Tr,
+	Th,
+	Td,
+	TableCaption,
+	TableContainer,
+  } from '@chakra-ui/react';
 
 import {
 	BigLetter,
@@ -13,6 +27,15 @@ import {
 	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	Chart,
+	ChartWrapper,
+	ChartCellWrapper,
+	ChartLabelDescription,
+	ChartLabelCellWrapper,
+	Filter,
+	FilterTitle,
+	FilterOption,
+	FilterOptions,
 	Content,
 	ContentFullSize,
 	ContentWide,
@@ -20,7 +43,6 @@ import {
 	Header,
 	Heading2,
 	Heading3,
-	Heading4,
 	ImageWithBorder,
 	InlineV,
 	IntroSection,
@@ -34,16 +56,12 @@ import {
 	NumberedList,
 	Paragraph,
 	StyledProtoSemiticAleph,
-	Table,
+	TableOld,
 	TableCell,
 	TableHeaderCell,
 	TableRow,
 	Title,
-	ToC,
-	ToCList,
-	ToCTitle,
-	NumberedListItem,
-	IntroSectionCellWrapperBig
+	NumberedListItem
 } from './styles.js';
 
 function TableRowLetter(props) {
@@ -81,6 +99,29 @@ function IntroSectionCell(props) {
 						{props.paragraph}
 				</IntroSectionCellParagraph>
 			</IntroSectionCellWrapper>
+		</>
+	)
+}
+
+function ChartCell(props) {
+	return (
+		<>
+			<ChartCellWrapper>
+				{props.character}
+			</ChartCellWrapper>
+		</>
+	)
+}
+
+function ChartLabelCell(props) {
+	return (
+		<>
+			<ChartLabelCellWrapper gridArea={props.gridArea}>
+				{props.text}
+				{props.description && (
+					<ChartLabelDescription>{props.description}</ChartLabelDescription>
+					)}
+			</ChartLabelCellWrapper>
 		</>
 	)
 }
@@ -128,7 +169,7 @@ class Page extends React.Component {
 							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
 						/>
 						<IntroSectionCell 
-							headingVixa = "ə θán iksperimənt"
+							headingVixa = "ə θát iksperimənt"
 							heading = "A thought experiment"
 							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
 						/>
@@ -139,6 +180,33 @@ class Page extends React.Component {
 						/>
 					</IntroSectionGrid>
 				</IntroSection>
+				<Chart>
+					<Heading2>Vixa characters</Heading2>
+					<Filter>
+						<FilterTitle>Languages</FilterTitle>
+						<FilterOptions>
+							<FilterOption>All languages</FilterOption>
+							<FilterOption>English</FilterOption>
+							<FilterOption>Hungarian</FilterOption>
+						</FilterOptions>
+					</Filter>
+					<ChartWrapper>
+						{chartData.labels.x.map((item, index) => (
+								<ChartLabelCell
+								key={index}
+								text={item.text}
+								description={item.description}
+							/>
+						))}
+						{chartData.characters.map((item, index) => (
+								<ChartCell
+								key={index}
+								character={item.character}
+								vixaCharacter={item.vixaCharacter}
+							/>
+						))}
+					</ChartWrapper>
+				</Chart>
 				<Content>
 					<Heading2>Introduction <InlineV><br/>intrədákšən</InlineV></Heading2>
 					<Heading3>The origins of the latin alphabet <InlineV><br/>ðə orijənz áf ðə letən elfəbet</InlineV></Heading3>
@@ -199,7 +267,7 @@ class Page extends React.Component {
 				<Content>
 					<Paragraph>Since English spelling often diverges from pronounciation, it can take time for English speakers to get used to writing with Vixa. Additionally, each dialect needs to be written differently, since they sound different.</Paragraph>
 					<Heading3>General American</Heading3>
-					<Table>
+					<TableOld>
 						<TableRow>
 							<TableHeaderCell>Letter</TableHeaderCell>
 							<TableHeaderCell>IPA</TableHeaderCell>
@@ -370,7 +438,7 @@ class Page extends React.Component {
 							description='Z as in "zoom"'
 							vixa="z"
 						/>
-					</Table><Heading2>Vixa for Hungarian <InlineV><br/>viksa for hángeriən</InlineV></Heading2>
+					</TableOld><Heading2>Vixa for Hungarian <InlineV><br/>viksa for hángeriən</InlineV></Heading2>
 					<Paragraph>Vixa works excellently for Hungarian. Several digraphs and trigraphs, such as "ty," "gy," "ny," or "dzs" are
 						single letters in Vixa, making writing faster and simpler. It also gets rid of the difference between "j" and "ly,"
 						a pain point even for several native Hungarian speakers.
@@ -384,7 +452,7 @@ class Page extends React.Component {
 				</ContentWide>
 				<Content>
 					<Heading3>Hungarian</Heading3>
-					<Table>
+					<TableOld>
 						<TableRow>
 							<TableHeaderCell>Letter</TableHeaderCell>
 							<TableHeaderCell>IPA</TableHeaderCell>
@@ -590,7 +658,7 @@ class Page extends React.Component {
 							description='ZS as in "zseb"'
 							vixa="ž"
 						/>
-					</Table>
+					</TableOld>
 				</Content>
             </Canvas> 
         );
