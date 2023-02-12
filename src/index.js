@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
 
 import ConsonantsChart from './images/chart-consonants.svg';
@@ -9,6 +8,7 @@ import VowelsChart from './images/chart-vowels.svg';
 import chartData from './chart.json';
 
 import {
+	Button,
 	Table,
 	Thead,
 	Tbody,
@@ -154,22 +154,22 @@ class Page extends React.Component {
 							paragraph = "Each part of Vixa’s letters tells you something about the sound they represent. This internal logic can make learning faster and easier."
 						/>
 						<IntroSectionCell 
-							headingVixa = "izi tu wráyt"
+							headingVixa = "izi tu ráyt"
 							heading = "Easy to write"
 							paragraph = "Vixa is super fast to write by hand. The most common sounds have the simplest letters. Consonants can be written without lifting the pen and vowels can be omitted altogether."
 						/>
 						<IntroSectionCell 
-							headingVixa = "sâports meni lengəjiz"
+							headingVixa = "sâports meni lengwəjiz"
 							heading = "Supports many languages"
 							paragraph = "Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
 						/>
 						<IntroSectionCell 
-							headingVixa = "béyzd án sáyəns"
+							headingVixa = "béyzd ǎn sáyəns"
 							heading = "Based on science"
 							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
 						/>
 						<IntroSectionCell 
-							headingVixa = "ə θát iksperimənt"
+							headingVixa = "ə θat iksperimənt"
 							heading = "A thought experiment"
 							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
 						/>
@@ -190,21 +190,26 @@ class Page extends React.Component {
 							<FilterOption>Hungarian</FilterOption>
 						</FilterOptions>
 					</Filter>
+					<Button label='asdasdasd' />
 					<ChartWrapper>
-						{chartData.labels.x.map((item, index) => (
-								<ChartLabelCell
-								key={index}
-								text={item.text}
-								description={item.description}
-							/>
-						))}
-						{chartData.characters.map((item, index) => (
-								<ChartCell
-								key={index}
-								character={item.character}
-								vixaCharacter={item.vixaCharacter}
-							/>
-						))}
+						<TableContainer>
+							<Table variant='simple' size='lg'>
+								<Thead>
+									{chartData.rows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
+										itemCell.type === "header" ? <Th key={indexCell}>{itemCell.text}</Th> : <Td key={indexCell}>{itemCell.text}</Td>
+									))}
+								</Thead>
+								<Tbody>
+									{chartData.rows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+										<Tr key={indexRow}>
+											{itemRow.row.map((itemCell, indexCell) => (
+											itemCell.type === "header" ? <Th key={indexCell}>{itemCell.text}</Th> : <Td key={indexCell}>{itemCell.text}</Td>
+											))}
+										</Tr>
+									))}
+								</Tbody>
+							</Table>
+						</TableContainer>
 					</ChartWrapper>
 				</Chart>
 				<Content>
@@ -240,6 +245,7 @@ class Page extends React.Component {
 					<Paragraph>In order for it to be easy to read, I wanted to make letterforms as distinct from each other as possible.</Paragraph>
 					<Paragraph>By "universal," I mean that it should be usable for the native languages of as much people as possible.</Paragraph>
 					<Paragraph>To make it fast to write, I designed the letters in a way that they can be written cursively, without lifting the pen. I applied a method that is used in file compression: the most frequently used types of sounds are represented by the simplest letterforms. I also made it so that vowels can be omitted, similarly to Hebrew, making writing even faster when needed.</Paragraph>
+					{/*
 					<Heading2>Quick summary <InlineV><br/>kwik sáməri</InlineV></Heading2>
 					<Paragraph>Here's a full table of the entire alphabet.</Paragraph><Paragraph>These are all the consonants:</Paragraph>
 				</Content>
@@ -658,7 +664,7 @@ class Page extends React.Component {
 							description='ZS as in "zseb"'
 							vixa="ž"
 						/>
-					</TableOld>
+					</TableOld>*/}
 				</Content>
             </Canvas> 
         );

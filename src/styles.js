@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import headerImage from './images/header.png';
+import headerImage from './images/header4.png';
 
 const ProtoSemiticAleph = () => {
 	return (
@@ -331,13 +331,7 @@ export const NumberedListItem = styled.li``;
 
 export const Chart = styled.div``;
 
-export const ChartWrapper = styled.div`
-	display: grid;
-	grid-template-columns: repeat(9, 1fr);
-	grid-template-rows: repeat(11, 1fr);
-	grid-column-gap: 32px;
-	grid-row-gap: 32px;
-`;
+export const ChartWrapper = styled.div``;
 
 export const ChartCellWrapper = styled.div`
 	grid-area: ${props => props.gridArea};

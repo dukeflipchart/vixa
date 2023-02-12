@@ -1,5 +1,80 @@
 {
-	"labels": [
+	"rows": [
+	  {
+		"type": "head",
+		"row": [
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "header",
+			"text": "LABIAL"
+		  },
+		  {
+			"type": "header",
+			"text": "DENTAL"
+		  },
+		  {
+			"type": "header",
+			"text": "ALVEOLAR"
+		  },
+		  {
+			"type": "header",
+			"text": "RETROFLEX"
+		  },
+		  {
+			"type": "header",
+			"text": "POSTALVEOLAR or PALATAL"
+		  },
+		  {
+			"type": "header",
+			"text": "VELAR"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "PLOSIVE",
+			"description": "unvoiced"
+		  },
+		  {
+			"type": "cell",
+			"text": "p"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"text": "t"
+		  },
+		  {
+			"type": "cell",
+			"text": "t (retroflex)"
+		  },
+		  {
+			"type": "cell",
+			"text": "c"
+		  },
+		  {
+			"type": "cell",
+			"text": "k"
+		  },
+		  {
+			"type": "cell",
+			"text": "g"
+		  },
+		  {
+			"type": "cell",
+			"text": "G"
+		  }
+		]
+	  }
+	],
+	"labels":
 		{
 			"x": [
 				{
@@ -34,8 +109,7 @@
 					"gridArea": "1 / 9 / 2 / 10"
 				}
 			]
-		}
-	],
+		},
 	
 	"characters": [
 		{	
