@@ -101,7 +101,7 @@ export const Header = styled.div`
 	flex-direction: column;
 	font-size: 2rem;
 	justify-content: center;
-	height: 70vh;
+	min-height: 100vh;
 	line-height: 1.75rem;
 	position: relative;
 	text-align: center;
@@ -305,10 +305,8 @@ export const Title = styled(Heading1)`
 
 export const Etymology = styled.p`
 	font-size: 1rem;
-	position: absolute;
-	bottom: 2rem;
 	z-index: 3;
-	margin: 0 auto;
+	margin: 0 auto 2rem;
 	width: 100%;
 `;
 
