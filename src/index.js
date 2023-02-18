@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './index.css';
 
-import ConsonantsChart from './images/chart-consonants.svg';
-import VowelsChart from './images/chart-vowels.svg';
+import chartData from './chart.json';
 
 import {
 	BigLetter,
@@ -13,15 +11,25 @@ import {
 	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	ChartSection,
+	Chart,
+	ChartCellWrapper,
+	ChartCellVixa,
+	ChartCellSecondLine,
+	ChartCellSecondLineItem,
+	ChartHead,
+	ChartHeaderCellWrapper,
+	ChartTitle,
+	ChartSubtitle,
+	Filter,
+	FilterTitle,
+	FilterOption,
+	FilterOptions,
 	Content,
-	ContentFullSize,
-	ContentWide,
 	Etymology,
 	Header,
 	Heading2,
 	Heading3,
-	Heading4,
-	ImageWithBorder,
 	InlineV,
 	IntroSection,
 	IntroSectionCellHeading,
@@ -34,16 +42,12 @@ import {
 	NumberedList,
 	Paragraph,
 	StyledProtoSemiticAleph,
-	Table,
+	TableOld,
 	TableCell,
 	TableHeaderCell,
 	TableRow,
 	Title,
-	ToC,
-	ToCList,
-	ToCTitle,
-	NumberedListItem,
-	IntroSectionCellWrapperBig
+	NumberedListItem
 } from './styles.js';
 
 function TableRowLetter(props) {
@@ -85,6 +89,31 @@ function IntroSectionCell(props) {
 	)
 }
 
+function ChartCell(props) {
+	return (
+		<>
+			<ChartCellWrapper>
+				<ChartCellVixa>{props.vixaCharacter}</ChartCellVixa>
+				<ChartCellSecondLine>
+					<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
+					<ChartCellSecondLineItem>{props.vixaCharacter}</ChartCellSecondLineItem>
+				</ChartCellSecondLine>
+			</ChartCellWrapper>
+		</>
+	)
+}
+
+function ChartHeaderCell(props) {
+	return (
+		<>
+			<ChartHeaderCellWrapper>
+				{props.text}<br/>{props.description}
+			</ChartHeaderCellWrapper>
+		</>
+	)
+}
+
+
 class Page extends React.Component {
 
     constructor(props) {
@@ -95,7 +124,7 @@ class Page extends React.Component {
     render() {
 
         return (
-            <Canvas>
+			<Canvas>
 				<Header>
 					<Title><InlineV>viksâ</InlineV>·vixa</Title>
 					<Etymology>From Sanskrit viśva विश्व (universal) <br/>+ akṣara अक्षर (syllable).</Etymology>
@@ -113,22 +142,22 @@ class Page extends React.Component {
 							paragraph = "Each part of Vixa’s letters tells you something about the sound they represent. This internal logic can make learning faster and easier."
 						/>
 						<IntroSectionCell 
-							headingVixa = "izi tu wráyt"
+							headingVixa = "izi tu ráyt"
 							heading = "Easy to write"
 							paragraph = "Vixa is super fast to write by hand. The most common sounds have the simplest letters. Consonants can be written without lifting the pen and vowels can be omitted altogether."
 						/>
 						<IntroSectionCell 
-							headingVixa = "sâports meni lengəjiz"
+							headingVixa = "sâports meni lengwəjiz"
 							heading = "Supports many languages"
 							paragraph = "Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
 						/>
 						<IntroSectionCell 
-							headingVixa = "béyzd án sáyəns"
+							headingVixa = "béyzd ǎn sáyəns"
 							heading = "Based on science"
 							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
 						/>
 						<IntroSectionCell 
-							headingVixa = "ə θán iksperimənt"
+							headingVixa = "ə θat iksperimənt"
 							heading = "A thought experiment"
 							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
 						/>
@@ -139,6 +168,75 @@ class Page extends React.Component {
 						/>
 					</IntroSectionGrid>
 				</IntroSection>
+				<ChartSection>
+					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br/>Vixa characters</ChartTitle>
+					<Filter>
+						<FilterTitle>Languages</FilterTitle>
+						<FilterOptions>
+							<FilterOption>All languages</FilterOption>
+							<FilterOption>English</FilterOption>
+							<FilterOption>Hungarian</FilterOption>
+						</FilterOptions>
+					</Filter>
+					<ChartSubtitle><InlineV>kánsonənts</InlineV><br/>Consonants</ChartSubtitle>
+					<Chart>
+						<ChartHead>
+							{chartData.consonantRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
+								itemCell.type === "header" ? (
+									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+								) : itemCell.type === "empty" ? (
+									<ChartHeaderCell key={indexCell} />
+								) : (
+									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
+								)
+							))}
+						</ChartHead>
+						<tbody>
+							{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+								<tr key={indexRow}>
+									{itemRow.row.map((itemCell, indexCell) => (
+										itemCell.type === "header" ? (
+											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+										) : itemCell.type === "empty" ? (
+											<ChartHeaderCell key={indexCell} />
+										) : (
+											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+										)
+									))}
+								</tr>
+							))}
+						</tbody>
+					</Chart>
+					<ChartSubtitle><InlineV>váwəlz</InlineV><br/>Vowels</ChartSubtitle>
+					<Chart>
+						<ChartHead>
+							{chartData.vowelRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
+								itemCell.type === "header" ? (
+									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+								) : itemCell.type === "empty" ? (
+									<ChartHeaderCell key={indexCell} />
+								) : (
+									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
+								)
+							))}
+						</ChartHead>
+						<tbody>
+							{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+								<tr key={indexRow}>
+									{itemRow.row.map((itemCell, indexCell) => (
+										itemCell.type === "header" ? (
+											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+										) : itemCell.type === "empty" ? (
+											<ChartHeaderCell key={indexCell} />
+										) : (
+											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+										)
+									))}
+								</tr>
+							))}
+						</tbody>
+					</Chart>
+				</ChartSection>
 				<Content>
 					<Heading2>Introduction <InlineV><br/>intrədákšən</InlineV></Heading2>
 					<Heading3>The origins of the latin alphabet <InlineV><br/>ðə orijənz áf ðə letən elfəbet</InlineV></Heading3>
@@ -172,6 +270,7 @@ class Page extends React.Component {
 					<Paragraph>In order for it to be easy to read, I wanted to make letterforms as distinct from each other as possible.</Paragraph>
 					<Paragraph>By "universal," I mean that it should be usable for the native languages of as much people as possible.</Paragraph>
 					<Paragraph>To make it fast to write, I designed the letters in a way that they can be written cursively, without lifting the pen. I applied a method that is used in file compression: the most frequently used types of sounds are represented by the simplest letterforms. I also made it so that vowels can be omitted, similarly to Hebrew, making writing even faster when needed.</Paragraph>
+					{/*
 					<Heading2>Quick summary <InlineV><br/>kwik sáməri</InlineV></Heading2>
 					<Paragraph>Here's a full table of the entire alphabet.</Paragraph><Paragraph>These are all the consonants:</Paragraph>
 				</Content>
@@ -199,7 +298,7 @@ class Page extends React.Component {
 				<Content>
 					<Paragraph>Since English spelling often diverges from pronounciation, it can take time for English speakers to get used to writing with Vixa. Additionally, each dialect needs to be written differently, since they sound different.</Paragraph>
 					<Heading3>General American</Heading3>
-					<Table>
+					<TableOld>
 						<TableRow>
 							<TableHeaderCell>Letter</TableHeaderCell>
 							<TableHeaderCell>IPA</TableHeaderCell>
@@ -370,7 +469,7 @@ class Page extends React.Component {
 							description='Z as in "zoom"'
 							vixa="z"
 						/>
-					</Table><Heading2>Vixa for Hungarian <InlineV><br/>viksa for hángeriən</InlineV></Heading2>
+					</TableOld><Heading2>Vixa for Hungarian <InlineV><br/>viksa for hángeriən</InlineV></Heading2>
 					<Paragraph>Vixa works excellently for Hungarian. Several digraphs and trigraphs, such as "ty," "gy," "ny," or "dzs" are
 						single letters in Vixa, making writing faster and simpler. It also gets rid of the difference between "j" and "ly,"
 						a pain point even for several native Hungarian speakers.
@@ -384,7 +483,7 @@ class Page extends React.Component {
 				</ContentWide>
 				<Content>
 					<Heading3>Hungarian</Heading3>
-					<Table>
+					<TableOld>
 						<TableRow>
 							<TableHeaderCell>Letter</TableHeaderCell>
 							<TableHeaderCell>IPA</TableHeaderCell>
@@ -590,9 +689,9 @@ class Page extends React.Component {
 							description='ZS as in "zseb"'
 							vixa="ž"
 						/>
-					</Table>
+					</TableOld>*/}
 				</Content>
-            </Canvas> 
+			</Canvas>
         );
     }
 }

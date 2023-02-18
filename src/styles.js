@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import headerImage from './images/header.png';
+import headerImage from './images/header4.png';
+import chartImage from './images/header-pattern.png';
 
 const ProtoSemiticAleph = () => {
 	return (
@@ -61,7 +62,8 @@ export const colors = {
     purple5: '#B56DE5',
 	purple8: '#E2B1FF',
 	purple9: '#F3D8FF',
-	neutral9: '#FFFFFF',
+	neutral10: '#FFFFFF',
+	neutral9: '#EEEEEE',
 	neutral8: '#C4C4C4',
     neutral4: '#707070',
 	neutral2: '#393939',
@@ -101,7 +103,7 @@ export const Header = styled.div`
 	flex-direction: column;
 	font-size: 2rem;
 	justify-content: center;
-	height: 70vh;
+	min-height: 100vh;
 	line-height: 1.75rem;
 	position: relative;
 	text-align: center;
@@ -143,13 +145,11 @@ export const Header = styled.div`
 `;
 
 export const IntroSection = styled.div`
-	margin-bottom: 4rem;
 	padding: 4rem;
 	position: relative;
 `;
 
 export const IntroSectionGrid = styled.div`
-	border-bottom: 1px solid ${colors.neutral8};
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
@@ -157,7 +157,6 @@ export const IntroSectionGrid = styled.div`
 	grid-row-gap: 4rem;
 	margin: 0 auto;
 	max-width: 90rem;
-	padding-bottom: 4rem;
 `;
 
 export const IntroSectionCellWrapper = styled.div`
@@ -180,7 +179,7 @@ export const IntroSectionCellHeadingLatin = styled.p`
 export const IntroSectionCellHeadingV = styled.p`
 	color: ${colors.purple5};
 	font-family: 'Vixa Geometric Bold', Montserrat, sans-serif;
-	font-size: 110%;
+	font-size: 120%;
 	font-variant-ligatures: discretionary-ligatures;
 	margin: 0;
 `;
@@ -188,6 +187,8 @@ export const IntroSectionCellHeadingV = styled.p`
 export const IntroSectionCellParagraph = styled.p`
 	margin: 0.6rem 0;
 `;
+
+export const ChartLabelDescription = styled.div``;
 
 export const Content = styled.div`
 	padding: 0 2rem;
@@ -217,10 +218,6 @@ export const Heading2 = styled.h2`
 	font-size: 2rem;
 	line-height: 3rem;
 	margin-top: 5rem;
-
-	:first-of-type {
-		margin-top: 0;
-	}
 `;
 
 export const Heading3 = styled.h3`
@@ -248,7 +245,7 @@ export const Paragraph = styled.p``;
 
 export const InlineV = styled.span`
 	color: ${colors.purple5};
-	font-size: 135%;
+	font-size: 120%;
 	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
 	font-variant-ligatures: discretionary-ligatures;
 `;
@@ -303,10 +300,8 @@ export const Title = styled(Heading1)`
 
 export const Etymology = styled.p`
 	font-size: 1rem;
-	position: absolute;
-	bottom: 2rem;
 	z-index: 3;
-	margin: 0 auto;
+	margin: 0 auto 2rem;
 	width: 100%;
 `;
 
@@ -327,7 +322,114 @@ export const NumberedList = styled.ol``;
 
 export const NumberedListItem = styled.li``;
 
-export const Table = styled.table`
+export const ChartSection = styled.div`
+	padding: 2rem;
+	position: relative;
+
+	::before {
+		background-color: ${colors.neutral9};
+		content: " ";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -2;
+	}
+
+	::after {
+		background-image: url(${chartImage});
+		background-size: 1024px;
+		background-color: ${colors.neutral9};
+		background-position: center center;
+		content: " ";
+		mix-blend-mode: multiply;
+		opacity: 0.06;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+`;
+
+export const Chart = styled.table`
+	border-spacing: 0.5rem;
+	margin: 3rem auto;
+	position: relative;
+	left: -4rem;
+`;
+
+export const ChartTitle = styled(Heading2)`
+	font-size: 3rem;
+	line-height: 1.5;
+	margin: 3rem 0;
+	text-align: center;
+`;
+
+export const ChartSubtitle = styled(Heading3)`
+	font-size: 2rem;
+	line-height: 1.5;
+	margin: 3rem 0;
+	text-align: center;
+`;
+
+export const ChartCellWrapper = styled.td`
+	background: ${colors.neutral10};
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+	height: 6rem;
+	padding: 1rem;
+	width: 8rem;
+`;
+
+export const ChartCellVixa = styled.div`
+	font-size: 5rem;
+	line-height: 1;
+	font-weight: bold;
+	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
+	font-variant-ligatures: discretionary-ligatures;
+	margin: 1.5rem 0 0;
+	text-align: center;
+`;
+
+export const ChartCellSecondLine = styled.div`
+	color: ${colors.neutral4};
+	display: flex;
+	justify-content: space-between;
+`;
+
+export const ChartCellSecondLineItem = styled.div``;
+
+export const ChartHeaderCellWrapper = styled.th`
+	color: ${colors.neutral4};
+	font-size: 0.75rem;
+	padding: 0 1.5rem;
+	text-align: right;
+	width: 6rem;
+`;
+
+export const ChartHead = styled.thead`
+
+	${ChartHeaderCellWrapper} {
+		padding-bottom: 0.5rem;
+		text-align: center;
+		vertical-align: bottom;
+	}
+`;
+
+export const Filter = styled.div`
+	display: none;
+`;
+
+export const FilterOption = styled.div``;
+
+export const FilterOptions = styled.div``;
+
+export const FilterTitle = styled.div``;
+
+export const TableOld = styled.table`
 	width: 100%;
 	margin-top: 2rem;
 `;
