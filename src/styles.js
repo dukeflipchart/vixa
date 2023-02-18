@@ -76,7 +76,8 @@ const breakpoints = {
 	third: '65rem',
 	fourth: '80rem',
 	fifth: '95rem',
-	sixth: '110rem'
+	sixth: '110rem',
+	seventh: '150rem'
 }
 
 export const Neutral4 = styled.span`
@@ -322,6 +323,12 @@ export const NumberedList = styled.ol``;
 
 export const NumberedListItem = styled.li``;
 
+/* 
+
+CHARTS
+
+*/
+
 export const ChartSection = styled.div`
 	padding: 2rem;
 	position: relative;
@@ -355,20 +362,30 @@ export const ChartSection = styled.div`
 `;
 
 export const ChartsContainer = styled.div`
-	display: flex;
-	justify-content: center;
+	@media only screen and (min-width: ${breakpoints.seventh}) {
+		display: flex;
+		justify-content: center;
+	}
 `;
 
 export const ChartContainer = styled.div`
-	:first-of-type {
-		margin-right: 8rem;
+	@media only screen and (min-width: ${breakpoints.seventh}) {
+		:first-of-type {
+			margin-right: 8rem;
+		}
 	}
 `;
 
 export const Chart = styled.table`
 	border-spacing: 0.5rem;
 	margin: 3rem auto;
-	margin-left: -4rem;
+	position: relative;
+	left: -4rem;
+
+	@media only screen and (min-width: ${breakpoints.seventh}) {
+		margin-left: -4rem;
+		position: static;
+	}
 `;
 
 export const ChartTitle = styled(Heading2)`
