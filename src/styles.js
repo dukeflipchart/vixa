@@ -354,11 +354,21 @@ export const ChartSection = styled.div`
 	}
 `;
 
+export const ChartsContainer = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+export const ChartContainer = styled.div`
+	:first-of-type {
+		margin-right: 8rem;
+	}
+`;
+
 export const Chart = styled.table`
 	border-spacing: 0.5rem;
 	margin: 3rem auto;
-	position: relative;
-	left: -4rem;
+	margin-left: -4rem;
 `;
 
 export const ChartTitle = styled(Heading2)`

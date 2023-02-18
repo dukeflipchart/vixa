@@ -21,6 +21,8 @@ import {
 	ChartHeaderCellWrapper,
 	ChartTitle,
 	ChartSubtitle,
+	ChartContainer,
+	ChartsContainer,
 	Filter,
 	FilterTitle,
 	FilterOption,
@@ -178,64 +180,70 @@ class Page extends React.Component {
 							<FilterOption>Hungarian</FilterOption>
 						</FilterOptions>
 					</Filter>
-					<ChartSubtitle><InlineV>kánsonənts</InlineV><br/>Consonants</ChartSubtitle>
-					<Chart>
-						<ChartHead>
-							{chartData.consonantRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
-								itemCell.type === "header" ? (
-									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-								) : itemCell.type === "empty" ? (
-									<ChartHeaderCell key={indexCell} />
-								) : (
-									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
-								)
-							))}
-						</ChartHead>
-						<tbody>
-							{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-								<tr key={indexRow}>
-									{itemRow.row.map((itemCell, indexCell) => (
+					<ChartsContainer>
+						<ChartContainer>
+							<ChartSubtitle><InlineV>kánsonənts</InlineV><br/>Consonants</ChartSubtitle>
+							<Chart>
+								<ChartHead>
+									{chartData.consonantRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
 										itemCell.type === "header" ? (
 											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 										) : itemCell.type === "empty" ? (
 											<ChartHeaderCell key={indexCell} />
 										) : (
-											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
 										)
 									))}
-								</tr>
-							))}
-						</tbody>
-					</Chart>
-					<ChartSubtitle><InlineV>váwəlz</InlineV><br/>Vowels</ChartSubtitle>
-					<Chart>
-						<ChartHead>
-							{chartData.vowelRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
-								itemCell.type === "header" ? (
-									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-								) : itemCell.type === "empty" ? (
-									<ChartHeaderCell key={indexCell} />
-								) : (
-									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
-								)
-							))}
-						</ChartHead>
-						<tbody>
-							{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-								<tr key={indexRow}>
-									{itemRow.row.map((itemCell, indexCell) => (
+								</ChartHead>
+								<tbody>
+									{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+										<tr key={indexRow}>
+											{itemRow.row.map((itemCell, indexCell) => (
+												itemCell.type === "header" ? (
+													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+												) : itemCell.type === "empty" ? (
+													<ChartHeaderCell key={indexCell} />
+												) : (
+													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+												)
+											))}
+										</tr>
+									))}
+								</tbody>
+							</Chart>
+						</ChartContainer>
+						<ChartContainer>
+							<ChartSubtitle><InlineV>váwəlz</InlineV><br/>Vowels</ChartSubtitle>
+							<Chart>
+								<ChartHead>
+									{chartData.vowelRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
 										itemCell.type === "header" ? (
 											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 										) : itemCell.type === "empty" ? (
 											<ChartHeaderCell key={indexCell} />
 										) : (
-											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
 										)
 									))}
-								</tr>
-							))}
-						</tbody>
-					</Chart>
+								</ChartHead>
+								<tbody>
+									{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+										<tr key={indexRow}>
+											{itemRow.row.map((itemCell, indexCell) => (
+												itemCell.type === "header" ? (
+													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+												) : itemCell.type === "empty" ? (
+													<ChartHeaderCell key={indexCell} />
+												) : (
+													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+												)
+											))}
+										</tr>
+									))}
+								</tbody>
+							</Chart>
+						</ChartContainer>
+					</ChartsContainer>
 				</ChartSection>
 				<Content>
 					<Heading2>Introduction <InlineV><br/>intrədákšən</InlineV></Heading2>
