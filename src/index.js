@@ -2,23 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import ConsonantsChart from './images/chart-consonants.svg';
-import VowelsChart from './images/chart-vowels.svg';
-
 import chartData from './chart.json';
-
-import {
-	Button,
-	Table,
-	Thead,
-	Tbody,
-	Tfoot,
-	Tr,
-	Th,
-	Td,
-	TableCaption,
-	TableContainer,
-  } from '@chakra-ui/react';
 
 import {
 	BigLetter,
@@ -27,23 +11,25 @@ import {
 	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	ChartSection,
 	Chart,
-	ChartWrapper,
 	ChartCellWrapper,
-	ChartLabelDescription,
-	ChartLabelCellWrapper,
+	ChartCellVixa,
+	ChartCellSecondLine,
+	ChartCellSecondLineItem,
+	ChartHead,
+	ChartHeaderCellWrapper,
+	ChartTitle,
+	ChartSubtitle,
 	Filter,
 	FilterTitle,
 	FilterOption,
 	FilterOptions,
 	Content,
-	ContentFullSize,
-	ContentWide,
 	Etymology,
 	Header,
 	Heading2,
 	Heading3,
-	ImageWithBorder,
 	InlineV,
 	IntroSection,
 	IntroSectionCellHeading,
@@ -107,24 +93,26 @@ function ChartCell(props) {
 	return (
 		<>
 			<ChartCellWrapper>
-				{props.character}
+				<ChartCellVixa>{props.vixaCharacter}</ChartCellVixa>
+				<ChartCellSecondLine>
+					<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
+					<ChartCellSecondLineItem>{props.vixaCharacter}</ChartCellSecondLineItem>
+				</ChartCellSecondLine>
 			</ChartCellWrapper>
 		</>
 	)
 }
 
-function ChartLabelCell(props) {
+function ChartHeaderCell(props) {
 	return (
 		<>
-			<ChartLabelCellWrapper gridArea={props.gridArea}>
-				{props.text}
-				{props.description && (
-					<ChartLabelDescription>{props.description}</ChartLabelDescription>
-					)}
-			</ChartLabelCellWrapper>
+			<ChartHeaderCellWrapper>
+				{props.text}<br/>{props.description}
+			</ChartHeaderCellWrapper>
 		</>
 	)
 }
+
 
 class Page extends React.Component {
 
@@ -136,7 +124,7 @@ class Page extends React.Component {
     render() {
 
         return (
-            <Canvas>
+			<Canvas>
 				<Header>
 					<Title><InlineV>viksâ</InlineV>·vixa</Title>
 					<Etymology>From Sanskrit viśva विश्व (universal) <br/>+ akṣara अक्षर (syllable).</Etymology>
@@ -180,8 +168,8 @@ class Page extends React.Component {
 						/>
 					</IntroSectionGrid>
 				</IntroSection>
-				<Chart>
-					<Heading2>Vixa characters</Heading2>
+				<ChartSection>
+					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br/>Vixa characters</ChartTitle>
 					<Filter>
 						<FilterTitle>Languages</FilterTitle>
 						<FilterOptions>
@@ -190,28 +178,65 @@ class Page extends React.Component {
 							<FilterOption>Hungarian</FilterOption>
 						</FilterOptions>
 					</Filter>
-					<Button label='asdasdasd' />
-					<ChartWrapper>
-						<TableContainer>
-							<Table variant='simple' size='lg'>
-								<Thead>
-									{chartData.rows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
-										itemCell.type === "header" ? <Th key={indexCell}>{itemCell.text}</Th> : <Td key={indexCell}>{itemCell.text}</Td>
+					<ChartSubtitle><InlineV>kánsonənts</InlineV><br/>Consonants</ChartSubtitle>
+					<Chart>
+						<ChartHead>
+							{chartData.consonantRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
+								itemCell.type === "header" ? (
+									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+								) : itemCell.type === "empty" ? (
+									<ChartHeaderCell key={indexCell} />
+								) : (
+									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
+								)
+							))}
+						</ChartHead>
+						<tbody>
+							{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+								<tr key={indexRow}>
+									{itemRow.row.map((itemCell, indexCell) => (
+										itemCell.type === "header" ? (
+											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+										) : itemCell.type === "empty" ? (
+											<ChartHeaderCell key={indexCell} />
+										) : (
+											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+										)
 									))}
-								</Thead>
-								<Tbody>
-									{chartData.rows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-										<Tr key={indexRow}>
-											{itemRow.row.map((itemCell, indexCell) => (
-											itemCell.type === "header" ? <Th key={indexCell}>{itemCell.text}</Th> : <Td key={indexCell}>{itemCell.text}</Td>
-											))}
-										</Tr>
+								</tr>
+							))}
+						</tbody>
+					</Chart>
+					<ChartSubtitle><InlineV>váwəlz</InlineV><br/>Vowels</ChartSubtitle>
+					<Chart>
+						<ChartHead>
+							{chartData.vowelRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
+								itemCell.type === "header" ? (
+									<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+								) : itemCell.type === "empty" ? (
+									<ChartHeaderCell key={indexCell} />
+								) : (
+									<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
+								)
+							))}
+						</ChartHead>
+						<tbody>
+							{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
+								<tr key={indexRow}>
+									{itemRow.row.map((itemCell, indexCell) => (
+										itemCell.type === "header" ? (
+											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
+										) : itemCell.type === "empty" ? (
+											<ChartHeaderCell key={indexCell} />
+										) : (
+											<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
+										)
 									))}
-								</Tbody>
-							</Table>
-						</TableContainer>
-					</ChartWrapper>
-				</Chart>
+								</tr>
+							))}
+						</tbody>
+					</Chart>
+				</ChartSection>
 				<Content>
 					<Heading2>Introduction <InlineV><br/>intrədákšən</InlineV></Heading2>
 					<Heading3>The origins of the latin alphabet <InlineV><br/>ðə orijənz áf ðə letən elfəbet</InlineV></Heading3>
@@ -666,7 +691,7 @@ class Page extends React.Component {
 						/>
 					</TableOld>*/}
 				</Content>
-            </Canvas> 
+			</Canvas>
         );
     }
 }

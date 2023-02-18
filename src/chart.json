@@ -1,5 +1,5 @@
 {
-	"rows": [
+	"consonantRows": [
 	  {
 		"type": "head",
 		"row": [
@@ -24,11 +24,21 @@
 		  },
 		  {
 			"type": "header",
-			"text": "POSTALVEOLAR or PALATAL"
+			"text": "POSTALVEOLAR",
+			"description": "or PALATAL"
 		  },
 		  {
 			"type": "header",
 			"text": "VELAR"
+		  },
+		  {
+			"type": "header",
+			"text": "UVULAR",
+			"description": "or PHARYNGEAL"
+		  },
+		  {
+			"type": "header",
+			"text": "GLOTTAL"
 		  }
 		]
 	  },
@@ -42,36 +52,865 @@
 		  },
 		  {
 			"type": "cell",
-			"text": "p"
+			"vixaCharacter": "p",
+			"ipaCharacter": "p"
 		  },
 		  {
 			"type": "empty"
 		  },
 		  {
 			"type": "cell",
-			"text": "t"
+			"vixaCharacter": "t",
+			"ipaCharacter": "t"
 		  },
 		  {
 			"type": "cell",
-			"text": "t (retroflex)"
+			"vixaCharacter": "ṭ",
+			"ipaCharacter": "ʈ"
 		  },
 		  {
 			"type": "cell",
-			"text": "c"
+			"vixaCharacter": "ť",
+			"ipaCharacter": "c"
 		  },
 		  {
 			"type": "cell",
-			"text": "k"
+			"vixaCharacter": "k",
+			"ipaCharacter": "k"
 		  },
 		  {
 			"type": "cell",
-			"text": "g"
+			"vixaCharacter": "q",
+			"ipaCharacter": "q"
 		  },
 		  {
 			"type": "cell",
-			"text": "G"
+			"vixaCharacter": "ɦ",
+			"ipaCharacter": "ʔ"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "PLOSIVE",
+			"description": "aspirated"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "P",
+			"ipaCharacter": "pʰ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "T",
+			"ipaCharacter": "tʰ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ṭ",
+			"ipaCharacter": "ʈʰ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "K",
+			"ipaCharacter": "kʰ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "PLOSIVE",
+			"description": "voiced"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "b",
+			"ipaCharacter": "b"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "d",
+			"ipaCharacter": "d"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ḍ",
+			"ipaCharacter": "ɖ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ď",
+			"ipaCharacter": "ɟ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "g",
+			"ipaCharacter": "g"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ġ",
+			"ipaCharacter": "ɢ"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "PLOSIVE",
+			"description": "murmured"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "B",
+			"ipaCharacter": "bʱ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "D",
+			"ipaCharacter": "dʱ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ḍ",
+			"ipaCharacter": "ɖʱ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "G",
+			"ipaCharacter": "gʱ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "PLOSIVE",
+			"description": "pharyngealized"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ṫ",
+			"ipaCharacter": "tˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "NASAL"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "m",
+			"ipaCharacter": "m"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "n",
+			"ipaCharacter": "n"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ṇ",
+			"ipaCharacter": "ɳ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ñ",
+			"ipaCharacter": "ɲ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ṇ",
+			"ipaCharacter": "ŋ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "FRICATIVE",
+			"description": "voiceless"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "f",
+			"ipaCharacter": "f"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "θ",
+			"ipaCharacter": "θ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "s",
+			"ipaCharacter": "s"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ṣ",
+			"ipaCharacter": "ʂ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "š",
+			"ipaCharacter": "ʃ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "x",
+			"ipaCharacter": "x"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ħ",
+			"ipaCharacter": "ħ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "h",
+			"ipaCharacter": "h"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "FRICATIVE",
+			"description": "voiced"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "v",
+			"ipaCharacter": "v"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ð",
+			"ipaCharacter": "ð"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "z",
+			"ipaCharacter": "z"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ẓ",
+			"ipaCharacter": "ʐ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ž",
+			"ipaCharacter": "ʒ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ǧ",
+			"ipaCharacter": "ɣ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "γ",
+			"ipaCharacter": "ʕ"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "FRICATIVE",
+			"description": "pharyngealized"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ṡ",
+			"ipaCharacter": "sˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "FRICATIVE",
+			"description": "voiced, pharyngealized"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ż",
+			"ipaCharacter": "zˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "APPROXIMANT"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "r",
+			"ipaCharacter": "ɹ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "y",
+			"ipaCharacter": "j"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "w",
+			"ipaCharacter": "w"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "APPROXIMANT",
+			"description": "lateral"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "l",
+			"ipaCharacter": "l"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "AFFRICATE",
+			"description": "voiceless"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "c",
+			"ipaCharacter": "t͡s"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "č",
+			"ipaCharacter": "t͡ʃ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "AFFRICATE",
+			"description": "voiced"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ź",
+			"ipaCharacter": "d͡z"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "j",
+			"ipaCharacter": "d͡ʒ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "AFFRICATE",
+			"description": "murmured"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Z",
+			"ipaCharacter": "d͡zʱ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "J",
+			"ipaCharacter": "d͡ʒʱ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "AFFRICATE",
+			"description": "pharyngealized"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ź",
+			"ipaCharacter": "d͡zˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Đ",
+			"ipaCharacter": "d͡ʒˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "TRILL",
+			"description": "or TAP or FLAP"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "ŕ",
+			"ipaCharacter": "rˤ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  }
+		]
+	  },
+	  {
+		"type": "body",
+		"row": [
+		  {
+			"type": "header",
+			"text": "TAP or FLAP",
+			"description": "aspirated"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ŕ",
+			"ipaCharacter": "rʰ"
+		  },
+		  {
+			"type": "cell",
+			"vixaCharacter": "Ṛ",
+			"ipaCharacter": "ɽʰ"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
+		  },
+		  {
+			"type": "empty"
 		  }
 		]
 	  }
-	]
+	],
+	"vowelRows": [
+		{
+		  "type": "head",
+		  "row": [
+			{
+			  "type": "empty"
+			},
+			{
+			  "type": "header",
+			  "text": "FRONT",
+			  "description": "unrounded"
+			},
+			{
+			  "type": "header",
+			  "text": "FRONT",
+			  "description": "rounded"
+			},
+			{
+			  "type": "header",
+			  "text": "BACK",
+			  "description": "unrounded"
+			},
+			{
+			  "type": "header",
+			  "text": "BACK",
+			  "description": "rounded"
+			}
+		  ]
+		},
+		{
+		  "type": "body",
+		  "row": [
+			{
+			  "type": "header",
+			  "text": "CLOSE"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "i",
+			  "ipaCharacter": "i"
+			},
+			{
+				"type": "cell",
+				"vixaCharacter": "ü",
+				"ipaCharacter": "y"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "ű",
+			  "ipaCharacter": "ɪ, ɯ"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "u",
+			  "ipaCharacter": "u"
+			}
+		  ]
+		},
+		{
+		  "type": "body",
+		  "row": [
+			{
+			  "type": "header",
+			  "text": "CLOSE-MID"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "é",
+			  "ipaCharacter": "e"
+			},
+			{
+				"type": "cell",
+				"vixaCharacter": "ö",
+				"ipaCharacter": "ø"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "ő",
+			  "ipaCharacter": "ɤ"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "o",
+			  "ipaCharacter": "o"
+			}
+		  ]
+		},
+		{
+		  "type": "body",
+		  "row": [
+			{
+			  "type": "header",
+			  "text": "OPEN-MID"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "e",
+			  "ipaCharacter": "ɛ"
+			},
+			{
+				"type": "cell",
+				"vixaCharacter": "ə",
+				"ipaCharacter": "ə"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "â",
+			  "ipaCharacter": "ʌ"
+			},
+			{
+			  "type": "empty"
+			}
+		  ]
+		},
+		{
+		  "type": "body",
+		  "row": [
+			{
+			  "type": "header",
+			  "text": "OPEN"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "á",
+			  "ipaCharacter": "a"
+			},
+			{
+				"type": "empty"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "ǎ",
+			  "ipaCharacter": "ɑ"
+			},
+			{
+			  "type": "cell",
+			  "vixaCharacter": "a",
+			  "ipaCharacter": "ɔ, ɒ"
+			}
+		  ]
+		}
+	  ]
 }
