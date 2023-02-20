@@ -457,7 +457,7 @@ export const ChartCellWrapper = styled.td`
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 	height: 6rem;
-	margin: 0.5rem;
+	margin: 0.25rem;
 	padding: 0.75rem;
 	width: 6rem;
 
