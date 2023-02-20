@@ -182,6 +182,7 @@ export const IntroSectionCellHeadingV = styled.p`
 	font-family: 'Vixa Geometric Bold', Montserrat, sans-serif;
 	font-size: 120%;
 	font-variant-ligatures: discretionary-ligatures;
+	line-height: 1.5;
 	margin: 0;
 `;
 
@@ -390,6 +391,11 @@ export const Chart = styled.table`
 		margin: 3rem auto;
 		position: relative;
 		table-layout: fixed;
+		left: -4.25rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		left: -4.75rem;
 	}
 `;
 
