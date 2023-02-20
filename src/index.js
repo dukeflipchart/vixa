@@ -15,13 +15,14 @@ import {
 	Chart,
 	ChartCellWrapper,
 	ChartCellVixa,
-	ChartCellSecondLine,
+	ChartCellBottomLine,
 	ChartCellSecondLineItem,
+	ChartContainer,
 	ChartHead,
 	ChartHeaderCellWrapper,
-	ChartTitle,
+	ChartRow,
 	ChartSubtitle,
-	ChartContainer,
+	ChartTitle,
 	ChartsContainer,
 	Filter,
 	FilterTitle,
@@ -96,10 +97,10 @@ function ChartCell(props) {
 		<>
 			<ChartCellWrapper>
 				<ChartCellVixa>{props.vixaCharacter}</ChartCellVixa>
-				<ChartCellSecondLine>
+				<ChartCellBottomLine>
 					<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
 					<ChartCellSecondLineItem>{props.vixaCharacter}</ChartCellSecondLineItem>
-				</ChartCellSecondLine>
+				</ChartCellBottomLine>
 			</ChartCellWrapper>
 		</>
 	)
@@ -108,7 +109,7 @@ function ChartCell(props) {
 function ChartHeaderCell(props) {
 	return (
 		<>
-			<ChartHeaderCellWrapper>
+			<ChartHeaderCellWrapper isEmpty={props.isEmpty}>
 				{props.text}<br/>{props.description}
 			</ChartHeaderCellWrapper>
 		</>
@@ -189,7 +190,7 @@ class Page extends React.Component {
 										itemCell.type === "header" ? (
 											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 										) : itemCell.type === "empty" ? (
-											<ChartHeaderCell key={indexCell} />
+											<ChartHeaderCell isEmpty key={indexCell} />
 										) : (
 											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
 										)
@@ -197,17 +198,17 @@ class Page extends React.Component {
 								</ChartHead>
 								<tbody>
 									{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-										<tr key={indexRow}>
+										<ChartRow key={indexRow}>
 											{itemRow.row.map((itemCell, indexCell) => (
 												itemCell.type === "header" ? (
 													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 												) : itemCell.type === "empty" ? (
-													<ChartHeaderCell key={indexCell} />
+													<ChartHeaderCell isEmpty key={indexCell} />
 												) : (
 													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
 												)
 											))}
-										</tr>
+										</ChartRow>
 									))}
 								</tbody>
 							</Chart>
@@ -220,7 +221,7 @@ class Page extends React.Component {
 										itemCell.type === "header" ? (
 											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 										) : itemCell.type === "empty" ? (
-											<ChartHeaderCell key={indexCell} />
+											<ChartHeaderCell isEmpty key={indexCell} />
 										) : (
 											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
 										)
@@ -228,17 +229,17 @@ class Page extends React.Component {
 								</ChartHead>
 								<tbody>
 									{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-										<tr key={indexRow}>
+										<ChartRow key={indexRow}>
 											{itemRow.row.map((itemCell, indexCell) => (
 												itemCell.type === "header" ? (
 													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
 												) : itemCell.type === "empty" ? (
-													<ChartHeaderCell key={indexCell} />
+													<ChartHeaderCell isEmpty key={indexCell} />
 												) : (
 													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
 												)
 											))}
-										</tr>
+										</ChartRow>
 									))}
 								</tbody>
 							</Chart>
