@@ -71,13 +71,13 @@ export const colors = {
 }
 
 const breakpoints = {
-	first: '35rem',
-	second: '50rem',
-	third: '65rem',
-	fourth: '80rem',
-	fifth: '95rem',
-	sixth: '110rem',
-	seventh: '150rem'
+	first: '35rem', 	// 560px
+	second: '50rem',	// 800px
+	third: '65rem',		// 1040px
+	fourth: '80rem', 	// 1280px
+	fifth: '95rem',		// 1520px
+	sixth: '110rem',	// 1760px
+	seventh: '150rem'	// 2400px
 }
 
 export const Neutral4 = styled.span`
@@ -246,7 +246,7 @@ export const Paragraph = styled.p``;
 
 export const InlineV = styled.span`
 	color: ${colors.purple5};
-	font-size: 120%;
+	font-size: 135%;
 	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
 	font-variant-ligatures: discretionary-ligatures;
 `;
@@ -325,12 +325,12 @@ export const NumberedListItem = styled.li``;
 
 /* 
 
-CHARTS
+CHART
 
 */
 
 export const ChartSection = styled.div`
-	padding: 2rem;
+	padding: 1rem;
 	position: relative;
 
 	::before {
@@ -359,6 +359,10 @@ export const ChartSection = styled.div`
 		bottom: 0;
 		z-index: -1;
 	}
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		padding: 2rem;
+	}
 `;
 
 export const ChartsContainer = styled.div`
@@ -377,14 +381,15 @@ export const ChartContainer = styled.div`
 `;
 
 export const Chart = styled.table`
-	border-spacing: 0.5rem;
+	display: block;
 	margin: 3rem auto;
-	position: relative;
-	left: -4rem;
 
-	@media only screen and (min-width: ${breakpoints.seventh}) {
-		margin-left: -4rem;
-		position: static;
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		border-spacing: 0.5rem;
+		display: table;
+		margin: 3rem auto;
+		position: relative;
+		table-layout: fixed;
 	}
 `;
 
@@ -402,49 +407,92 @@ export const ChartSubtitle = styled(Heading3)`
 	text-align: center;
 `;
 
+export const ChartHeaderCellWrapper = styled.th`
+	display: ${props => props.isEmpty ? "none;" : "block"};
+	color: ${colors.neutral4};
+	flex: 1 0 100%;
+	margin: 2rem 0 0.25rem;
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		display: table-cell;
+		font-size: 0.625rem;
+		padding: 0 0.75rem;
+		text-align: right;
+		width: 6rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		font-size: 0.75rem;
+		padding: 0 1rem;
+		width: 7rem;
+	}
+`;
+
+export const ChartHead = styled.thead`
+	display: none;
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		display: table-header-group;
+
+		${ChartHeaderCellWrapper} {
+			padding-bottom: 0.5rem;
+			text-align: center;
+			vertical-align: bottom;
+		}
+	}
+`;
+
+export const ChartRow = styled.tr`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		display: table-row;
+	}
+`;
+
 export const ChartCellWrapper = styled.td`
 	background: ${colors.neutral10};
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 	height: 6rem;
-	padding: 1rem;
-	width: 8rem;
+	margin: 0.5rem;
+	padding: 0.75rem;
+	width: 6rem;
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		height: 7rem;
+		margin: 0;
+		padding: 1rem;
+		width: 7rem;
+	}
 `;
 
 export const ChartCellVixa = styled.div`
-	font-size: 5rem;
+	font-size: 3rem;
 	line-height: 1;
 	font-weight: bold;
 	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
 	font-variant-ligatures: discretionary-ligatures;
-	margin: 1.5rem 0 0;
+	margin: 1.25rem 0 0.25rem;
 	text-align: center;
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		font-size: 4rem;
+		margin: 1.25rem 0 0.25rem;
+	}
 `;
 
-export const ChartCellSecondLine = styled.div`
+export const ChartCellBottomLine = styled.div`
 	color: ${colors.neutral4};
 	display: flex;
+	font-size: 1rem;
+	line-height: 1rem;
 	justify-content: space-between;
 `;
 
 export const ChartCellSecondLineItem = styled.div``;
-
-export const ChartHeaderCellWrapper = styled.th`
-	color: ${colors.neutral4};
-	font-size: 0.75rem;
-	padding: 0 1.5rem;
-	text-align: right;
-	width: 6rem;
-`;
-
-export const ChartHead = styled.thead`
-
-	${ChartHeaderCellWrapper} {
-		padding-bottom: 0.5rem;
-		text-align: center;
-		vertical-align: bottom;
-	}
-`;
 
 export const Filter = styled.div`
 	display: none;
