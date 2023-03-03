@@ -1,916 +1,1043 @@
 {
-	"consonantRows": [
-	  {
-		"type": "head",
-		"row": [
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "header",
-			"text": "LABIAL"
-		  },
-		  {
-			"type": "header",
-			"text": "DENTAL"
-		  },
-		  {
-			"type": "header",
-			"text": "ALVEOLAR"
-		  },
-		  {
-			"type": "header",
-			"text": "RETROFLEX"
-		  },
-		  {
-			"type": "header",
-			"text": "POSTALVEOLAR",
-			"description": "or PALATAL"
-		  },
-		  {
-			"type": "header",
-			"text": "VELAR"
-		  },
-		  {
-			"type": "header",
-			"text": "UVULAR",
-			"description": "or PHARYNGEAL"
-		  },
-		  {
-			"type": "header",
-			"text": "GLOTTAL"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "PLOSIVE",
-			"description": "unvoiced"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "p",
-			"ipaCharacter": "p"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "t",
-			"ipaCharacter": "t"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ṭ",
-			"ipaCharacter": "ʈ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ť",
-			"ipaCharacter": "c"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "k",
-			"ipaCharacter": "k"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "q",
-			"ipaCharacter": "q"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ɦ",
-			"ipaCharacter": "ʔ"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "PLOSIVE",
-			"description": "aspirated"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "P",
-			"ipaCharacter": "pʰ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "T",
-			"ipaCharacter": "tʰ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ṭ",
-			"ipaCharacter": "ʈʰ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "K",
-			"ipaCharacter": "kʰ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "PLOSIVE",
-			"description": "voiced"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "b",
-			"ipaCharacter": "b"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "d",
-			"ipaCharacter": "d"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ḍ",
-			"ipaCharacter": "ɖ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ď",
-			"ipaCharacter": "ɟ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "g",
-			"ipaCharacter": "g"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ġ",
-			"ipaCharacter": "ɢ"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "PLOSIVE",
-			"description": "murmured"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "B",
-			"ipaCharacter": "bʱ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "D",
-			"ipaCharacter": "dʱ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ḍ",
-			"ipaCharacter": "ɖʱ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "G",
-			"ipaCharacter": "gʱ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "PLOSIVE",
-			"description": "pharyngealized"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ṫ",
-			"ipaCharacter": "tˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "NASAL"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "m",
-			"ipaCharacter": "m"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "n",
-			"ipaCharacter": "n"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ṇ",
-			"ipaCharacter": "ɳ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ñ",
-			"ipaCharacter": "ɲ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ṇ",
-			"ipaCharacter": "ŋ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "FRICATIVE",
-			"description": "voiceless"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "f",
-			"ipaCharacter": "f"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "θ",
-			"ipaCharacter": "θ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "s",
-			"ipaCharacter": "s"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ṣ",
-			"ipaCharacter": "ʂ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "š",
-			"ipaCharacter": "ʃ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "x",
-			"ipaCharacter": "x"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ħ",
-			"ipaCharacter": "ħ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "h",
-			"ipaCharacter": "h"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "FRICATIVE",
-			"description": "voiced"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "v",
-			"ipaCharacter": "v"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ð",
-			"ipaCharacter": "ð"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "z",
-			"ipaCharacter": "z"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ẓ",
-			"ipaCharacter": "ʐ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ž",
-			"ipaCharacter": "ʒ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ǧ",
-			"ipaCharacter": "ɣ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "γ",
-			"ipaCharacter": "ʕ"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "FRICATIVE",
-			"description": "pharyngealized"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ṡ",
-			"ipaCharacter": "sˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "FRICATIVE",
-			"description": "voiced, pharyngealized"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ż",
-			"ipaCharacter": "zˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "APPROXIMANT"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "r",
-			"ipaCharacter": "ɹ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "y",
-			"ipaCharacter": "j"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "w",
-			"ipaCharacter": "w"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "APPROXIMANT",
-			"description": "lateral"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "l",
-			"ipaCharacter": "l"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "AFFRICATE",
-			"description": "voiceless"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "c",
-			"ipaCharacter": "t͡s"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "č",
-			"ipaCharacter": "t͡ʃ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "AFFRICATE",
-			"description": "voiced"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ź",
-			"ipaCharacter": "d͡z"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "j",
-			"ipaCharacter": "d͡ʒ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "AFFRICATE",
-			"description": "murmured"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Z",
-			"ipaCharacter": "d͡zʱ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "J",
-			"ipaCharacter": "d͡ʒʱ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "AFFRICATE",
-			"description": "pharyngealized"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ź",
-			"ipaCharacter": "d͡zˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Đ",
-			"ipaCharacter": "d͡ʒˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "TRILL",
-			"description": "or TAP or FLAP"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "ŕ",
-			"ipaCharacter": "rˤ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  },
-	  {
-		"type": "body",
-		"row": [
-		  {
-			"type": "header",
-			"text": "TAP or FLAP",
-			"description": "aspirated"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ŕ",
-			"ipaCharacter": "rʰ"
-		  },
-		  {
-			"type": "cell",
-			"vixaCharacter": "Ṛ",
-			"ipaCharacter": "ɽʰ"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  },
-		  {
-			"type": "empty"
-		  }
-		]
-	  }
+	"languages": [
+		"en-us",
+		"hu-hu"
 	],
-	"vowelRows": [
+	"methodCategories": [
 		{
-		  "type": "head",
-		  "row": [
-			{
-			  "type": "empty"
-			},
-			{
-			  "type": "header",
-			  "text": "FRONT",
-			  "description": "unrounded"
-			},
-			{
-			  "type": "header",
-			  "text": "FRONT",
-			  "description": "rounded"
-			},
-			{
-			  "type": "header",
-			  "text": "BACK",
-			  "description": "unrounded"
-			},
-			{
-			  "type": "header",
-			  "text": "BACK",
-			  "description": "rounded"
-			}
-		  ]
+			"id": "plosive-voiceless",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "voiceless",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
 		},
 		{
-		  "type": "body",
-		  "row": [
-			{
-			  "type": "header",
-			  "text": "CLOSE"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "i",
-			  "ipaCharacter": "i"
-			},
-			{
-				"type": "cell",
-				"vixaCharacter": "ü",
-				"ipaCharacter": "y"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "ű",
-			  "ipaCharacter": "ɪ, ɯ"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "u",
-			  "ipaCharacter": "u"
-			}
-		  ]
+			"id": "plosive-aspirated",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "aspirated",
+			"languages": []
 		},
 		{
-		  "type": "body",
-		  "row": [
-			{
-			  "type": "header",
-			  "text": "CLOSE-MID"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "é",
-			  "ipaCharacter": "e"
-			},
-			{
-				"type": "cell",
-				"vixaCharacter": "ö",
-				"ipaCharacter": "ø"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "ő",
-			  "ipaCharacter": "ɤ"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "o",
-			  "ipaCharacter": "o"
-			}
-		  ]
+			"id": "plosive-voiced",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "voiced",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
 		},
 		{
-		  "type": "body",
-		  "row": [
-			{
-			  "type": "header",
-			  "text": "OPEN-MID"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "e",
-			  "ipaCharacter": "ɛ"
-			},
-			{
-				"type": "cell",
-				"vixaCharacter": "ə",
-				"ipaCharacter": "ə"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "â",
-			  "ipaCharacter": "ʌ"
-			},
-			{
-			  "type": "empty"
-			}
-		  ]
+			"id": "plosive-murmured",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "murmured",
+			"languages": []
 		},
 		{
-		  "type": "body",
-		  "row": [
-			{
-			  "type": "header",
-			  "text": "OPEN"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "á",
-			  "ipaCharacter": "a"
-			},
-			{
-				"type": "empty"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "ǎ",
-			  "ipaCharacter": "ɑ"
-			},
-			{
-			  "type": "cell",
-			  "vixaCharacter": "a",
-			  "ipaCharacter": "ɔ, ɒ"
-			}
-		  ]
+			"id": "plosive-pharyngealized",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "pharyngealized",
+			"languages": []
+		},
+		{
+			"id": "plosive-voiced-pharyngealized",
+			"type": "consonant",
+			"text": "PLOSIVE",
+			"textSecondLine": "voiced, pharyngealized",
+			"languages": []
+		},
+		{
+			"id": "nasal",
+			"type": "consonant",
+			"text": "NASAL",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "fricative-voiceless",
+			"type": "consonant",
+			"text": "FRICATIVE",
+			"textSecondLine": "voiceless",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "fricative-voiced",
+			"type": "consonant",
+			"text": "FRICATIVE",
+			"textSecondLine": "voiced",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "fricative-pharyngealized",
+			"type": "consonant",
+			"text": "FRICATIVE",
+			"textSecondLine": "pharyngealized",
+			"languages": []
+		},
+		{
+			"id": "fricative-voiced-pharyngealized",
+			"type": "consonant",
+			"text": "FRICATIVE",
+			"textSecondLine": "voiced, pharyngealized",
+			"languages": []
+		},
+		{
+			"id": "approximant",
+			"type": "consonant",
+			"text": "APPROXIMANT",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "approximant-lateral",
+			"type": "consonant",
+			"text": "APPROXIMANT",
+			"textSecondLine": "lateral",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "affricate-voiceless",
+			"type": "consonant",
+			"text": "AFFRICATE",
+			"textSecondLine": "voiceless",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "affricate-aspirated",
+			"type": "consonant",
+			"text": "AFFRICATE",
+			"textSecondLine": "aspirated",
+			"languages": []
+		},
+		{
+			"id": "affricate-voiced",
+			"type": "consonant",
+			"text": "AFFRICATE",
+			"textSecondLine": "voiced",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "affricate-murmured",
+			"type": "consonant",
+			"text": "AFFRICATE",
+			"textSecondLine": "murmured",
+			"languages": []
+		},
+		{
+			"id": "affricate-pharyngealized",
+			"type": "consonant",
+			"text": "AFFRICATE",
+			"textSecondLine": "pharyngealized",
+			"languages": []
+		},
+		{
+			"id": "trill",
+			"type": "consonant",
+			"text": "TRILL",
+			"textSecondLine": "or TAP",
+			"languages": [
+				"hu-hu"
+			]
+		},
+		{
+			"id": "tap",
+			"type": "consonant",
+			"text": "TAP",
+			"textSecondLine": "aspirated",
+			"languages": []
+		},
+		{
+			"id": "close",
+			"type": "vowel",
+			"text": "CLOSE",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "close-mid",
+			"type": "vowel",
+			"text": "CLOSE-MID",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "open-mid",
+			"type": "vowel",
+			"text": "OPEN-MID",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "open",
+			"type": "vowel",
+			"text": "OPEN",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
 		}
-	  ]
+	],
+	"placeCategories": [
+		{
+			"id": "labial",
+			"type": "consonant",
+			"text": "LABIAL",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "dental",
+			"type": "consonant",
+			"text": "DENTAL",
+			"languages": [
+				"en-us"
+			]
+		},
+		{
+			"id": "alveolar",
+			"type": "consonant",
+			"text": "ALVEOLAR",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "retroflex",
+			"type": "consonant",
+			"text": "RETROFLEX",
+			"languages": []
+		},
+		{
+			"id": "postalveolar-or-palatal",
+			"type": "consonant",
+			"text": "POSTALVEOLAR",
+			"textSecondLine": "or PALATAL",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "velar",
+			"type": "consonant",
+			"text": "VELAR",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "uvular-or-pharyngeal",
+			"type": "consonant",
+			"text": "UVULAR",
+			"textSecondLine": "or PHARYNGEAL",
+			"languages": []
+		},
+		{
+			"id": "glottal",
+			"type": "consonant",
+			"text": "GLOTTAL",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "front",
+			"type": "vowel",
+			"text": "FRONT",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "front-rounded",
+			"type": "vowel",
+			"text": "FRONT",
+			"textSecondLine": "rounded",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		},
+		{
+			"id": "back",
+			"type": "vowel",
+			"text": "BACK",
+			"languages": [
+				"en-us"
+			]
+		},
+		{
+			"id": "back-rounded",
+			"type": "vowel",
+			"text": "BACK",
+			"textSecondLine": "rounded",
+			"languages": [
+				"en-us",
+				"hu-hu"
+			]
+		}
+	],
+	"characters": [
+		{
+			"type": "consonant",
+			"vixaCharacter": "p",
+			"ipaCharacter": "p",
+			"placeCategory": "labial",
+			"methodCategory": "plosive-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "P"},
+				{ "id": "hu-hu", "description": "P"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "P",
+			"ipaCharacter": "pʰ",
+			"placeCategory": "labial",
+			"methodCategory": "plosive-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "b",
+			"ipaCharacter": "b",
+			"placeCategory": "labial",
+			"methodCategory": "plosive-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "B"},
+				{ "id": "hu-hu", "description": "P"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "B",
+			"ipaCharacter": "bʱ",
+			"placeCategory": "labial",
+			"methodCategory": "plosive-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "m",
+			"ipaCharacter": "m",
+			"placeCategory": "labial",
+			"methodCategory": "nasal",
+			"languages": [
+				{ "id": "en-us", "description": "M"},
+				{ "id": "hu-hu", "description": "M"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "f",
+			"ipaCharacter": "f",
+			"placeCategory": "labial",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "F"},
+				{ "id": "hu-hu", "description": "F"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "v",
+			"ipaCharacter": "v",
+			"placeCategory": "labial",
+			"methodCategory": "fricative-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "θ",
+			"ipaCharacter": "θ",
+			"placeCategory": "dental",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "TH in think"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ð",
+			"ipaCharacter": "ð",
+			"placeCategory": "dental",
+			"methodCategory": "fricative-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "TH in the"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "t",
+			"ipaCharacter": "t",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "T"},
+				{ "id": "hu-hu", "description": "T"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "T",
+			"ipaCharacter": "tʰ",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "d",
+			"ipaCharacter": "d",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "D"},
+				{ "id": "hu-hu", "description": "D"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "D",
+			"ipaCharacter": "dʰ",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ṫ",
+			"ipaCharacter": "tˤ",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ḋ",
+			"ipaCharacter": "dˤ",
+			"placeCategory": "alveolar",
+			"methodCategory": "plosive-voiced-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "n",
+			"ipaCharacter": "n",
+			"placeCategory": "alveolar",
+			"methodCategory": "nasal",
+			"languages": [
+				{ "id": "en-us", "description": "N"},
+				{ "id": "hu-hu", "description": "N"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "s",
+			"ipaCharacter": "s",
+			"placeCategory": "alveolar",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "S"},
+				{ "id": "hu-hu", "description": "SZ"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "z",
+			"ipaCharacter": "z",
+			"placeCategory": "alveolar",
+			"methodCategory": "fricative-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "Z"},
+				{ "id": "hu-hu", "description": "Z"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ṡ",
+			"ipaCharacter": "sˤ",
+			"placeCategory": "alveolar",
+			"methodCategory": "fricative-voiceless-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ż",
+			"ipaCharacter": "zˤ",
+			"placeCategory": "alveolar",
+			"methodCategory": "fricative-voiced-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "r",
+			"ipaCharacter": "ɹ",
+			"placeCategory": "alveolar",
+			"methodCategory": "fricative-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "R"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "l",
+			"ipaCharacter": "l",
+			"placeCategory": "alveolar",
+			"methodCategory": "approximant-lateral",
+			"languages": [
+				{ "id": "en-us", "description": "L"},
+				{ "id": "hu-hu", "description": "L"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "c",
+			"ipaCharacter": "t͡s",
+			"placeCategory": "alveolar",
+			"methodCategory": "affricate-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "TS"},
+				{ "id": "hu-hu", "description": "C"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "C",
+			"ipaCharacter": "t͡sʰ",
+			"placeCategory": "alveolar",
+			"methodCategory": "affricate-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ź",
+			"ipaCharacter": "d͡z",
+			"placeCategory": "alveolar",
+			"methodCategory": "affricate-voiced",
+			"languages": [
+				{ "id": "hu-hu", "description": "DZ"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ź",
+			"ipaCharacter": "d͡zʱ",
+			"placeCategory": "alveolar",
+			"methodCategory": "affricate-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ź",
+			"ipaCharacter": "d͡zˤ",
+			"placeCategory": "alveolar",
+			"methodCategory": "affricate-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ŕ",
+			"ipaCharacter": "r",
+			"placeCategory": "alveolar",
+			"methodCategory": "trill",
+			"languages": [
+				{ "id": "hu-hu", "description": "R"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ŕ",
+			"ipaCharacter": "rʰ",
+			"placeCategory": "alveolar",
+			"methodCategory": "trill-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṭ",
+			"ipaCharacter": "ʈ",
+			"placeCategory": "retroflex",
+			"methodCategory": "plosive-voiceless",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ṭ",
+			"ipaCharacter": "ʈʰ",
+			"placeCategory": "retroflex",
+			"methodCategory": "plosive-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ḍ",
+			"ipaCharacter": "ɖ",
+			"placeCategory": "retroflex",
+			"methodCategory": "plosive-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ḍ",
+			"ipaCharacter": "ɖʱ",
+			"placeCategory": "retroflex",
+			"methodCategory": "plosive-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṇ",
+			"ipaCharacter": "ɳ",
+			"placeCategory": "retroflex",
+			"methodCategory": "nasal",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṣ",
+			"ipaCharacter": "ʂ",
+			"placeCategory": "retroflex",
+			"methodCategory": "fricative-voiceless",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ẓ",
+			"ipaCharacter": "ʐ",
+			"placeCategory": "retroflex",
+			"methodCategory": "fricative-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Ṛ",
+			"ipaCharacter": "ɽʰ",
+			"placeCategory": "retroflex",
+			"methodCategory": "trill-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ť",
+			"ipaCharacter": "c",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "plosive-voiceless",
+			"languages": [
+				{ "id": "hu-hu", "description": "TY"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ď",
+			"ipaCharacter": "ɟ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "plosive-voiced",
+			"languages": [
+				{ "id": "hu-hu", "description": "GY"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ñ",
+			"ipaCharacter": "ɲ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "nasal",
+			"languages": [
+				{ "id": "hu-hu", "description": "NY"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "š",
+			"ipaCharacter": "ʃ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "SH"},
+				{ "id": "hu-hu", "description": "S"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ž",
+			"ipaCharacter": "ʒ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "fricative-voiced",
+			"languages": [
+				{ "id": "hu-hu", "description": "ZS"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "y",
+			"ipaCharacter": "j",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "approximant",
+			"languages": [
+				{ "id": "en-us", "description": "Y"},
+				{ "id": "hu-hu", "description": "J, LY"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "č",
+			"ipaCharacter": "t͡ʃ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "affricate-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "CH"},
+				{ "id": "hu-hu", "description": "CS"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Č",
+			"ipaCharacter": "t͡ʃʰ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "affricate-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "j",
+			"ipaCharacter": "d͡ʒ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "affricate-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "J"},
+				{ "id": "hu-hu", "description": "DZS"}]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "J",
+			"ipaCharacter": "d͡ʒʱ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "affricate-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "Đ",
+			"ipaCharacter": "d͡ʒˤ",
+			"placeCategory": "postalveolar-or-palatal",
+			"methodCategory": "affricate-pharyngealized",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "k",
+			"ipaCharacter": "k",
+			"placeCategory": "velar",
+			"methodCategory": "plosive-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "K"},
+				{ "id": "hu-hu", "description": "K"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "K",
+			"ipaCharacter": "kʰ",
+			"placeCategory": "velar",
+			"methodCategory": "plosive-aspirated",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "g",
+			"ipaCharacter": "g",
+			"placeCategory": "velar",
+			"methodCategory": "plosive-voiced",
+			"languages": [
+				{ "id": "en-us", "description": "G"},
+				{ "id": "hu-hu", "description": "G"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "G",
+			"ipaCharacter": "gʱ",
+			"placeCategory": "velar",
+			"methodCategory": "plosive-murmured",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṇ",
+			"ipaCharacter": "ŋ",
+			"placeCategory": "velar",
+			"methodCategory": "nasal",
+			"languages": [
+				{ "id": "en-us", "description": "NG in thing"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṇ",
+			"ipaCharacter": "ŋ",
+			"placeCategory": "velar",
+			"methodCategory": "nasal",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "x",
+			"ipaCharacter": "x",
+			"placeCategory": "velar",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "CH in loch"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ǧ",
+			"ipaCharacter": "ɣ",
+			"placeCategory": "velar",
+			"methodCategory": "fricative-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "w",
+			"ipaCharacter": "w",
+			"placeCategory": "velar",
+			"methodCategory": "approximant",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "q",
+			"ipaCharacter": "q",
+			"placeCategory": "uvular-or-pharyngeal",
+			"methodCategory": "plosive-voiceless",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ġ",
+			"ipaCharacter": "ɢ",
+			"placeCategory": "uvular-or-pharyngeal",
+			"methodCategory": "plosive-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ħ",
+			"ipaCharacter": "ħ",
+			"placeCategory": "uvular-or-pharyngeal",
+			"methodCategory": "fricative-voiceless",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "γ",
+			"ipaCharacter": "ʕ",
+			"placeCategory": "uvular-or-pharyngeal",
+			"methodCategory": "fricative-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ɦ",
+			"ipaCharacter": "ʔ",
+			"placeCategory": "glottal",
+			"methodCategory": "plosive-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "H in uh-oh"}
+			]
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "h",
+			"ipaCharacter": "h",
+			"placeCategory": "glottal",
+			"methodCategory": "fricative-voiceless",
+			"languages": [
+				{ "id": "en-us", "description": "H in heart"},
+				{ "id": "hu-hu", "description": "H"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "i",
+			"ipaCharacter": "i",
+			"placeCategory": "front",
+			"methodCategory": "close",
+			"languages": [
+				{ "id": "en-us", "description": "EE in free"},
+				{ "id": "hu-hu", "description": "I"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "é",
+			"ipaCharacter": "e",
+			"placeCategory": "front",
+			"methodCategory": "close-mid",
+			"languages": [
+				{ "id": "en-us", "description": "A in day"},
+				{ "id": "hu-hu", "description": "É"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "e",
+			"ipaCharacter": "ɛ",
+			"placeCategory": "front",
+			"methodCategory": "open-mid",
+			"languages": [
+				{ "id": "en-us", "description": "E in bet"},
+				{ "id": "hu-hu", "description": "E"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "á",
+			"ipaCharacter": "a",
+			"placeCategory": "front",
+			"methodCategory": "open",
+			"languages": [
+				{ "id": "en-us", "description": "I in high"},
+				{ "id": "hu-hu", "description": "Á"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ü",
+			"ipaCharacter": "y",
+			"placeCategory": "front-rounded",
+			"methodCategory": "close",
+			"languages": [
+				{ "id": "hu-hu", "description": "Ü, Ű"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ö",
+			"ipaCharacter": "ø",
+			"placeCategory": "front-rounded",
+			"methodCategory": "close-mid",
+			"languages": [
+				{ "id": "hu-hu", "description": "Ö, Ő"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ə",
+			"ipaCharacter": "ə",
+			"placeCategory": "front-rounded",
+			"methodCategory": "open-mid",
+			"languages": [
+				{ "id": "en-us", "description": "A in around"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ű",
+			"ipaCharacter": "ɪ, ɯ",
+			"placeCategory": "back",
+			"methodCategory": "close",
+			"languages": []
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ő",
+			"ipaCharacter": "ɤ",
+			"placeCategory": "back",
+			"methodCategory": "close-mid",
+			"languages": []
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "â",
+			"ipaCharacter": "ʌ",
+			"placeCategory": "back",
+			"methodCategory": "open-mid",
+			"languages": [
+				{ "id": "en-us", "description": "U in strut"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "ǎ",
+			"ipaCharacter": "ɑ",
+			"placeCategory": "back",
+			"methodCategory": "open",
+			"languages": [
+				{ "id": "en-us", "description": "O in lot"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "u",
+			"ipaCharacter": "u",
+			"placeCategory": "back-rounded",
+			"methodCategory": "close",
+			"languages": [
+				{ "id": "en-us", "description": "OO in foot"},
+				{ "id": "hu-hu", "description": "U"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "o",
+			"ipaCharacter": "o",
+			"placeCategory": "back-rounded",
+			"methodCategory": "close-mid",
+			"languages": [
+				{ "id": "en-us", "description": "OA in goat"},
+				{ "id": "hu-hu", "description": "O"}
+			]
+		},
+		{
+			"type": "vowel",
+			"vixaCharacter": "a",
+			"ipaCharacter": "ɔ, ɒ",
+			"placeCategory": "back-rounded",
+			"methodCategory": "open",
+			"languages": [
+				{ "id": "en-us", "description": "OU in thought"},
+				{ "id": "hu-hu", "description": "A"}
+			]
+		}
+	]
 }

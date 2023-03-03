@@ -381,7 +381,7 @@ export const ChartContainer = styled.div`
 	}
 `;
 
-export const Chart = styled.table`
+export const ChartWrapper = styled.table`
 	display: block;
 	margin: 3rem auto;
 
@@ -448,31 +448,38 @@ export const ChartHead = styled.thead`
 	}
 `;
 
-export const ChartRow = styled.tr`
-	display: flex;
+export const StyledChartRow = styled.tr`
+	display: ${(props) => (props.isVisible ? "flex" : "none")};
 	flex-wrap: wrap;
 	justify-content: center;
 
 	@media only screen and (min-width: ${breakpoints.fourth}) {
-		display: table-row;
+		display: ${(props) => (props.isVisible ? "table-row" : "none")};
 	}
 `;
 
 export const ChartCellWrapper = styled.td`
-	background: ${colors.neutral10};
+	background: ${(props) => (props.isEmpty ? "none" : colors.neutral10)};
 	border-radius: 0.5rem;
-	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+	box-shadow: ${(props) => (props.isEmpty ? "none" : "0 0 1rem rgb(0 0 0 / 10%)")};
+	display: table-cell;
 	height: 6rem;
 	margin: 0.25rem;
 	padding: 0.75rem;
 	width: 6rem;
+
+	${props => props.isEmpty && `
+	> ${ChartCellVixa},
+	> ${ChartCellTertiaryLine} {
+		display: none;
+	}
 
 	@media only screen and (min-width: ${breakpoints.fifth}) {
 		height: 7rem;
 		margin: 0;
 		padding: 1rem;
 		width: 7rem;
-	}
+	`}
 `;
 
 export const ChartCellVixa = styled.div`
@@ -490,7 +497,14 @@ export const ChartCellVixa = styled.div`
 	}
 `;
 
-export const ChartCellBottomLine = styled.div`
+export const ChartCellSecondaryLine = styled.div`
+	display: flex;
+	font-size: 1rem;
+	line-height: 1rem;
+	justify-content: center;
+`;
+
+export const ChartCellTertiaryLine = styled.div`
 	color: ${colors.neutral4};
 	display: flex;
 	font-size: 1rem;
@@ -500,52 +514,15 @@ export const ChartCellBottomLine = styled.div`
 
 export const ChartCellSecondLineItem = styled.div``;
 
-export const Filter = styled.div`
-	display: none;
-`;
+export const Filter = styled.div``;
 
-export const FilterOption = styled.div``;
+export const FilterOption = styled.a`
+	cursor: pointer;
+`;
 
 export const FilterOptions = styled.div``;
 
 export const FilterTitle = styled.div``;
-
-export const TableOld = styled.table`
-	width: 100%;
-	margin-top: 2rem;
-`;
-
-export const TableHeaderCell = styled.th`
-	border-bottom: 1px solid ${colors.neutral7};
-	color: ${colors.neutral4};
-	font-family: "Montserrat", sans-serif;
-	font-size: 0.75rem;
-	text-align: left;
-	text-transform: uppercase;
-	padding: 0.5rem;
-
-	&:first-of-type {
-		padding-left: 0;
-	}
-
-	&:last-of-type {
-		padding-right: 0;
-	}
-`;
-
-export const TableRow = styled.tr``;
-
-export const TableCell = styled.td`
-	padding: 0.5rem;
-
-	&:first-of-type {
-		padding-left: 0;
-	}
-
-	&:last-of-type {
-		padding-right: 0;
-	}
-`;
 
 export const ToC = styled.div``;
 
