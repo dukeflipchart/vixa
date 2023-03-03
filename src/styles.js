@@ -448,31 +448,38 @@ export const ChartHead = styled.thead`
 	}
 `;
 
-export const ChartRow = styled.tr`
-	display: flex;
+export const StyledChartRow = styled.tr`
+	display: ${(props) => (props.isVisible ? "flex" : "none")};
 	flex-wrap: wrap;
 	justify-content: center;
 
 	@media only screen and (min-width: ${breakpoints.fourth}) {
-		display: table-row;
+		display: ${(props) => (props.isVisible ? "table-row" : "none")};
 	}
 `;
 
 export const ChartCellWrapper = styled.td`
-	background: ${colors.neutral10};
+	background: ${(props) => (props.isEmpty ? "none" : colors.neutral10)};
 	border-radius: 0.5rem;
-	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+	box-shadow: ${(props) => (props.isEmpty ? "none" : "0 0 1rem rgb(0 0 0 / 10%)")};
+	display: table-cell;
 	height: 6rem;
 	margin: 0.25rem;
 	padding: 0.75rem;
 	width: 6rem;
+
+	${props => props.isEmpty && `
+	> ${ChartCellVixa},
+	> ${ChartCellBottomLine} {
+		display: none;
+	}
 
 	@media only screen and (min-width: ${breakpoints.fifth}) {
 		height: 7rem;
 		margin: 0;
 		padding: 1rem;
 		width: 7rem;
-	}
+	`}
 `;
 
 export const ChartCellVixa = styled.div`
@@ -500,11 +507,11 @@ export const ChartCellBottomLine = styled.div`
 
 export const ChartCellSecondLineItem = styled.div``;
 
-export const Filter = styled.div`
-	display: none;
-`;
+export const Filter = styled.div``;
 
-export const FilterOption = styled.div``;
+export const FilterOption = styled.a`
+	cursor: pointer;
+`;
 
 export const FilterOptions = styled.div``;
 

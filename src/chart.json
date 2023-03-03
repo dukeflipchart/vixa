@@ -48,12 +48,18 @@
 		  {
 			"type": "header",
 			"text": "PLOSIVE",
-			"description": "unvoiced"
+			"description": "unvoiced",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "p",
-			"ipaCharacter": "p"
+			"ipaCharacter": "p",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -61,7 +67,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "t",
-			"ipaCharacter": "t"
+			"ipaCharacter": "t",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -76,7 +85,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "k",
-			"ipaCharacter": "k"
+			"ipaCharacter": "k",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -86,7 +98,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "ɦ",
-			"ipaCharacter": "ʔ"
+			"ipaCharacter": "ʔ",
+			"languages": [
+			  "en-us"
+			]
 		  }
 		]
 	  },
@@ -138,12 +153,18 @@
 		  {
 			"type": "header",
 			"text": "PLOSIVE",
-			"description": "voiced"
+			"description": "voiced",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "b",
-			"ipaCharacter": "b"
+			"ipaCharacter": "b",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -151,7 +172,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "d",
-			"ipaCharacter": "d"
+			"ipaCharacter": "d",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -166,7 +190,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "g",
-			"ipaCharacter": "g"
+			"ipaCharacter": "g",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -261,12 +288,18 @@
 		"row": [
 		  {
 			"type": "header",
-			"text": "NASAL"
+			"text": "NASAL",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "m",
-			"ipaCharacter": "m"
+			"ipaCharacter": "m",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -274,7 +307,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "n",
-			"ipaCharacter": "n"
+			"ipaCharacter": "n",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -305,22 +341,34 @@
 		  {
 			"type": "header",
 			"text": "FRICATIVE",
-			"description": "voiceless"
+			"description": "voiceless",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "f",
-			"ipaCharacter": "f"
+			"ipaCharacter": "f",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "θ",
-			"ipaCharacter": "θ"
+			"ipaCharacter": "θ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "s",
-			"ipaCharacter": "s"
+			"ipaCharacter": "s",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -330,7 +378,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "š",
-			"ipaCharacter": "ʃ"
+			"ipaCharacter": "ʃ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -345,7 +396,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "h",
-			"ipaCharacter": "h"
+			"ipaCharacter": "h",
+			"languages": [
+			  "en-us"
+			]
 		  }
 		]
 	  },
@@ -355,22 +409,34 @@
 		  {
 			"type": "header",
 			"text": "FRICATIVE",
-			"description": "voiced"
+			"description": "voiced",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "v",
-			"ipaCharacter": "v"
+			"ipaCharacter": "v",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "ð",
-			"ipaCharacter": "ð"
+			"ipaCharacter": "ð",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "z",
-			"ipaCharacter": "z"
+			"ipaCharacter": "z",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -380,7 +446,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "ž",
-			"ipaCharacter": "ʒ"
+			"ipaCharacter": "ʒ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
@@ -474,7 +543,10 @@
 		"row": [
 		  {
 			"type": "header",
-			"text": "APPROXIMANT"
+			"text": "APPROXIMANT",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -485,7 +557,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "r",
-			"ipaCharacter": "ɹ"
+			"ipaCharacter": "ɹ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -493,12 +568,18 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "y",
-			"ipaCharacter": "j"
+			"ipaCharacter": "j",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "cell",
 			"vixaCharacter": "w",
-			"ipaCharacter": "w"
+			"ipaCharacter": "w",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -514,7 +595,10 @@
 		  {
 			"type": "header",
 			"text": "APPROXIMANT",
-			"description": "lateral"
+			"description": "lateral",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -525,7 +609,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "l",
-			"ipaCharacter": "l"
+			"ipaCharacter": "l",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -550,7 +637,10 @@
 		  {
 			"type": "header",
 			"text": "AFFRICATE",
-			"description": "voiceless"
+			"description": "voiceless",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -569,7 +659,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "č",
-			"ipaCharacter": "t͡ʃ"
+			"ipaCharacter": "t͡ʃ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -588,7 +681,10 @@
 		  {
 			"type": "header",
 			"text": "AFFRICATE",
-			"description": "voiced"
+			"description": "voiced",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -607,7 +703,10 @@
 		  {
 			"type": "cell",
 			"vixaCharacter": "j",
-			"ipaCharacter": "d͡ʒ"
+			"ipaCharacter": "d͡ʒ",
+			"languages": [
+			  "en-us"
+			]
 		  },
 		  {
 			"type": "empty"
@@ -805,12 +904,18 @@
 		  "row": [
 			{
 			  "type": "header",
-			  "text": "CLOSE"
+			  "text": "CLOSE",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 			  "type": "cell",
 			  "vixaCharacter": "i",
-			  "ipaCharacter": "i"
+			  "ipaCharacter": "i",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 				"type": "cell",
@@ -825,7 +930,10 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "u",
-			  "ipaCharacter": "u"
+			  "ipaCharacter": "u",
+			  "languages": [
+				"en-us"
+			  ]
 			}
 		  ]
 		},
@@ -839,7 +947,10 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "é",
-			  "ipaCharacter": "e"
+			  "ipaCharacter": "e",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 				"type": "cell",
@@ -854,7 +965,10 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "o",
-			  "ipaCharacter": "o"
+			  "ipaCharacter": "o",
+			  "languages": [
+				"en-us"
+			  ]
 			}
 		  ]
 		},
@@ -868,17 +982,26 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "e",
-			  "ipaCharacter": "ɛ"
+			  "ipaCharacter": "ɛ",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 				"type": "cell",
 				"vixaCharacter": "ə",
-				"ipaCharacter": "ə"
+				"ipaCharacter": "ə",
+				"languages": [
+				  "en-us"
+				]
 			},
 			{
 			  "type": "cell",
 			  "vixaCharacter": "â",
-			  "ipaCharacter": "ʌ"
+			  "ipaCharacter": "ʌ",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 			  "type": "empty"
@@ -895,7 +1018,10 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "á",
-			  "ipaCharacter": "a"
+			  "ipaCharacter": "a",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 				"type": "empty"
@@ -903,7 +1029,10 @@
 			{
 			  "type": "cell",
 			  "vixaCharacter": "ǎ",
-			  "ipaCharacter": "ɑ"
+			  "ipaCharacter": "ɑ",
+			  "languages": [
+				"en-us"
+			  ]
 			},
 			{
 			  "type": "cell",

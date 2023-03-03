@@ -20,7 +20,6 @@ import {
 	ChartContainer,
 	ChartHead,
 	ChartHeaderCellWrapper,
-	ChartRow,
 	ChartSubtitle,
 	ChartTitle,
 	ChartsContainer,
@@ -44,6 +43,7 @@ import {
 	Neutral4,
 	NumberedList,
 	Paragraph,
+	StyledChartRow,
 	StyledProtoSemiticAleph,
 	TableOld,
 	TableCell,
@@ -92,10 +92,14 @@ function IntroSectionCell(props) {
 	)
 }
 
+const ChartRow = ({ children, isVisible }) => {
+	return <StyledChartRow isVisible={isVisible}>{children}</StyledChartRow>;
+};
+
 function ChartCell(props) {
 	return (
 		<>
-			<ChartCellWrapper>
+			<ChartCellWrapper isEmpty={props.isEmpty}>
 				<ChartCellVixa>{props.vixaCharacter}</ChartCellVixa>
 				<ChartCellBottomLine>
 					<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
@@ -109,7 +113,7 @@ function ChartCell(props) {
 function ChartHeaderCell(props) {
 	return (
 		<>
-			<ChartHeaderCellWrapper isEmpty={props.isEmpty}>
+			<ChartHeaderCellWrapper isEmpty={props.isEmpty} isVisible={props.isVisible}>
 				{props.text}<br/>{props.description}
 			</ChartHeaderCellWrapper>
 		</>
@@ -121,8 +125,13 @@ class Page extends React.Component {
 
     constructor(props) {
 
-        super(props);
+		super(props);
+
+		this.state = {
+			selectedLanguage: 'all'
+		};
     }
+
 
     render() {
 
@@ -174,73 +183,105 @@ class Page extends React.Component {
 				<ChartSection>
 					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br/>Vixa characters</ChartTitle>
 					<Filter>
-						<FilterTitle>Languages</FilterTitle>
+						<FilterTitle>Languages: {this.state.selectedLanguage}</FilterTitle>
 						<FilterOptions>
-							<FilterOption>All languages</FilterOption>
-							<FilterOption>English</FilterOption>
-							<FilterOption>Hungarian</FilterOption>
+							<FilterOption onClick={() => this.setState({selectedLanguage: 'all'})}>All characters</FilterOption>
+							<FilterOption onClick={() => this.setState({selectedLanguage: 'en-us'})}>English (US)</FilterOption>
+							<FilterOption onClick={() => this.setState({selectedLanguage: 'hu-hu'})}>Hungarian</FilterOption>
 						</FilterOptions>
 					</Filter>
 					<ChartsContainer>
 						<ChartContainer>
-							<ChartSubtitle><InlineV>kánsonənts</InlineV><br/>Consonants</ChartSubtitle>
+							<ChartSubtitle><InlineV>kánsonənts</InlineV><br />Consonants</ChartSubtitle>
 							<Chart>
 								<ChartHead>
-									{chartData.consonantRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
-										itemCell.type === "header" ? (
-											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-										) : itemCell.type === "empty" ? (
-											<ChartHeaderCell isEmpty key={indexCell} />
-										) : (
-											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
-										)
-									))}
+									{chartData.consonantRows.find(row => row.type === "head")?.row.map(
+										(itemCell, indexCell) =>
+											itemCell.type === "header" ? (
+												<ChartHeaderCell
+													key={indexCell}
+													text={itemCell.text}
+													description={itemCell.description}
+													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
+												/>
+											) : itemCell.type === "empty" ? (
+												<ChartHeaderCell isEmpty key={indexCell} />
+											) : (
+												<ChartCell
+													key={indexCell}
+													languages={itemCell.languages}
+													vixaCharacter={itemCell.vixaCharacter}
+													ipaCharacter={itemCell.ipaCharacter}
+													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
+												/>
+											)
+									)}
 								</ChartHead>
 								<tbody>
-									{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-										<ChartRow key={indexRow}>
-											{itemRow.row.map((itemCell, indexCell) => (
-												itemCell.type === "header" ? (
-													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-												) : itemCell.type === "empty" ? (
-													<ChartHeaderCell isEmpty key={indexCell} />
-												) : (
-													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
-												)
-											))}
-										</ChartRow>
-									))}
+									{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => {
+										const isVisible = this.state.selectedLanguage === "all" || itemRow.row.some(itemCell => itemCell.languages?.includes(this.state.selectedLanguage));
+										return (
+											<ChartRow key={indexRow} isVisible={isVisible}>
+												{itemRow.row.map((itemCell, indexCell) => {
+													const cellIsVisible = itemCell.type === "empty" || this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage);
+													return itemCell.type === "header" ? (
+														<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} isVisible={cellIsVisible} />
+													) : itemCell.type === "empty" ? (
+														<ChartHeaderCell isEmpty key={indexCell} isVisible={cellIsVisible} />
+													) : (
+														<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter} languages={itemCell.languages} isEmpty={itemCell.type === "empty" || !cellIsVisible} />
+													);
+												})}
+											</ChartRow>
+										);
+									})}
 								</tbody>
 							</Chart>
 						</ChartContainer>
 						<ChartContainer>
-							<ChartSubtitle><InlineV>váwəlz</InlineV><br/>Vowels</ChartSubtitle>
+							<ChartSubtitle><InlineV>váwəlz</InlineV><br />Vowels</ChartSubtitle>
 							<Chart>
 								<ChartHead>
-									{chartData.vowelRows.find(row => row.type === "head")?.row.map((itemCell, indexCell) => (
-										itemCell.type === "header" ? (
-											<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-										) : itemCell.type === "empty" ? (
-											<ChartHeaderCell isEmpty key={indexCell} />
-										) : (
-											<ChartCell key={indexCell}>{itemCell.text}</ChartCell>
-										)
-									))}
+									{chartData.vowelRows.find(row => row.type === "head")?.row.map(
+										(itemCell, indexCell) =>
+											itemCell.type === "header" ? (
+												<ChartHeaderCell
+													key={indexCell}
+													text={itemCell.text}
+													description={itemCell.description}
+													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
+												/>
+											) : itemCell.type === "empty" ? (
+												<ChartHeaderCell isEmpty key={indexCell} />
+											) : (
+												<ChartCell
+													key={indexCell}
+													languages={itemCell.languages}
+													vixaCharacter={itemCell.vixaCharacter}
+													ipaCharacter={itemCell.ipaCharacter}
+													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
+												/>
+											)
+									)}
 								</ChartHead>
 								<tbody>
-									{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => (
-										<ChartRow key={indexRow}>
-											{itemRow.row.map((itemCell, indexCell) => (
-												itemCell.type === "header" ? (
-													<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} />
-												) : itemCell.type === "empty" ? (
-													<ChartHeaderCell isEmpty key={indexCell} />
-												) : (
-													<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter}/>
-												)
-											))}
-										</ChartRow>
-									))}
+									{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => {
+										const isVisible = this.state.selectedLanguage === "all" || itemRow.row.some(itemCell => itemCell.languages?.includes(this.state.selectedLanguage));
+										return (
+											<ChartRow key={indexRow} isVisible={isVisible}>
+												{itemRow.row.map((itemCell, indexCell) => {
+													const cellIsVisible = itemCell.type === "empty" || this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage);
+													return itemCell.type === "header" ? (
+														<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} isVisible={cellIsVisible} />
+													) : itemCell.type === "empty" ? (
+														<ChartHeaderCell isEmpty key={indexCell} isVisible={cellIsVisible} />
+													) : (
+														<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter} languages={itemCell.languages} isEmpty={itemCell.type === "empty" || !cellIsVisible} />
+													);
+												})}
+											</ChartRow>
+										);
+									})}
 								</tbody>
 							</Chart>
 						</ChartContainer>
