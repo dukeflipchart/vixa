@@ -381,7 +381,7 @@ export const ChartContainer = styled.div`
 	}
 `;
 
-export const Chart = styled.table`
+export const ChartWrapper = styled.table`
 	display: block;
 	margin: 3rem auto;
 
@@ -470,7 +470,7 @@ export const ChartCellWrapper = styled.td`
 
 	${props => props.isEmpty && `
 	> ${ChartCellVixa},
-	> ${ChartCellBottomLine} {
+	> ${ChartCellTertiaryLine} {
 		display: none;
 	}
 
@@ -497,7 +497,14 @@ export const ChartCellVixa = styled.div`
 	}
 `;
 
-export const ChartCellBottomLine = styled.div`
+export const ChartCellSecondaryLine = styled.div`
+	display: flex;
+	font-size: 1rem;
+	line-height: 1rem;
+	justify-content: center;
+`;
+
+export const ChartCellTertiaryLine = styled.div`
 	color: ${colors.neutral4};
 	display: flex;
 	font-size: 1rem;
@@ -516,43 +523,6 @@ export const FilterOption = styled.a`
 export const FilterOptions = styled.div``;
 
 export const FilterTitle = styled.div``;
-
-export const TableOld = styled.table`
-	width: 100%;
-	margin-top: 2rem;
-`;
-
-export const TableHeaderCell = styled.th`
-	border-bottom: 1px solid ${colors.neutral7};
-	color: ${colors.neutral4};
-	font-family: "Montserrat", sans-serif;
-	font-size: 0.75rem;
-	text-align: left;
-	text-transform: uppercase;
-	padding: 0.5rem;
-
-	&:first-of-type {
-		padding-left: 0;
-	}
-
-	&:last-of-type {
-		padding-right: 0;
-	}
-`;
-
-export const TableRow = styled.tr``;
-
-export const TableCell = styled.td`
-	padding: 0.5rem;
-
-	&:first-of-type {
-		padding-left: 0;
-	}
-
-	&:last-of-type {
-		padding-right: 0;
-	}
-`;
 
 export const ToC = styled.div``;
 

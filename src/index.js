@@ -12,11 +12,12 @@ import {
 	EgyptianCharacter,
 	Canvas,
 	ChartSection,
-	Chart,
+	ChartWrapper,
 	ChartCellWrapper,
 	ChartCellVixa,
-	ChartCellBottomLine,
+	ChartCellTertiaryLine,
 	ChartCellSecondLineItem,
+	ChartCellSecondaryLine,
 	ChartContainer,
 	ChartHead,
 	ChartHeaderCellWrapper,
@@ -45,23 +46,9 @@ import {
 	Paragraph,
 	StyledChartRow,
 	StyledProtoSemiticAleph,
-	TableOld,
-	TableCell,
-	TableHeaderCell,
-	TableRow,
 	Title,
 	NumberedListItem
 } from './styles.js';
-
-function TableRowLetter(props) {
-	return (
-		<TableRow>
-			<TableCell><BigLetterTable><InlineV>{props.vixa}</InlineV></BigLetterTable></TableCell>
-			<TableCell><Neutral4>[{props.ipa}]</Neutral4></TableCell>
-			<TableCell>{props.description}</TableCell>
-		</TableRow>
-	);
-}
 
 function BigQuote(props) {
 	return (
@@ -101,10 +88,14 @@ function ChartCell(props) {
 		<>
 			<ChartCellWrapper isEmpty={props.isEmpty}>
 				<ChartCellVixa>{props.vixaCharacter}</ChartCellVixa>
-				<ChartCellBottomLine>
-					<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
-					<ChartCellSecondLineItem>{props.vixaCharacter}</ChartCellSecondLineItem>
-				</ChartCellBottomLine>
+				{props.languageDescription ? (
+					<ChartCellSecondaryLine>{props.languageDescription}</ChartCellSecondaryLine>
+				) : (
+					<ChartCellTertiaryLine>
+						<ChartCellSecondLineItem>[{props.ipaCharacter}]</ChartCellSecondLineItem>
+						<ChartCellSecondLineItem>{props.vixaCharacter}</ChartCellSecondLineItem>
+					</ChartCellTertiaryLine>
+				)}
 			</ChartCellWrapper>
 		</>
 	)
@@ -120,6 +111,79 @@ function ChartHeaderCell(props) {
 	)
 }
 
+function ChartNew(props) {
+
+	const visiblePlaceCategories = chartData.placeCategories.filter(
+		placeCategory =>
+			(props.selectedLanguage === "all" || placeCategory.languages.includes(props.selectedLanguage)) &&
+			placeCategory.type === props.type
+	);
+
+	return (
+		<ChartWrapper>
+			<ChartHead>
+				{/* display top row with place categories */}
+				<ChartRow isVisible>
+					<ChartHeaderCell isEmpty /> {/* top left cell is always empty */}
+					{visiblePlaceCategories.map((itemCell, indexCell) => (
+						<ChartHeaderCell
+							key={indexCell}
+							text={itemCell.text}
+							description={itemCell.textSecondLine}
+						/>
+					))}
+				</ChartRow>
+			</ChartHead>
+			<tbody>
+				{chartData.methodCategories
+					.filter(
+						methodCategory =>
+							(props.selectedLanguage === "all" || methodCategory.languages.includes(props.selectedLanguage)) &&
+							methodCategory.type === props.type
+							
+					) // for every row...
+					.map((itemMethodCategory, indexMethodCategory) => {
+
+						const characters = chartData.characters.filter(
+							character =>
+								(props.selectedLanguage === "all" || character.languages.some(language => language.id === props.selectedLanguage)) &&
+								character.methodCategory === itemMethodCategory.id &&
+								character.type === props.type
+						);
+
+						const characterMap = {};
+						characters.forEach(character => {
+							characterMap[character.placeCategory] = character;
+						});
+
+						const visibleCells = visiblePlaceCategories.map((placeCategory, indexCell) => {
+							const character = characterMap[placeCategory.id];
+							return (
+								character ?
+									<ChartCell
+										key={indexCell}
+										ipaCharacter={character.ipaCharacter}
+										vixaCharacter={character.vixaCharacter}
+										languageDescription={character.languages?.find(language => language.id === props.selectedLanguage)?.description}
+									/>
+									: <ChartCell key={indexCell} isEmpty />
+							);
+						});
+
+						return (
+							<ChartRow isVisible key={indexMethodCategory}>
+								<ChartHeaderCell
+									text={itemMethodCategory.text}
+									description={itemMethodCategory.textSecondLine}
+								/>
+								{visibleCells}
+							</ChartRow>
+						);
+					})}
+			</tbody>
+		</ChartWrapper>
+	);
+}
 
 class Page extends React.Component {
 
@@ -193,97 +257,11 @@ class Page extends React.Component {
 					<ChartsContainer>
 						<ChartContainer>
 							<ChartSubtitle><InlineV>kánsonənts</InlineV><br />Consonants</ChartSubtitle>
-							<Chart>
-								<ChartHead>
-									{chartData.consonantRows.find(row => row.type === "head")?.row.map(
-										(itemCell, indexCell) =>
-											itemCell.type === "header" ? (
-												<ChartHeaderCell
-													key={indexCell}
-													text={itemCell.text}
-													description={itemCell.description}
-													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
-												/>
-											) : itemCell.type === "empty" ? (
-												<ChartHeaderCell isEmpty key={indexCell} />
-											) : (
-												<ChartCell
-													key={indexCell}
-													languages={itemCell.languages}
-													vixaCharacter={itemCell.vixaCharacter}
-													ipaCharacter={itemCell.ipaCharacter}
-													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
-												/>
-											)
-									)}
-								</ChartHead>
-								<tbody>
-									{chartData.consonantRows.filter(row => row.type === "body").map((itemRow, indexRow) => {
-										const isVisible = this.state.selectedLanguage === "all" || itemRow.row.some(itemCell => itemCell.languages?.includes(this.state.selectedLanguage));
-										return (
-											<ChartRow key={indexRow} isVisible={isVisible}>
-												{itemRow.row.map((itemCell, indexCell) => {
-													const cellIsVisible = itemCell.type === "empty" || this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage);
-													return itemCell.type === "header" ? (
-														<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} isVisible={cellIsVisible} />
-													) : itemCell.type === "empty" ? (
-														<ChartHeaderCell isEmpty key={indexCell} isVisible={cellIsVisible} />
-													) : (
-														<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter} languages={itemCell.languages} isEmpty={itemCell.type === "empty" || !cellIsVisible} />
-													);
-												})}
-											</ChartRow>
-										);
-									})}
-								</tbody>
-							</Chart>
+							<ChartNew selectedLanguage={this.state.selectedLanguage} type="consonant"/>
 						</ChartContainer>
 						<ChartContainer>
 							<ChartSubtitle><InlineV>váwəlz</InlineV><br />Vowels</ChartSubtitle>
-							<Chart>
-								<ChartHead>
-									{chartData.vowelRows.find(row => row.type === "head")?.row.map(
-										(itemCell, indexCell) =>
-											itemCell.type === "header" ? (
-												<ChartHeaderCell
-													key={indexCell}
-													text={itemCell.text}
-													description={itemCell.description}
-													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
-												/>
-											) : itemCell.type === "empty" ? (
-												<ChartHeaderCell isEmpty key={indexCell} />
-											) : (
-												<ChartCell
-													key={indexCell}
-													languages={itemCell.languages}
-													vixaCharacter={itemCell.vixaCharacter}
-													ipaCharacter={itemCell.ipaCharacter}
-													isVisible={this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage)}
-												/>
-											)
-									)}
-								</ChartHead>
-								<tbody>
-									{chartData.vowelRows.filter(row => row.type === "body").map((itemRow, indexRow) => {
-										const isVisible = this.state.selectedLanguage === "all" || itemRow.row.some(itemCell => itemCell.languages?.includes(this.state.selectedLanguage));
-										return (
-											<ChartRow key={indexRow} isVisible={isVisible}>
-												{itemRow.row.map((itemCell, indexCell) => {
-													const cellIsVisible = itemCell.type === "empty" || this.state.selectedLanguage === "all" || itemCell.languages?.includes(this.state.selectedLanguage);
-													return itemCell.type === "header" ? (
-														<ChartHeaderCell key={indexCell} text={itemCell.text} description={itemCell.description} isVisible={cellIsVisible} />
-													) : itemCell.type === "empty" ? (
-														<ChartHeaderCell isEmpty key={indexCell} isVisible={cellIsVisible} />
-													) : (
-														<ChartCell key={indexCell} vixaCharacter={itemCell.vixaCharacter} ipaCharacter={itemCell.ipaCharacter} languages={itemCell.languages} isEmpty={itemCell.type === "empty" || !cellIsVisible} />
-													);
-												})}
-											</ChartRow>
-										);
-									})}
-								</tbody>
-							</Chart>
+							<ChartNew selectedLanguage={this.state.selectedLanguage} type="vowel"/>
 						</ChartContainer>
 					</ChartsContainer>
 				</ChartSection>
@@ -320,426 +298,6 @@ class Page extends React.Component {
 					<Paragraph>In order for it to be easy to read, I wanted to make letterforms as distinct from each other as possible.</Paragraph>
 					<Paragraph>By "universal," I mean that it should be usable for the native languages of as much people as possible.</Paragraph>
 					<Paragraph>To make it fast to write, I designed the letters in a way that they can be written cursively, without lifting the pen. I applied a method that is used in file compression: the most frequently used types of sounds are represented by the simplest letterforms. I also made it so that vowels can be omitted, similarly to Hebrew, making writing even faster when needed.</Paragraph>
-					{/*
-					<Heading2>Quick summary <InlineV><br/>kwik sáməri</InlineV></Heading2>
-					<Paragraph>Here's a full table of the entire alphabet.</Paragraph><Paragraph>These are all the consonants:</Paragraph>
-				</Content>
-				<ContentFullSize>
-					<ImageWithBorder src={ConsonantsChart} alt="Consonants" />
-				</ContentFullSize>
-				<Content>
-					<Paragraph>And these are the vowels:</Paragraph>
-				</Content>
-				<ContentFullSize>
-					<ImageWithBorder src={VowelsChart} alt="Vowels" />
-				</ContentFullSize>
-				<Content>
-					<Paragraph>Vixa writes syllables, not letters. This means that when a consonant is followed by a vowel, they get merged together into one syllable. The vowel becomes somewhat like a diacritic:</Paragraph>
-					<BigLetter><InlineV>b + e = be</InlineV></BigLetter>
-					<Heading2>Vixa for English <InlineV><br/> viksa for ingliš</InlineV></Heading2>
-					<Paragraph>Vixa fully supports the English language, even its rare dental sounds: [θ] (th as in "thief"), and [ð] (th as in "the").</Paragraph>
-				</Content>
-				<ContentWide>
-					<BigQuote
-						text = "oll hyumən biingz ar born fri end ikwəl in digniti end ráyts."
-						caption = 'Example text in General American English: "All human beings are born free and equal in dignity and rights."'
-					/>
-				</ContentWide>
-				<Content>
-					<Paragraph>Since English spelling often diverges from pronounciation, it can take time for English speakers to get used to writing with Vixa. Additionally, each dialect needs to be written differently, since they sound different.</Paragraph>
-					<Heading3>General American</Heading3>
-					<TableOld>
-						<TableRow>
-							<TableHeaderCell>Letter</TableHeaderCell>
-							<TableHeaderCell>IPA</TableHeaderCell>
-							<TableHeaderCell>GA English sound</TableHeaderCell>
-						</TableRow>
-						<TableRowLetter
-							ipa="æ"
-							description='A as in "apple"'
-							vixa="e"
-						/>
-						<TableRowLetter
-							ipa="ə"
-							description='A as in "comma"'
-							vixa="ə"
-						/>
-						<TableRowLetter
-							ipa="e"
-							description='A as in "way"'
-							vixa="é"
-						/>
-						<TableRowLetter
-							ipa="b"
-							description='B as in "big"'
-							vixa="b"
-						/>
-						<TableRowLetter
-							ipa="k"
-							description='C as in "cat"'
-							vixa="k"
-						/>
-						<TableRowLetter
-							ipa="tʃ"
-							description='CH as in "cheap"'
-							vixa="č"
-						/>
-						<TableRowLetter
-							ipa="x"
-							description='CH as in "loch"'
-							vixa="x"
-						/>
-						<TableRowLetter
-							ipa="d"
-							description='D as in "dog"'
-							vixa="d"
-						/>
-						<TableRowLetter
-							ipa="ɛ"
-							description='E as in "echo"'
-							vixa="e"
-						/>
-						<TableRowLetter
-							ipa="i"
-							description='EE as in "bee"'
-							vixa="i"
-						/>
-						<TableRowLetter
-							ipa="f"
-							description='F as in "four"'
-							vixa="f"
-						/>
-						<TableRowLetter
-							ipa="g"
-							description='G as in "good"'
-							vixa="g"
-						/>
-						<TableRowLetter
-							ipa="h"
-							description='H as in "home"'
-							vixa="h"
-						/>
-						<TableRowLetter
-							ipa="ɪ"
-							description='I as in "kit"'
-							vixa="i"
-						/>
-						<TableRowLetter
-							ipa="d͡ʒ"
-							description='J as in "job"'
-							vixa="j"
-						/>
-						<TableRowLetter
-							ipa="k"
-							description='K as in "kid"'
-							vixa="k"
-						/>
-						<TableRowLetter
-							ipa="l"
-							description='L as in "love"'
-							vixa="l"
-						/>
-						<TableRowLetter
-							ipa="m"
-							description='M as in "mother"'
-							vixa="m"
-						/>
-						<TableRowLetter
-							ipa="n"
-							description='N as in "nice"'
-							vixa="n"
-						/>
-						<TableRowLetter
-							ipa="o"
-							description='O as in "goat"'
-							vixa="o"
-						/>
-						<TableRowLetter
-							ipa="a"
-							description='O as in "comma"'
-							vixa="á"
-						/>
-						<TableRowLetter
-							ipa="u"
-							description='OO as in "foot"'
-							vixa="u"
-						/>
-						<TableRowLetter
-							ipa="p"
-							description='P as in "pet"'
-							vixa="p"
-						/>
-						<TableRowLetter
-							ipa="r"
-							description='R as in "ruckus"'
-							vixa="r"
-						/>
-						<TableRowLetter
-							ipa="s"
-							description='S as in "soup"'
-							vixa="s"
-						/>
-						<TableRowLetter
-							ipa="t"
-							description='T as in "tell"'
-							vixa="t"
-						/>
-						<TableRowLetter
-							ipa="θ"
-							description='TH as in "thing"'
-							vixa="θ"
-						/>
-						<TableRowLetter
-							ipa="ð"
-							description='TH as in "them"'
-							vixa="ð"
-						/>
-						<TableRowLetter
-							ipa="v"
-							description='V as in "vine"'
-							vixa="v"
-						/>
-						<TableRowLetter
-							ipa="w"
-							description='W as in "win"'
-							vixa="w"
-						/>
-						<TableRowLetter
-							ipa="ks"
-							description='X as in "explain"'
-							vixa="ks"
-						/>
-						<TableRowLetter
-							ipa="j"
-							description='Y as in "you"'
-							vixa="y"
-						/>
-						<TableRowLetter
-							ipa="z"
-							description='Z as in "zoom"'
-							vixa="z"
-						/>
-					</TableOld><Heading2>Vixa for Hungarian <InlineV><br/>viksa for hángeriən</InlineV></Heading2>
-					<Paragraph>Vixa works excellently for Hungarian. Several digraphs and trigraphs, such as "ty," "gy," "ny," or "dzs" are
-						single letters in Vixa, making writing faster and simpler. It also gets rid of the difference between "j" and "ly,"
-						a pain point even for several native Hungarian speakers.
-					</Paragraph>
-				</Content>
-				<ContentWide>
-					<BigQuote
-						text = "Minden embeŕi léñ sabadnak sületik, és eďenlö méltošága éš yoga van."
-						caption = 'Example text in Hungarian: "Minden emberi lény szabadnak születik, és egyenlő méltósága és joga van."'
-					/>
-				</ContentWide>
-				<Content>
-					<Heading3>Hungarian</Heading3>
-					<TableOld>
-						<TableRow>
-							<TableHeaderCell>Letter</TableHeaderCell>
-							<TableHeaderCell>IPA</TableHeaderCell>
-							<TableHeaderCell>Hungarian sound</TableHeaderCell>
-						</TableRow>
-						<TableRowLetter
-							ipa="ɒ"
-							description='A as in "ad"'
-							vixa="a"
-						/>
-						<TableRowLetter
-							ipa="a"
-							description='Á as in "ár"'
-							vixa="á"
-						/>
-						<TableRowLetter
-							ipa="b"
-							description='B as in "báj"'
-							vixa="b"
-						/>
-						<TableRowLetter
-							ipa="t͡s"
-							description='C as in "cél"'
-							vixa="c"
-						/>
-						<TableRowLetter
-							ipa="t͡ʃ"
-							description='CS as in "csel"'
-							vixa="č"
-						/>
-						<TableRowLetter
-							ipa="d"
-							description='D as in "dob"'
-							vixa="d"
-						/>
-						<TableRowLetter
-							ipa="d͡z"
-							description='DZ as in "edző"'
-							vixa="ź"
-						/>
-						<TableRowLetter
-							ipa="d͡ʒ"
-							description='DZS as in "dzsessz"'
-							vixa="j"
-						/>
-						<TableRowLetter
-							ipa="ɛ"
-							description='E as in "egy"'
-							vixa="e"
-						/>
-						<TableRowLetter
-							ipa="e"
-							description='É as in "ég"'
-							vixa="é"
-						/>
-						<TableRowLetter
-							ipa="f"
-							description='F as in "fog"'
-							vixa="f"
-						/>
-						<TableRowLetter
-							ipa="g"
-							description='G as in "gép"'
-							vixa="g"
-						/>
-						<TableRowLetter
-							ipa="ɟ"
-							description='GY as in "gyöngy"'
-							vixa="ď"
-						/>
-						<TableRowLetter
-							ipa="h"
-							description='H as in "hó"'
-							vixa="h"
-						/>
-						<TableRowLetter
-							ipa="i"
-							description='I as in "itt"'
-							vixa="i"
-						/>
-						<TableRowLetter
-							ipa="iː"
-							description='Í as in "így"'
-							vixa="ii"
-						/>
-						<TableRowLetter
-							ipa="j"
-							description='J as in "jó"'
-							vixa="y"
-						/>
-						<TableRowLetter
-							ipa="k"
-							description='K as in "kedv"'
-							vixa="k"
-						/>
-						<TableRowLetter
-							ipa="l"
-							description='L as in "ló"'
-							vixa="l"
-						/>
-						<TableRowLetter
-							ipa="j"
-							description='LY as in "lyuk"'
-							vixa="y"
-						/>
-						<TableRowLetter
-							ipa="m"
-							description='M as in "ma"'
-							vixa="m"
-						/>
-						<TableRowLetter
-							ipa="n"
-							description='N as in "nem"'
-							vixa="n"
-						/>
-						<TableRowLetter
-							ipa="ɲ"
-							description='NY as in "nyár"'
-							vixa="ñ"
-						/>
-						<TableRowLetter
-							ipa="o"
-							description='O as in "ott"'
-							vixa="o"
-						/>
-						<TableRowLetter
-							ipa="o"
-							description='Ó as in "óv"'
-							vixa="oo"
-						/>
-						<TableRowLetter
-							ipa="ø"
-							description='Ö as in "öv"'
-							vixa="ö"
-						/>
-						<TableRowLetter
-							ipa="øː"
-							description='Ő as in "őr"'
-							vixa="öö"
-						/>
-						<TableRowLetter
-							ipa="p"
-							description='P as in "pipa"'
-							vixa="p"
-						/>
-						<TableRowLetter
-							ipa="r"
-							description='R as in "raj"'
-							vixa="ŕ"
-						/>
-						<TableRowLetter
-							ipa="ʃ"
-							description='S as in "só"'
-							vixa="š"
-						/>
-						<TableRowLetter
-							ipa="s"
-							description='SZ as in "szó"'
-							vixa="s"
-						/>
-						<TableRowLetter
-							ipa="t"
-							description='T as in "tan"'
-							vixa="t"
-						/>
-						<TableRowLetter
-							ipa="c"
-							description='TY as in "tyúk"'
-							vixa="t"
-						/>
-						<TableRowLetter
-							ipa="u"
-							description='U as in "un"'
-							vixa="u"
-						/>
-						<TableRowLetter
-							ipa="uː"
-							description='Ú as in "úgy"'
-							vixa="uu"
-						/>
-						<TableRowLetter
-							ipa="y"
-							description='Ü as in "ül"'
-							vixa="ü"
-						/>
-						<TableRowLetter
-							ipa="yː"
-							description='Ű as in "űr"'
-							vixa="üü"
-						/>
-						<TableRowLetter
-							ipa="v"
-							description='V as in "vág"'
-							vixa="v"
-						/>
-						<TableRowLetter
-							ipa="z"
-							description='Z as in "zöld"'
-							vixa="z"
-						/>
-						<TableRowLetter
-							ipa="ʒ"
-							description='ZS as in "zseb"'
-							vixa="ž"
-						/>
-					</TableOld>*/}
 				</Content>
 			</Canvas>
         );
