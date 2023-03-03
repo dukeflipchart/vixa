@@ -331,7 +331,7 @@ CHART
 */
 
 export const ChartSection = styled.div`
-	padding: 1rem;
+	padding: 0 1rem 1rem;
 	position: relative;
 
 	::before {
@@ -362,7 +362,7 @@ export const ChartSection = styled.div`
 	}
 
 	@media only screen and (min-width: ${breakpoints.fourth}) {
-		padding: 2rem;
+		padding: 0 2rem 2rem;
 	}
 `;
 
@@ -400,11 +400,45 @@ export const ChartWrapper = styled.table`
 `;
 
 export const ChartTitle = styled(Heading2)`
+	background: ${colors.neutral1};
+	color: ${colors.neutral10};
 	font-size: 3rem;
 	line-height: 1.5;
-	margin: 3rem 0;
+	margin: 0 -2rem;
+	padding: 3rem;
 	text-align: center;
+
+	${InlineV} {
+		color: ${colors.purple7};
+	}
 `;
+
+export const Filter = styled.div`
+	background: ${colors.neutral2};
+	display: flex;
+	margin: 0 -2rem;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+`;
+
+export const FilterOption = styled.button`
+	background: ${colors.neutral2};
+	border: none;
+	color: ${colors.neutral10};
+	cursor: pointer;
+	flex: 0 0;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: 2rem;
+	padding: 1rem;
+`;
+
+export const FilterOptions = styled.div``;
+
+export const FilterTitle = styled.div``;
 
 export const ChartSubtitle = styled(Heading3)`
 	font-size: 2rem;
@@ -513,16 +547,6 @@ export const ChartCellTertiaryLine = styled.div`
 `;
 
 export const ChartCellSecondLineItem = styled.div``;
-
-export const Filter = styled.div``;
-
-export const FilterOption = styled.a`
-	cursor: pointer;
-`;
-
-export const FilterOptions = styled.div``;
-
-export const FilterTitle = styled.div``;
 
 export const ToC = styled.div``;
 

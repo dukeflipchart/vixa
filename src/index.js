@@ -247,9 +247,8 @@ class Page extends React.Component {
 				<ChartSection>
 					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br/>Vixa characters</ChartTitle>
 					<Filter>
-						<FilterTitle>Languages: {this.state.selectedLanguage}</FilterTitle>
 						<FilterOptions>
-							<FilterOption onClick={() => this.setState({selectedLanguage: 'all'})}>All characters</FilterOption>
+							<FilterOption onClick={() => this.setState({selectedLanguage: 'all'})} isActive={this.state.selectedLanguage==="all"}>All characters</FilterOption>
 							<FilterOption onClick={() => this.setState({selectedLanguage: 'en-us'})}>English (US)</FilterOption>
 							<FilterOption onClick={() => this.setState({selectedLanguage: 'hu-hu'})}>Hungarian</FilterOption>
 						</FilterOptions>
