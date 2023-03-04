@@ -148,31 +148,57 @@ export const Header = styled.div`
 `;
 
 export const IntroSection = styled.div`
-	padding: 4rem;
+	padding: 2rem;
 	position: relative;
+	
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		padding: 4rem;
+	}
 `;
 
 export const IntroSectionGrid = styled.div`
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
-	grid-column-gap: 4rem;
-	grid-row-gap: 4rem;
 	margin: 0 auto;
 	max-width: 90rem;
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 4rem;
+		grid-row-gap: 4rem;
+		max-width: 60rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		max-width: 90rem;
+	}
 `;
 
 export const IntroSectionCellWrapper = styled.div`
-	margin-top: ${props => props.isBig ? "-1rem;" : ""};
-	grid-area: ${props => props.isBig ? "1 / 1 / 4 / 2;" : ""};
+	margin-bottom: 3rem;
+	grid-area: ${props => props.isBig ? "1 / 1 / 1 / 3;" : ""};
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		margin-bottom: 0;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		margin-top: ${props => props.isBig ? "-1rem;" : "0"};
+		grid-area: ${props => props.isBig ? "1 / 1 / 4 / 2;" : ""};
+	}
 `;
 
 export const IntroSectionCellHeading = styled.h3`
 	font-size: ${props => props.isBig ? "3rem" : "1.5rem"};
 	line-height: 1.5;
 	margin: 0;
-	position: ${props => props.isBig ? "sticky" : "static"};
 	top: ${props => props.isBig ? "1rem" : "auto"};
+	
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		position: ${props => props.isBig ? "sticky" : "static"};
+	}
 `;
 
 export const IntroSectionCellHeadingLatin = styled.p`
@@ -333,8 +359,10 @@ CHART
 */
 
 export const ChartSection = styled.div`
-	padding: 0 1rem 1rem;
 	position: relative;
+`;
+
+export const ChartsContainer = styled.div`
 
 	::before {
 		background-color: ${colors.neutral9};
@@ -363,12 +391,6 @@ export const ChartSection = styled.div`
 		z-index: -1;
 	}
 
-	@media only screen and (min-width: ${breakpoints.fourth}) {
-		padding: 0 2rem 2rem;
-	}
-`;
-
-export const ChartsContainer = styled.div`
 	@media only screen and (min-width: ${breakpoints.seventh}) {
 		display: flex;
 		justify-content: center;
@@ -406,7 +428,7 @@ export const ChartTitle = styled(Heading2)`
 	color: ${colors.neutral1};
 	font-size: 3rem;
 	line-height: 1.5;
-	margin: 0 -2rem;
+	margin: 0;
 	padding: 3rem 3rem 4.5rem;
 	text-align: center;
 
@@ -419,7 +441,7 @@ export const FilterWrapper = styled.div`
 	background: ${colors.neutral2};
 	box-shadow: 0 0 1rem rgb(0 0 0 / 30%);
 	display: flex;
-	margin: 0 -2rem;
+	margin: 0;
 	justify-content: center;
 	position: sticky;
 	top: 0;
@@ -471,6 +493,7 @@ export const ChartHeaderCellWrapper = styled.th`
 	color: ${colors.neutral4};
 	flex: 1 0 100%;
 	margin: 2rem 0 0.25rem;
+	padding: 0;
 
 	@media only screen and (min-width: ${breakpoints.fourth}) {
 		display: table-cell;
