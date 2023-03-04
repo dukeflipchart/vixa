@@ -349,7 +349,7 @@ export const ChartSection = styled.div`
 		background-image: url(${chartImage});
 		background-size: 1024px;
 		background-color: ${colors.neutral9};
-		background-position: center center;
+		background-position: center top;
 		content: " ";
 		mix-blend-mode: multiply;
 		opacity: 0.06;
@@ -413,8 +413,9 @@ export const ChartTitle = styled(Heading2)`
 	}
 `;
 
-export const Filter = styled.div`
+export const FilterWrapper = styled.div`
 	background: ${colors.neutral2};
+	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 	display: flex;
 	margin: 0 -2rem;
 	justify-content: center;
@@ -423,8 +424,8 @@ export const Filter = styled.div`
 	z-index: 2;
 `;
 
-export const FilterOption = styled.button`
-	background: ${colors.neutral2};
+export const FilterButton = styled.button`
+	background: ${props => props.isActive ? colors.purple3 : colors.neutral2};
 	border: none;
 	color: ${colors.neutral10};
 	cursor: pointer;
@@ -433,7 +434,13 @@ export const FilterOption = styled.button`
 	font-size: 1.25rem;
 	font-weight: bold;
 	line-height: 2rem;
-	padding: 1rem;
+	padding: 1rem 1.5rem;
+
+	:hover,
+	:focus {
+		background: ${colors.purple4};
+		outline: none;
+	}
 `;
 
 export const FilterOptions = styled.div``;
