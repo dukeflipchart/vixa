@@ -433,15 +433,21 @@ export const FilterButton = styled.button`
 	cursor: pointer;
 	flex: 0 0;
 	font-family: "Montserrat", sans-serif;
-	font-size: 1.25rem;
+	font-size: 0.875rem;
 	font-weight: bold;
-	line-height: 2rem;
-	padding: 1rem 1.5rem;
+	line-height: 1.25rem;
+	padding: 0.75rem 1rem;
 
 	:hover,
 	:focus {
 		background: ${colors.purple4};
 		outline: none;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		font-size: 1.25rem;
+		line-height: 2rem;
+		padding: 1rem 1.5rem;
 	}
 `;
 
