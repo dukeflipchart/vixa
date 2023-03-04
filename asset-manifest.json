@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/vixa/static/css/main.bc8d4a25.css",
-    "main.js": "/vixa/static/js/main.78b10696.js",
+    "main.js": "/vixa/static/js/main.313f662f.js",
     "static/media/header4.png": "/vixa/static/media/header4.eb5cdebd2487efb3d4ca.png",
     "static/media/header-pattern.png": "/vixa/static/media/header-pattern.7c4bc367b7400de58e46.png",
     "static/media/VixaGeometric-Bold.otf": "/vixa/static/media/VixaGeometric-Bold.8ee504480724d1af7b4f.otf",
     "index.html": "/vixa/index.html",
     "main.bc8d4a25.css.map": "/vixa/static/css/main.bc8d4a25.css.map",
-    "main.78b10696.js.map": "/vixa/static/js/main.78b10696.js.map"
+    "main.313f662f.js.map": "/vixa/static/js/main.313f662f.js.map"
   },
   "entrypoints": [
     "static/css/main.bc8d4a25.css",
-    "static/js/main.78b10696.js"
+    "static/js/main.313f662f.js"
   ]
 }
