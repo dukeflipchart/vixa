@@ -6,11 +6,11 @@ import chartData from './chart.json';
 
 import {
 	BigLetter,
-	BigLetterTable,
 	BigQuoteText,
 	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	ChartBody,
 	ChartSection,
 	ChartWrapper,
 	ChartCellWrapper,
@@ -24,9 +24,8 @@ import {
 	ChartSubtitle,
 	ChartTitle,
 	ChartsContainer,
-	Filter,
-	FilterTitle,
-	FilterOption,
+	FilterWrapper,
+	FilterButton,
 	FilterOptions,
 	Content,
 	Etymology,
@@ -41,7 +40,6 @@ import {
 	IntroSectionCellWrapper,
 	IntroSectionCellParagraph,
 	IntroSectionGrid,
-	Neutral4,
 	NumberedList,
 	Paragraph,
 	StyledChartRow,
@@ -134,7 +132,7 @@ function ChartNew(props) {
 					))}
 				</ChartRow>
 			</ChartHead>
-			<tbody>
+			<ChartBody>
 				{chartData.methodCategories
 					.filter(
 						methodCategory =>
@@ -144,18 +142,21 @@ function ChartNew(props) {
 					) // for every row...
 					.map((itemMethodCategory, indexMethodCategory) => {
 
+						// get all the characters to display
 						const characters = chartData.characters.filter(
 							character =>
 								(props.selectedLanguage === "all" || character.languages.some(language => language.id === props.selectedLanguage)) &&
 								character.methodCategory === itemMethodCategory.id &&
 								character.type === props.type
 						);
-
+						
+						// put them in the correct place in the row
 						const characterMap = {};
 						characters.forEach(character => {
 							characterMap[character.placeCategory] = character;
 						});
 
+						// return all cells in the row, either with a character or empty
 						const visibleCells = visiblePlaceCategories.map((placeCategory, indexCell) => {
 							const character = characterMap[placeCategory.id];
 							return (
@@ -170,6 +171,7 @@ function ChartNew(props) {
 							);
 						});
 
+						// the entire chart
 						return (
 							<ChartRow isVisible key={indexMethodCategory}>
 								<ChartHeaderCell
@@ -180,10 +182,57 @@ function ChartNew(props) {
 							</ChartRow>
 						);
 					})}
-			</tbody>
+			</ChartBody>
 		</ChartWrapper>
 	);
 }
+
+function FilterOption(props) {
+
+	const handleClick = () => {
+		props.onClick(props.languageId);
+	};
+
+	return (
+		<FilterButton
+			onClick={handleClick}
+			isActive={props.isActive}
+		>
+			{props.children}
+		</FilterButton>
+	);
+}
+
+function Filter(props) {
+
+	const { selectedLanguage, onLanguageSelect } = props;
+
+	const options = chartData.languages.map((language) => (
+	  <FilterOption
+		key={language.id}
+		languageId={language.id}
+		onClick={onLanguageSelect}
+		isActive={selectedLanguage === language.id}
+	  >
+		{language.name}
+	  </FilterOption>
+	));
+
+	return (
+	  <FilterWrapper>
+		<FilterOptions>
+		  <FilterOption
+			languageId="all"
+			onClick={onLanguageSelect}
+			isActive={selectedLanguage === "all"}
+		  >
+			All characters
+		  </FilterOption>
+		  {options}
+		</FilterOptions>
+	  </FilterWrapper>
+	);
+  }
 
 class Page extends React.Component {
 
@@ -207,57 +256,53 @@ class Page extends React.Component {
 				</Header>
 				<IntroSection>
 					<IntroSectionGrid>
-						<IntroSectionCell 
-							headingVixa = "ə yunivərzəl elfəbet"
-							heading = "A universal alphabet"
-							isBig = "true"
+						<IntroSectionCell
+							headingVixa="ə yunivərzəl elfəbet"
+							heading="A universal alphabet"
+							isBig="true"
 						/>
-						<IntroSectionCell 
-							headingVixa = "izi tu lərn"
-							heading = "Easy to learn"
-							paragraph = "Each part of Vixa’s letters tells you something about the sound they represent. This internal logic can make learning faster and easier."
+						<IntroSectionCell
+							headingVixa="izi tu lərn"
+							heading="Easy to learn"
+							paragraph="Each part of Vixa’s letters tells you something about the sound they represent. This internal logic can make learning faster and easier."
 						/>
-						<IntroSectionCell 
-							headingVixa = "izi tu ráyt"
-							heading = "Easy to write"
-							paragraph = "Vixa is super fast to write by hand. The most common sounds have the simplest letters. Consonants can be written without lifting the pen and vowels can be omitted altogether."
+						<IntroSectionCell
+							headingVixa="izi tu ráyt"
+							heading="Easy to write"
+							paragraph="Vixa is super fast to write by hand. The most common sounds have the simplest letters. Consonants can be written without lifting the pen and vowels can be omitted altogether."
 						/>
-						<IntroSectionCell 
-							headingVixa = "sâports meni lengwəjiz"
-							heading = "Supports many languages"
-							paragraph = "Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
+						<IntroSectionCell
+							headingVixa="sâports meni lengwəjiz"
+							heading="Supports many languages"
+							paragraph="Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
 						/>
-						<IntroSectionCell 
-							headingVixa = "béyzd ǎn sáyəns"
-							heading = "Based on science"
-							paragraph = "Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
+						<IntroSectionCell
+							headingVixa="béyzd ǎn sáyəns"
+							heading="Based on science"
+							paragraph="Vixa is based on phonology. Features of a letter describe phonological characteristics of the sound it represents. If two characters are similar, the sounds they represent are also similar."
 						/>
-						<IntroSectionCell 
-							headingVixa = "ə θat iksperimənt"
-							heading = "A thought experiment"
-							paragraph = "I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
+						<IntroSectionCell
+							headingVixa="ə θat iksperimənt"
+							heading="A thought experiment"
+							paragraph="I made Vixa because I love learning about languages and designing fonts. I wanted to explore the idea of what a global alphabet might look like."
 						/>
-						<IntroSectionCell 
-							headingVixa = "tráy it áut!"
-							heading = "Try it out!"
-							paragraph = "Maybe you could use Vixa as a cipher, or for a fictional language? I made a font you can download. It’s free as long as you use it non-commercially and credit me."
+						<IntroSectionCell
+							headingVixa="tráy it áut!"
+							heading="Try it out!"
+							paragraph="Maybe you could use Vixa as a cipher, or for a fictional language? I made a font you can download. It’s free as long as you use it non-commercially and credit me."
 						/>
 					</IntroSectionGrid>
 				</IntroSection>
 				<ChartSection>
-					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br/>Vixa characters</ChartTitle>
-					<Filter>
-						<FilterTitle>Languages: {this.state.selectedLanguage}</FilterTitle>
-						<FilterOptions>
-							<FilterOption onClick={() => this.setState({selectedLanguage: 'all'})}>All characters</FilterOption>
-							<FilterOption onClick={() => this.setState({selectedLanguage: 'en-us'})}>English (US)</FilterOption>
-							<FilterOption onClick={() => this.setState({selectedLanguage: 'hu-hu'})}>Hungarian</FilterOption>
-						</FilterOptions>
-					</Filter>
+					<ChartTitle><InlineV>viksâ keriktərz</InlineV><br />Vixa characters</ChartTitle>
+					<Filter
+						selectedLanguage={this.state.selectedLanguage}
+						onLanguageSelect={(languageId) => this.setState({ selectedLanguage: languageId })}
+					/>
 					<ChartsContainer>
 						<ChartContainer>
 							<ChartSubtitle><InlineV>kánsonənts</InlineV><br />Consonants</ChartSubtitle>
-							<ChartNew selectedLanguage={this.state.selectedLanguage} type="consonant"/>
+							<ChartNew selectedLanguage={this.state.selectedLanguage} type="consonant" />
 						</ChartContainer>
 						<ChartContainer>
 							<ChartSubtitle><InlineV>váwəlz</InlineV><br />Vowels</ChartSubtitle>

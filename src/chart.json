@@ -1,7 +1,13 @@
 {
 	"languages": [
-		"en-us",
-		"hu-hu"
+		{
+			"id": "en-us",
+			"name": "English (US)"
+		},
+		{
+			"id": "hu-hu",
+			"name": "Hungarian"
+		}
 	],
 	"methodCategories": [
 		{
