@@ -830,7 +830,8 @@
 			"placeCategory": "velar",
 			"methodCategory": "fricative-voiceless",
 			"languages": [
-				{ "id": "en-us", "description": "CH in loch"}
+				{ "id": "en-us", "description": "CH in loch"},
+				{ "id": "hu-hu", "description": "H in potroh"}
 			]
 		},
 		{
@@ -907,7 +908,7 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "H in heart"},
-				{ "id": "hu-hu", "description": "H"}
+				{ "id": "hu-hu", "description": "H in has"}
 			]
 		},
 		{
