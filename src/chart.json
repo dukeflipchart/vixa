@@ -5,7 +5,11 @@
 			"name": "English (US)"
 		},
 		{
-			"id": "hu-hu",
+			"id": "es",
+			"name": "Spanish"
+		},
+		{
+			"id": "hu",
 			"name": "Hungarian"
 		}
 	],
@@ -17,7 +21,8 @@
 			"textSecondLine": "voiceless",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -34,7 +39,8 @@
 			"textSecondLine": "voiced",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -64,7 +70,8 @@
 			"text": "NASAL",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -74,7 +81,8 @@
 			"textSecondLine": "voiceless",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -84,7 +92,7 @@
 			"textSecondLine": "voiced",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"hu"
 			]
 		},
 		{
@@ -107,7 +115,8 @@
 			"text": "APPROXIMANT",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -117,7 +126,8 @@
 			"textSecondLine": "lateral",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -127,7 +137,8 @@
 			"textSecondLine": "voiceless",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -144,7 +155,7 @@
 			"textSecondLine": "voiced",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"hu"
 			]
 		},
 		{
@@ -167,7 +178,8 @@
 			"text": "TRILL",
 			"textSecondLine": "or TAP",
 			"languages": [
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -183,7 +195,8 @@
 			"text": "CLOSE",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -192,7 +205,8 @@
 			"text": "CLOSE-MID",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -201,7 +215,7 @@
 			"text": "OPEN-MID",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"hu"
 			]
 		},
 		{
@@ -210,7 +224,8 @@
 			"text": "OPEN",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		}
 	],
@@ -221,7 +236,8 @@
 			"text": "LABIAL",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -229,7 +245,8 @@
 			"type": "consonant",
 			"text": "DENTAL",
 			"languages": [
-				"en-us"
+				"en-us",
+				"es"
 			]
 		},
 		{
@@ -238,7 +255,8 @@
 			"text": "ALVEOLAR",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -254,7 +272,8 @@
 			"textSecondLine": "or PALATAL",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -263,7 +282,8 @@
 			"text": "VELAR",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -279,7 +299,7 @@
 			"text": "GLOTTAL",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"hu"
 			]
 		},
 		{
@@ -288,7 +308,8 @@
 			"text": "FRONT",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		},
 		{
@@ -298,7 +319,7 @@
 			"textSecondLine": "rounded",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"hu"
 			]
 		},
 		{
@@ -306,7 +327,8 @@
 			"type": "vowel",
 			"text": "BACK",
 			"languages": [
-				"en-us"
+				"en-us",
+				"es"
 			]
 		},
 		{
@@ -316,7 +338,8 @@
 			"textSecondLine": "rounded",
 			"languages": [
 				"en-us",
-				"hu-hu"
+				"es",
+				"hu"
 			]
 		}
 	],
@@ -329,7 +352,8 @@
 			"methodCategory": "plosive-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "P"},
-				{ "id": "hu-hu", "description": "P"}
+				{ "id": "es", "description": "P"},
+				{ "id": "hu", "description": "P"}
 			]
 		},
 		{
@@ -348,7 +372,8 @@
 			"methodCategory": "plosive-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "B"},
-				{ "id": "hu-hu", "description": "P"}
+				{ "id": "es", "description": "PB"},
+				{ "id": "hu", "description": "B"}
 			]
 		},
 		{
@@ -367,7 +392,8 @@
 			"methodCategory": "nasal",
 			"languages": [
 				{ "id": "en-us", "description": "M"},
-				{ "id": "hu-hu", "description": "M"}
+				{ "id": "es", "description": "M"},
+				{ "id": "hu", "description": "M"}
 			]
 		},
 		{
@@ -378,7 +404,8 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "F"},
-				{ "id": "hu-hu", "description": "F"}
+				{ "id": "es", "description": "F"},
+				{ "id": "hu", "description": "F"}
 			]
 		},
 		{
@@ -396,7 +423,8 @@
 			"placeCategory": "dental",
 			"methodCategory": "fricative-voiceless",
 			"languages": [
-				{ "id": "en-us", "description": "TH in think"}
+				{ "id": "en-us", "description": "TH in think"},
+				{ "id": "es", "description": "C, Z"}
 			]
 		},
 		{
@@ -417,7 +445,8 @@
 			"methodCategory": "plosive-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "T"},
-				{ "id": "hu-hu", "description": "T"}
+				{ "id": "es", "description": "T"},
+				{ "id": "hu", "description": "T"}
 			]
 		},
 		{
@@ -436,7 +465,8 @@
 			"methodCategory": "plosive-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "D"},
-				{ "id": "hu-hu", "description": "D"}
+				{ "id": "es", "description": "TD"},
+				{ "id": "hu", "description": "D"}
 			]
 		},
 		{
@@ -471,7 +501,8 @@
 			"methodCategory": "nasal",
 			"languages": [
 				{ "id": "en-us", "description": "N"},
-				{ "id": "hu-hu", "description": "N"}
+				{ "id": "es", "description": "N"},
+				{ "id": "hu", "description": "N"}
 			]
 		},
 		{
@@ -482,7 +513,8 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "S"},
-				{ "id": "hu-hu", "description": "SZ"}
+				{ "id": "es", "description": "S"},
+				{ "id": "hu", "description": "SZ"}
 			]
 		},
 		{
@@ -493,7 +525,7 @@
 			"methodCategory": "fricative-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "Z"},
-				{ "id": "hu-hu", "description": "Z"}
+				{ "id": "hu", "description": "Z"}
 			]
 		},
 		{
@@ -530,7 +562,8 @@
 			"methodCategory": "approximant-lateral",
 			"languages": [
 				{ "id": "en-us", "description": "L"},
-				{ "id": "hu-hu", "description": "L"}
+				{ "id": "es", "description": "L"},
+				{ "id": "hu", "description": "L"}
 			]
 		},
 		{
@@ -541,7 +574,7 @@
 			"methodCategory": "affricate-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "TS"},
-				{ "id": "hu-hu", "description": "C"}
+				{ "id": "hu", "description": "C"}
 			]
 		},
 		{
@@ -559,7 +592,7 @@
 			"placeCategory": "alveolar",
 			"methodCategory": "affricate-voiced",
 			"languages": [
-				{ "id": "hu-hu", "description": "DZ"}
+				{ "id": "hu", "description": "DZ"}
 			]
 		},
 		{
@@ -585,7 +618,8 @@
 			"placeCategory": "alveolar",
 			"methodCategory": "trill",
 			"languages": [
-				{ "id": "hu-hu", "description": "R"}
+				{ "id": "es", "description": "R"},
+				{ "id": "hu", "description": "R"}
 			]
 		},
 		{
@@ -667,7 +701,7 @@
 			"placeCategory": "postalveolar-or-palatal",
 			"methodCategory": "plosive-voiceless",
 			"languages": [
-				{ "id": "hu-hu", "description": "TY"}
+				{ "id": "hu", "description": "TY"}
 			]
 		},
 		{
@@ -677,7 +711,7 @@
 			"placeCategory": "postalveolar-or-palatal",
 			"methodCategory": "plosive-voiced",
 			"languages": [
-				{ "id": "hu-hu", "description": "GY"}
+				{ "id": "hu", "description": "GY"}
 			]
 		},
 		{
@@ -687,7 +721,8 @@
 			"placeCategory": "postalveolar-or-palatal",
 			"methodCategory": "nasal",
 			"languages": [
-				{ "id": "hu-hu", "description": "NY"}
+				{ "id": "es", "description": "Ñ"},
+				{ "id": "hu", "description": "NY"}
 			]
 		},
 		{
@@ -698,7 +733,7 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "SH"},
-				{ "id": "hu-hu", "description": "S"}
+				{ "id": "hu", "description": "S"}
 			]
 		},
 		{
@@ -708,7 +743,7 @@
 			"placeCategory": "postalveolar-or-palatal",
 			"methodCategory": "fricative-voiced",
 			"languages": [
-				{ "id": "hu-hu", "description": "ZS"}
+				{ "id": "hu", "description": "ZS"}
 			]
 		},
 		{
@@ -719,7 +754,8 @@
 			"methodCategory": "approximant",
 			"languages": [
 				{ "id": "en-us", "description": "Y"},
-				{ "id": "hu-hu", "description": "J, LY"}
+				{ "id": "es", "description": "LL"},
+				{ "id": "hu", "description": "J, LY"}
 			]
 		},
 		{
@@ -730,7 +766,8 @@
 			"methodCategory": "affricate-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "CH"},
-				{ "id": "hu-hu", "description": "CS"}
+				{ "id": "es", "description": "CH"},
+				{ "id": "hu", "description": "CS"}
 			]
 		},
 		{
@@ -749,7 +786,7 @@
 			"methodCategory": "affricate-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "J"},
-				{ "id": "hu-hu", "description": "DZS"}]
+				{ "id": "hu", "description": "DZS"}]
 		},
 		{
 			"type": "consonant",
@@ -775,7 +812,8 @@
 			"methodCategory": "plosive-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "K"},
-				{ "id": "hu-hu", "description": "K"}
+				{ "id": "es", "description": "C, Q, K"},
+				{ "id": "hu", "description": "K"}
 			]
 		},
 		{
@@ -794,7 +832,8 @@
 			"methodCategory": "plosive-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "G"},
-				{ "id": "hu-hu", "description": "G"}
+				{ "id": "es", "description": "G"},
+				{ "id": "hu", "description": "G"}
 			]
 		},
 		{
@@ -811,9 +850,7 @@
 			"ipaCharacter": "ŋ",
 			"placeCategory": "velar",
 			"methodCategory": "nasal",
-			"languages": [
-				{ "id": "en-us", "description": "NG in thing"}
-			]
+			"languages": []
 		},
 		{
 			"type": "consonant",
@@ -831,7 +868,8 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "CH in loch"},
-				{ "id": "hu-hu", "description": "H in potroh"}
+				{ "id": "es", "description": "X"},
+				{ "id": "hu", "description": "H in potroh"}
 			]
 		},
 		{
@@ -908,7 +946,7 @@
 			"methodCategory": "fricative-voiceless",
 			"languages": [
 				{ "id": "en-us", "description": "H in heart"},
-				{ "id": "hu-hu", "description": "H in has"}
+				{ "id": "hu", "description": "H in has"}
 			]
 		},
 		{
@@ -919,7 +957,8 @@
 			"methodCategory": "close",
 			"languages": [
 				{ "id": "en-us", "description": "EE in free"},
-				{ "id": "hu-hu", "description": "I"}
+				{ "id": "es", "description": "I, Y"},
+				{ "id": "hu", "description": "I"}
 			]
 		},
 		{
@@ -930,7 +969,8 @@
 			"methodCategory": "close-mid",
 			"languages": [
 				{ "id": "en-us", "description": "A in day"},
-				{ "id": "hu-hu", "description": "É"}
+				{ "id": "es", "description": "E"},
+				{ "id": "hu", "description": "É"}
 			]
 		},
 		{
@@ -941,7 +981,7 @@
 			"methodCategory": "open-mid",
 			"languages": [
 				{ "id": "en-us", "description": "E in bet"},
-				{ "id": "hu-hu", "description": "E"}
+				{ "id": "hu", "description": "E"}
 			]
 		},
 		{
@@ -952,7 +992,7 @@
 			"methodCategory": "open",
 			"languages": [
 				{ "id": "en-us", "description": "I in high"},
-				{ "id": "hu-hu", "description": "Á"}
+				{ "id": "hu", "description": "Á"}
 			]
 		},
 		{
@@ -962,7 +1002,7 @@
 			"placeCategory": "front-rounded",
 			"methodCategory": "close",
 			"languages": [
-				{ "id": "hu-hu", "description": "Ü, Ű"}
+				{ "id": "hu", "description": "Ü, Ű"}
 			]
 		},
 		{
@@ -972,7 +1012,7 @@
 			"placeCategory": "front-rounded",
 			"methodCategory": "close-mid",
 			"languages": [
-				{ "id": "hu-hu", "description": "Ö, Ő"}
+				{ "id": "hu", "description": "Ö, Ő"}
 			]
 		},
 		{
@@ -1014,11 +1054,12 @@
 		{
 			"type": "vowel",
 			"vixaCharacter": "ǎ",
-			"ipaCharacter": "ɑ",
+			"ipaCharacter": "ɑ, ɐ",
 			"placeCategory": "back",
 			"methodCategory": "open",
 			"languages": [
-				{ "id": "en-us", "description": "O in lot"}
+				{ "id": "en-us", "description": "O in lot"},
+				{ "id": "es", "description": "A"}
 			]
 		},
 		{
@@ -1029,7 +1070,8 @@
 			"methodCategory": "close",
 			"languages": [
 				{ "id": "en-us", "description": "OO in foot"},
-				{ "id": "hu-hu", "description": "U"}
+				{ "id": "es", "description": "U"},
+				{ "id": "hu", "description": "U"}
 			]
 		},
 		{
@@ -1040,7 +1082,8 @@
 			"methodCategory": "close-mid",
 			"languages": [
 				{ "id": "en-us", "description": "OA in goat"},
-				{ "id": "hu-hu", "description": "O"}
+				{ "id": "es", "description": "O"},
+				{ "id": "hu", "description": "O"}
 			]
 		},
 		{
@@ -1051,7 +1094,7 @@
 			"methodCategory": "open",
 			"languages": [
 				{ "id": "en-us", "description": "OU in thought"},
-				{ "id": "hu-hu", "description": "A"}
+				{ "id": "hu", "description": "A"}
 			]
 		}
 	]

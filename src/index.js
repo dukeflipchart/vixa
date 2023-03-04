@@ -274,7 +274,7 @@ class Page extends React.Component {
 						<IntroSectionCell
 							headingVixa="sâports meni lengwəjiz"
 							heading="Supports many languages"
-							paragraph="Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin, Yue, Wu, Hindi, Spanish and Standard Arabic. Tonal markers not yet included."
+							paragraph="Vixa supports the sounds used in the native languages of at least 3.6 billion people, including English, Mandarin Chinese, Hindi, Spanish, French and Standard Arabic. Tonal markers not yet included."
 						/>
 						<IntroSectionCell
 							headingVixa="béyzd ǎn sáyəns"
