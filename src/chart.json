@@ -372,7 +372,7 @@
 			"methodCategory": "plosive-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "B"},
-				{ "id": "es", "description": "PB"},
+				{ "id": "es", "description": "B"},
 				{ "id": "hu", "description": "B"}
 			]
 		},
@@ -465,7 +465,7 @@
 			"methodCategory": "plosive-voiced",
 			"languages": [
 				{ "id": "en-us", "description": "D"},
-				{ "id": "es", "description": "TD"},
+				{ "id": "es", "description": "D"},
 				{ "id": "hu", "description": "D"}
 			]
 		},
