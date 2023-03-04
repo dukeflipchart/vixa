@@ -171,7 +171,7 @@
 			]
 		},
 		{
-			"id": "tap",
+			"id": "tap-aspirated",
 			"type": "consonant",
 			"text": "TAP",
 			"textSecondLine": "aspirated",
@@ -593,7 +593,7 @@
 			"vixaCharacter": "Ŕ",
 			"ipaCharacter": "rʰ",
 			"placeCategory": "alveolar",
-			"methodCategory": "trill-aspirated",
+			"methodCategory": "tap-aspirated",
 			"languages": []
 		},
 		{
@@ -657,7 +657,7 @@
 			"vixaCharacter": "Ṛ",
 			"ipaCharacter": "ɽʰ",
 			"placeCategory": "retroflex",
-			"methodCategory": "trill-aspirated",
+			"methodCategory": "tap-aspirated",
 			"languages": []
 		},
 		{
