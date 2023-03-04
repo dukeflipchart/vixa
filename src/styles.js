@@ -148,7 +148,7 @@ export const Header = styled.div`
 `;
 
 export const IntroSection = styled.div`
-	padding: 2rem;
+	padding: 2rem 2rem 0;
 	position: relative;
 	
 	@media only screen and (min-width: ${breakpoints.fourth}) {
@@ -191,11 +191,15 @@ export const IntroSectionCellWrapper = styled.div`
 `;
 
 export const IntroSectionCellHeading = styled.h3`
-	font-size: ${props => props.isBig ? "3rem" : "1.5rem"};
+	font-size: ${props => props.isBig ? "2rem" : "1.5rem"};
 	line-height: 1.5;
 	margin: 0;
 	top: ${props => props.isBig ? "1rem" : "auto"};
 	
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: ${props => props.isBig ? "3rem" : "1.5rem"};
+	}
+
 	@media only screen and (min-width: ${breakpoints.fifth}) {
 		position: ${props => props.isBig ? "sticky" : "static"};
 	}
@@ -363,6 +367,7 @@ export const ChartSection = styled.div`
 `;
 
 export const ChartsContainer = styled.div`
+	padding: 1rem;
 
 	::before {
 		background-color: ${colors.neutral9};
@@ -389,6 +394,10 @@ export const ChartsContainer = styled.div`
 		right: 0;
 		bottom: 0;
 		z-index: -1;
+	}
+
+	@media only screen and (min-width: ${breakpoints.third}) {
+		padding: 2rem;
 	}
 
 	@media only screen and (min-width: ${breakpoints.seventh}) {
@@ -426,14 +435,20 @@ export const ChartWrapper = styled.table`
 export const ChartTitle = styled(Heading2)`
 	background: ${colors.neutral10};
 	color: ${colors.neutral1};
-	font-size: 3rem;
+	font-size: 2rem;
 	line-height: 1.5;
 	margin: 0;
-	padding: 3rem 3rem 4.5rem;
+	padding: 0 2rem 3rem;
 	text-align: center;
 
 	${InlineV} {
 		color: ${colors.purple7};
+	}
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: 3rem;
+		line-height: 1.5;
+		padding: 3rem 3rem 4.5rem;
 	}
 `;
 
