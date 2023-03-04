@@ -88,7 +88,7 @@
 			]
 		},
 		{
-			"id": "fricative-pharyngealized",
+			"id": "fricative-voiceless-pharyngealized",
 			"type": "consonant",
 			"text": "FRICATIVE",
 			"textSecondLine": "pharyngealized",
@@ -517,7 +517,7 @@
 			"vixaCharacter": "r",
 			"ipaCharacter": "ɹ",
 			"placeCategory": "alveolar",
-			"methodCategory": "fricative-voiced",
+			"methodCategory": "approximant",
 			"languages": [
 				{ "id": "en-us", "description": "R"}
 			]
@@ -807,7 +807,7 @@
 		},
 		{
 			"type": "consonant",
-			"vixaCharacter": "ṇ",
+			"vixaCharacter": "ň",
 			"ipaCharacter": "ŋ",
 			"placeCategory": "velar",
 			"methodCategory": "nasal",
@@ -817,7 +817,7 @@
 		},
 		{
 			"type": "consonant",
-			"vixaCharacter": "ṇ",
+			"vixaCharacter": "ň",
 			"ipaCharacter": "ŋ",
 			"placeCategory": "velar",
 			"methodCategory": "nasal",
@@ -863,6 +863,14 @@
 			"ipaCharacter": "ɢ",
 			"placeCategory": "uvular-or-pharyngeal",
 			"methodCategory": "plosive-voiced",
+			"languages": []
+		},
+		{
+			"type": "consonant",
+			"vixaCharacter": "ṅ",
+			"ipaCharacter": "ɴ",
+			"placeCategory": "uvular-or-pharyngeal",
+			"methodCategory": "nasal",
 			"languages": []
 		},
 		{
