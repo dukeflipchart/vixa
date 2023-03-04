@@ -57,6 +57,8 @@ export const colors = {
     blue4: '#456DC9',
     blue5: '#628AE6',
 	blue8: '#D2E2FE',
+	purple1: '#2C0E3E',
+	purple2: '#532074',
 	purple3: '#7835A2',
     purple4: '#984EC7',
     purple5: '#B56DE5',
@@ -383,7 +385,7 @@ export const ChartContainer = styled.div`
 
 export const ChartWrapper = styled.table`
 	display: block;
-	margin: 3rem auto;
+	margin: 0 auto;
 
 	@media only screen and (min-width: ${breakpoints.fourth}) {
 		border-spacing: 0.5rem;
@@ -400,12 +402,12 @@ export const ChartWrapper = styled.table`
 `;
 
 export const ChartTitle = styled(Heading2)`
-	background: ${colors.neutral1};
-	color: ${colors.neutral10};
+	background: ${colors.neutral10};
+	color: ${colors.neutral1};
 	font-size: 3rem;
 	line-height: 1.5;
 	margin: 0 -2rem;
-	padding: 3rem;
+	padding: 3rem 3rem 4.5rem;
 	text-align: center;
 
 	${InlineV} {
@@ -415,7 +417,7 @@ export const ChartTitle = styled(Heading2)`
 
 export const FilterWrapper = styled.div`
 	background: ${colors.neutral2};
-	box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+	box-shadow: 0 0 1rem rgb(0 0 0 / 30%);
 	display: flex;
 	margin: 0 -2rem;
 	justify-content: center;
@@ -450,8 +452,12 @@ export const FilterTitle = styled.div``;
 export const ChartSubtitle = styled(Heading3)`
 	font-size: 2rem;
 	line-height: 1.5;
-	margin: 3rem 0;
+	margin: 3rem 0 1rem;
 	text-align: center;
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		margin: 4.5rem 0 3rem;
+	}
 `;
 
 export const ChartHeaderCellWrapper = styled.th`
@@ -489,6 +495,14 @@ export const ChartHead = styled.thead`
 	}
 `;
 
+export const ChartBody = styled.tbody`
+	display: block;
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		display: table-row-group;
+	}
+`;
+
 export const StyledChartRow = styled.tr`
 	display: ${(props) => (props.isVisible ? "flex" : "none")};
 	flex-wrap: wrap;
@@ -503,7 +517,7 @@ export const ChartCellWrapper = styled.td`
 	background: ${(props) => (props.isEmpty ? "none" : colors.neutral10)};
 	border-radius: 0.5rem;
 	box-shadow: ${(props) => (props.isEmpty ? "none" : "0 0 1rem rgb(0 0 0 / 10%)")};
-	display: table-cell;
+	display: ${(props) => (props.isEmpty ? "none" : "table-cell")};
 	height: 6rem;
 	margin: 0.25rem;
 	padding: 0.75rem;
@@ -513,6 +527,10 @@ export const ChartCellWrapper = styled.td`
 	> ${ChartCellVixa},
 	> ${ChartCellTertiaryLine} {
 		display: none;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
+		display: table-cell;
 	}
 
 	@media only screen and (min-width: ${breakpoints.fifth}) {
@@ -540,9 +558,16 @@ export const ChartCellVixa = styled.div`
 
 export const ChartCellSecondaryLine = styled.div`
 	display: flex;
-	font-size: 1rem;
-	line-height: 1rem;
+	font-size: 0.875rem;
+	line-height: 0.875rem;
+	margin-top: 0.125rem;
 	justify-content: center;
+	text-align: center;
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		font-size: 1rem;
+		line-height: 1rem;
+	}
 `;
 
 export const ChartCellTertiaryLine = styled.div`

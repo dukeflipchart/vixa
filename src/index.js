@@ -6,11 +6,11 @@ import chartData from './chart.json';
 
 import {
 	BigLetter,
-	BigLetterTable,
 	BigQuoteText,
 	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	ChartBody,
 	ChartSection,
 	ChartWrapper,
 	ChartCellWrapper,
@@ -25,7 +25,6 @@ import {
 	ChartTitle,
 	ChartsContainer,
 	FilterWrapper,
-	FilterTitle,
 	FilterButton,
 	FilterOptions,
 	Content,
@@ -41,7 +40,6 @@ import {
 	IntroSectionCellWrapper,
 	IntroSectionCellParagraph,
 	IntroSectionGrid,
-	Neutral4,
 	NumberedList,
 	Paragraph,
 	StyledChartRow,
@@ -134,7 +132,7 @@ function ChartNew(props) {
 					))}
 				</ChartRow>
 			</ChartHead>
-			<tbody>
+			<ChartBody>
 				{chartData.methodCategories
 					.filter(
 						methodCategory =>
@@ -184,7 +182,7 @@ function ChartNew(props) {
 							</ChartRow>
 						);
 					})}
-			</tbody>
+			</ChartBody>
 		</ChartWrapper>
 	);
 }
