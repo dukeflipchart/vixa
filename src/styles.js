@@ -158,7 +158,7 @@ export const IntroSection = styled.div`
 
 export const IntroSectionGrid = styled.div`
 	margin: 0 auto;
-	max-width: 90rem;
+	max-width: 60rem;
 
 	@media only screen and (min-width: ${breakpoints.second}) {
 		display: grid;
@@ -166,7 +166,6 @@ export const IntroSectionGrid = styled.div`
 		grid-template-rows: repeat(2, 1fr);
 		grid-column-gap: 4rem;
 		grid-row-gap: 4rem;
-		max-width: 60rem;
 	}
 
 	@media only screen and (min-width: ${breakpoints.fifth}) {
@@ -194,7 +193,6 @@ export const IntroSectionCellHeading = styled.h3`
 	font-size: ${props => props.isBig ? "2rem" : "1.5rem"};
 	line-height: 1.5;
 	margin: 0;
-	top: ${props => props.isBig ? "1rem" : "auto"};
 	
 	@media only screen and (min-width: ${breakpoints.second}) {
 		font-size: ${props => props.isBig ? "3rem" : "1.5rem"};
@@ -202,6 +200,7 @@ export const IntroSectionCellHeading = styled.h3`
 
 	@media only screen and (min-width: ${breakpoints.fifth}) {
 		position: ${props => props.isBig ? "sticky" : "static"};
+		top: ${props => props.isBig ? "1rem" : "auto"};
 	}
 `;
 
@@ -222,6 +221,105 @@ export const IntroSectionCellParagraph = styled.p`
 	margin: 0.6rem 0;
 `;
 
+/* 
+
+CONTENT
+
+*/
+
+export const InlineV = styled.span`
+	color: ${colors.purple5};
+	font-size: 135%;
+	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
+	font-variant-ligatures: discretionary-ligatures;
+`;
+
+export const Heading1 = styled.h1`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+	line-height: 4.5rem;
+`;
+
+export const Heading2 = styled.h2`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	line-height: 1.5;
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: 3rem;
+
+		${InlineV} {	
+			font-size: 120%;
+		}
+	}
+`;
+
+export const Heading3 = styled.h3`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5rem;
+	line-height: 2.25rem;
+	margin-top: 4rem;
+	margin-bottom: 1.5rem;
+`;
+
+export const Heading4 = styled.h4`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.5625rem;
+	margin-top: 4rem;
+`;
+
+export const Heading5 = styled.h5`
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.10rem;
+	line-height: 1.375rem;
+`;
+
+export const Paragraph = styled.p`
+	font-size: 1.125rem;
+	margin-top: 1.5rem;
+	max-width: 35rem;
+	margin-bottom: 1.5rem;
+`;
+
+export const ParagraphBig = styled(Paragraph)`
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	max-width: none;
+`;
+
+export const ContentSection = styled.div`
+	margin: 0 auto;
+	max-width: 60rem;
+	position: relative;
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		max-width: 60rem;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fifth}) {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 1fr;
+		grid-column-gap: 4rem;
+		grid-row-gap: 4rem;
+		max-width: 90rem;
+	}
+`;
+
+export const ContentSectionTitle = styled.div`
+
+	${Heading2} {
+		position: sticky;
+		top: 1rem;
+	}
+`;
+
+export const ContentSectionContent = styled.div``;
+
 export const ChartLabelDescription = styled.div``;
 
 export const Content = styled.div`
@@ -239,49 +337,6 @@ export const ContentWide = styled.div`
 	width: 90%;
 	max-width: 50rem;
 	margin: 0 auto;
-`;
-
-export const Heading1 = styled.h1`
-	font-family: 'Montserrat', sans-serif;
-	font-size: 3rem;
-	line-height: 4.5rem;
-`;
-
-export const Heading2 = styled.h2`
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2rem;
-	line-height: 3rem;
-	margin-top: 5rem;
-`;
-
-export const Heading3 = styled.h3`
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.5rem;
-	line-height: 2.25rem;
-	margin-top: 3rem;
-`;
-
-export const Heading4 = styled.h4`
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.25rem;
-	line-height: 1.5625rem;
-	margin-top: 3rem;
-`;
-
-export const Heading5 = styled.h5`
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.10rem;
-	line-height: 1.375rem;
-`;
-
-export const Paragraph = styled.p``;
-
-
-export const InlineV = styled.span`
-	color: ${colors.purple5};
-	font-size: 135%;
-	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
-	font-variant-ligatures: discretionary-ligatures;
 `;
 
 export const Title = styled(Heading1)`
@@ -634,10 +689,11 @@ export const ToCTitle = styled(Heading5)`
 
 export const ToCItem = styled.div``;
 
-export const BigLetter = styled.span`
+export const BigLetter = styled.p`
 	font-family: "Montserrat", sans-serif;
 	font-size: 2.5rem;
-	line-height: 3.75rem;
+	line-height: 2.75rem;
+	margin: 0 auto;
 `;
 
 export const BigLetterTable = styled.span`
@@ -666,6 +722,7 @@ export const BigQuoteCaption = styled.div`
 
 export const EgyptianCharacter = styled(BigLetter)`
 	font-size: 6rem;
+	line-height: 1.5;
 	margin-top: -4rem;
 	margin-bottom: -2rem;
 `;
