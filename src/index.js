@@ -6,10 +6,13 @@ import chartData from './chart.json';
 
 import {
 	BigLetter,
-	BigQuoteText,
-	BigQuoteCaption,
 	EgyptianCharacter,
 	Canvas,
+	CategoryCardContent as CategoryCardBody,
+	CategoryCardWrapper,
+	CategoryCardSymbol,
+	CategoryCardTitle,
+	CategoryCardText,
 	ChartBody,
 	ChartSection,
 	ChartWrapper,
@@ -24,7 +27,6 @@ import {
 	ChartSubtitle,
 	ChartTitle,
 	ChartsContainer,
-	Content,
 	ContentSection,
 	ContentSectionContent,
 	ContentSectionTitle,
@@ -44,6 +46,11 @@ import {
 	IntroSectionCellWrapper,
 	IntroSectionCellParagraph,
 	IntroSectionGrid,
+	MethodCardBody,
+	MethodCardCharacter,
+	MethodCardCharacters,
+	MethodCardTitle,
+	MethodCardWrapper,
 	NumberedList,
 	Paragraph,
 	ParagraphBig,
@@ -52,15 +59,6 @@ import {
 	Title,
 	NumberedListItem
 } from './styles.js';
-
-function BigQuote(props) {
-	return (
-		<>
-			<BigQuoteText>{props.text}</BigQuoteText>
-			<BigQuoteCaption>{props.caption}</BigQuoteCaption>
-		</>
-	);
-}
 
 function IntroSectionCell(props) {
 	return (
@@ -237,7 +235,48 @@ function Filter(props) {
 		</FilterOptions>
 	  </FilterWrapper>
 	);
-  }
+}
+
+function CategoryCard(props) {
+
+	return(
+		<CategoryCardWrapper>
+			<CategoryCardSymbol color={props.color}>
+				<InlineV>{props.symbol}</InlineV>
+			</CategoryCardSymbol>
+			<CategoryCardBody>
+				<CategoryCardTitle color={props.color}>
+					{props.title}
+				</CategoryCardTitle>
+				<CategoryCardText>
+					{props.text}
+				</CategoryCardText>
+			</CategoryCardBody>
+		</CategoryCardWrapper>
+	);
+}
+
+function MethodCard(props) {
+
+	return (
+		<MethodCardWrapper>
+			<MethodCardTitle>
+				{props.title}
+			</MethodCardTitle>
+			<MethodCardCharacters>
+				{props.characters.map((itemCharacter, indexCharacter) => (
+					<MethodCardCharacter key={indexCharacter} color={itemCharacter.color}>
+						<InlineV>{itemCharacter.character}</InlineV>
+					</MethodCardCharacter>
+				))}
+			</MethodCardCharacters>
+			<MethodCardBody>
+				<Paragraph>{props.articulationDescription}</Paragraph>
+				<Paragraph>{props.shapeDescription}</Paragraph>
+			</MethodCardBody>
+		</MethodCardWrapper>
+	);
+}
 
 class Page extends React.Component {
 
@@ -362,48 +401,148 @@ class Page extends React.Component {
 						<ParagraphBig>Each part of Vixa’s letters tells you something about the sound they represent. Here's how the features of the letters correspond to the phonological properties of the sounds.</ParagraphBig>
 						<Heading3>Letter bases tell you <em>where</em> sounds are produced</Heading3>
 						<Paragraph>All Vixa letters contain a letter <em>base</em>. This letter base tells you the place of articulation. Humans can articulate sounds in various places in the mouth, from the lips all the way to the throat.</Paragraph>
-						<Paragraph><strong>Labial</strong> sounds are articulated with one or both lips. Their Vixa letter base is: <InlineV>p</InlineV></Paragraph>
-						<Paragraph><strong>Dental</strong> sounds are articulated with the tongue against the upper teeth. Their Vixa letter base is: <InlineV>θ</InlineV></Paragraph>
-						<Paragraph><strong>Alveolar</strong> sounds are articulated with the tongue against the superior alveolar ridge: the ridge behind the upper teeth. Their Vixa letter base is: <InlineV>t</InlineV></Paragraph>
-						<Paragraph><strong>Retroflex</strong> sounds are articulated with the tongue curled back, between the alveolar ridge and the hard palate: the middle of the roof of the mouth. Their Vixa letter base is: <InlineV>ṭ</InlineV></Paragraph>
-						<Paragraph><strong>Postalveolar</strong> sounds are articulated with the tongue against the back of the alveolar ridge. They share a letter base with palatal sounds, articulated with the tongue raised against the hard palate. Their Vixa letter base is: <InlineV>ť</InlineV></Paragraph>
-						<Paragraph><strong>Velar</strong> sounds are articulated with the back of the tongue against the soft palate, the back part of the roof of the mouth. Their Vixa letter base is: <InlineV>k</InlineV></Paragraph>
-						<Paragraph><strong>Uvular</strong> sounds are articulated with the tongue against the uvula. They share a letter base with pharyngeal sounds, articulated with the tongue in the pharynx. Their Vixa letter base is: <InlineV>q</InlineV></Paragraph>
-						<Paragraph><strong>Glottal</strong> sounds are articulated using the glottis, the opening of the vocal folds. Their Vixa letter base is: <InlineV>ɦ</InlineV></Paragraph>
+						<CategoryCard
+							color = "red4"
+							symbol = "p"
+							title = "Labial"
+							text = "Articulated with one or both lips."
+						/>
+						<CategoryCard 
+							color = "orange4"
+							symbol = "θ"
+							title = "Dental"
+							text = "Articulated with the tongue against the upper teeth."
+						/>
+						<CategoryCard 
+							color = "yellow4"
+							symbol = "t"
+							title = "Alveolar"
+							text = "Articulated with the tongue against the front of the alveolar ridge: the ridge behind the upper teeth."
+						/>
+						<CategoryCard 
+							color = "green4"
+							symbol = "ṭ"
+							title = "Retroflex"
+							text = "Articulated with the tongue curled back, between the alveolar ridge and the hard palate: the middle of the roof of the mouth."
+						/>
+						<CategoryCard 
+							color = "jade4"
+							symbol = "ť"
+							title = "Postalveolar or palatal"
+							text = "Articulated with the tongue against the back of the alveolar ridge, or with the tongue raised against the hard palate."
+						/>
+						<CategoryCard 
+							color = "blue4"
+							symbol = "k"
+							title = "Velar"
+							text = "Articulated with the back of the tongue against the soft palate, the back part of the roof of the mouth."
+						/>
+						<CategoryCard 
+							color = "periwinkle4"
+							symbol = "q"
+							title = "Uvular or pharyngeal"
+							text = "Articulated with the tongue against the uvula, or in the pharynx."
+						/>
+						<CategoryCard 
+							color = "purple4"
+							symbol = "ɦ"
+							title = "Glottal"
+							text = "Articulated using the glottis, the opening of the vocal folds."
+						/>
 						<Heading3>Additional letter features tell you <em>how</em>  the sounds are produced</Heading3>
 						<Paragraph>Letters can contain additional features, attached to the letter base. These show details about the <em>method</em> of articulation.</Paragraph>
-						<Heading4>Voiceless plosives</Heading4>
-						<BigLetter><InlineV>p t ť k</InlineV></BigLetter>
-						<Paragraph>Also known as occlusives or stops, voiceless plosives are produced with articulators blocking the vocal tract, so that airflow ceases. The vocal cords don’t vibrate. They are the most frequently used speech sounds across all the languages of the world.</Paragraph>
-						<Paragraph>Because these sounds are the most common, they have the simplest letter shapes. Voiceless plosives are denoted with just the letter base, without any ascenders or descenders.</Paragraph>
-						<Heading4>Aspirated voiceless plosives</Heading4>
-						<BigLetter><InlineV>P T K</InlineV></BigLetter>
-						<Paragraph>Voiceless plosives, released with a short burst of breath. Used by Indo-Aryan languages, Standard Chinese, Armenian and Ancient Greek.</Paragraph>
-						<Paragraph>Aspiration is denoted with a short tail on the right.</Paragraph>
-						<Heading4>Pharyngealized voiceless plosives</Heading4>
-						<BigLetter><InlineV>Ṫ</InlineV></BigLetter>
-						<Paragraph>Voiceless plosives, articulated with a constricted pharynx. Used by Arabic and Classical Hebrew.</Paragraph>
-						<Paragraph>Pharyngealization is denoted with a short tail on the right, along with a dot.</Paragraph>
-						<Heading4>Voiced plosives</Heading4>
-						<BigLetter><InlineV>b d ď g</InlineV></BigLetter>
-						<Paragraph>Produced with articulators completely blocking the vocal tract, so that airflow ceases. Vocal cords vibrate. They are very common sounds, used by lots of Indo-European languages.</Paragraph>
-						<Paragraph>Voicing is denoted with an ascender on the left.</Paragraph>
-						<Heading4>Murmured plosives</Heading4>
-						<BigLetter><InlineV>B D G</InlineV></BigLetter>
-						<Paragraph>Voiced plosives, with the vocal folds adjusted to let more air escape. Used by many Indo-Aryan and Nguni languages, like Hindi, Urdu, Xhosa and Zulu.</Paragraph>
-						<Paragraph>Murmured consonants are denoted with an ascender on the left, signifying voicing, and a tail on the right, signifying that it is murmured.</Paragraph>
-						<Heading4>Pharyngealized voiced plosives</Heading4>
-						<BigLetter><InlineV>Ḋ</InlineV></BigLetter>
-						<Paragraph>Voiced plosives, articulated with a constricted pharynx. Used by Arabic and Classical Hebrew.</Paragraph>
-						<Paragraph>Voiced pharyngealized plosives are denoted by an ascender on the left, signifying voicing, and a tail and dot on the right, signifying pharyngealization.</Paragraph>
-						<Heading4>Nasals</Heading4>
-						<BigLetter><InlineV>m n ñ ň</InlineV></BigLetter>
-						<Paragraph>Produced with the articulators blocking the vocal tract, so that airflow ceases. At the same time, the velum is lowered, so that air escapes through the nose. These sounds are extremely common.</Paragraph>
-						<Paragraph>Nasal sounds are denoted by a horizontal crossbar through the letterform.</Paragraph>
-						<Heading4>Voiceless fricatives</Heading4>
-						<BigLetter><InlineV>f s š x</InlineV></BigLetter>
-						<Paragraph>Produced when the articulators approach each other, producing turbulent airflow. Vocal cords don’t vibrate. They are used by many languages.</Paragraph>
-						<Paragraph>Fricatives are denoted by a descender on the right.</Paragraph>
+						<MethodCard
+							title = "Voiceless plosives"
+							characters = {[
+								{ character: "p", color: "red4" },
+								{ character: "t", color: "yellow4" },
+								{ character: "ṭ", color: "green4" },
+								{ character: "ť", color: "jade4" },
+								{ character: "k", color: "blue4" },
+								{ character: "q", color: "periwinkle4" },
+								{ character: "ɦ", color: "purple4" }
+							]}
+							articulationDescription = "Articulators block vocal tract, airflow ceases. Vocal cords don’t vibrate. The most commonly and frequently used speech sounds across the world."
+							shapeDescription = "Because these sounds are the most common, they have the simplest letter shapes. Voiceless plosives are denoted with just the letter base, without any ascenders or descenders."
+						/>
+						<MethodCard
+							title = "Aspirated voiceless plosives"
+							characters = {[
+								{ character: "P", color: "red4" },
+								{ character: "T", color: "yellow4" },
+								{ character: "Ṭ", color: "green4" },
+								{ character: "K", color: "blue4" }
+							]}
+							articulationDescription = "Voiceless plosives, released with a short burst of breath. Used by Indo-Aryan languages, Standard Chinese, Armenian and Ancient Greek."
+							shapeDescription = "Aspiration is denoted with a short tail on the right."
+						/>
+						<MethodCard
+							title = "Pharyngealized voiceless plosives"
+							characters = {[
+								{ character: "Ṫ", color: "yellow4" }
+							]}
+							articulationDescription = "Voiceless plosives, articulated with a constricted pharynx. Used by Arabic and Classical Hebrew."
+							shapeDescription = "Pharyngealization is denoted with a short tail on the right, along with a dot."
+						/>
+						<MethodCard
+							title = "Voiced plosives"
+							characters = {[
+								{ character: "b", color: "red4" },
+								{ character: "d", color: "yellow4" },
+								{ character: "ď", color: "green4" },
+								{ character: "ḍ", color: "jade4" },
+								{ character: "g", color: "blue4" },
+								{ character: "ġ", color: "periwinkle4" }
+							]}
+							articulationDescription = "Articulators block vocal tract, airflow ceases. Vocal cords vibrate. Common sounds, used by lots of Indo-European languages."
+							shapeDescription = "Voicing is denoted with an ascender on the left."
+						/>
+						<MethodCard
+							title = "Murmured plosives"
+							characters = {[
+								{ character: "B", color: "red4" },
+								{ character: "D", color: "yellow4" },
+								{ character: "Ḍ", color: "green4" },
+								{ character: "G", color: "blue4" }
+							]}
+							articulationDescription = "Voiced plosives, with vocal folds adjusted to let more air escape. Used by many Indo-Aryan and Nguni languages, like Hindi, Urdu, Xhosa and Zulu."
+							shapeDescription = "Murmured consonants are denoted with an ascender on the left, signifying voicing, and a tail on the right, signifying that it is murmured."
+						/>
+						<MethodCard
+							title = "Pharyngealized voiced plosives"
+							characters = {[
+								{ character: "Ḋ", color: "yellow4" }
+							]}
+							articulationDescription = "Voiced plosives, articulated with a constricted pharynx. Used by Arabic and Classical Hebrew."
+							shapeDescription = "Voiced pharyngealized plosives are denoted by an ascender on the left, signifying voicing, and a tail and dot on the right, signifying pharyngealization."
+						/>
+						<MethodCard
+							title = "Nasals"
+							characters = {[
+								{ character: "m", color: "red4" },
+								{ character: "n", color: "yellow4" },
+								{ character: "ñ", color: "green4" },
+								{ character: "ň", color: "jade4" },
+								{ character: "ṇ", color: "blue4" }
+							]}
+							articulationDescription = "Articulators block the vocal tract, airflow ceases. The velum is lowered, air escapes through the nose. These sounds are extremely common."
+							shapeDescription = "Nasal sounds are denoted by a horizontal crossbar through the letterform."
+						/>
+						<MethodCard
+							title = "Voiceless fricatives"
+							characters = {[
+								{ character: "f", color: "red4" },
+								{ character: "θ", color: "red4" },
+								{ character: "s", color: "yellow4" },
+								{ character: "ṣ", color: "green4" },
+								{ character: "š", color: "jade4" },
+								{ character: "x", color: "blue4" },
+								{ character: "ħ", color: "periwinkle4" },
+								{ character: "h", color: "violet4" }
+							]}
+							articulationDescription = "Articulators approach each other, producing turbulent airflow. Vocal cords don’t vibrate. They are used by many languages."
+							shapeDescription = "Fricatives are denoted by a descender on the right."
+						/>
 						<Heading4>Pharyngealized voiceless fricatives</Heading4>
 						<BigLetter><InlineV>Ṡ</InlineV></BigLetter>
 						<Paragraph>Voiceless fricatives, articulated with a constricted pharynx. Used by Arabic.</Paragraph>

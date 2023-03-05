@@ -47,30 +47,89 @@ const ScrollImage = keyframes`
 `
 
 export const colors = {
-	red3: '#9C2F13',
-    red4: '#C34727',
-	red8: '#FFB199',
-	red9: '#FFD9CD',
-    yellow4: '#8B7409',
-    green4: '#208058',
-    green5: '#3A9D74',
-    blue4: '#456DC9',
-    blue5: '#628AE6',
-	blue8: '#D2E2FE',
-	purple1: '#2C0E3E',
-	purple2: '#532074',
-	purple3: '#7835A2',
-    purple4: '#984EC7',
-    purple5: '#B56DE5',
-	purple8: '#E2B1FF',
-	purple9: '#F3D8FF',
-	neutral10: '#FFFFFF',
-	neutral9: '#EEEEEE',
-	neutral8: '#C4C4C4',
-    neutral4: '#707070',
-	neutral2: '#393939',
-	neutral1: '#1C1C1C'
-}
+	red9: "#ffdcd5",
+	red8: "#ffb9ac",
+	red7: "#ff9280",
+	red6: "#f36e5a",
+	red5: "#d8513d",
+	red4: "#b73926",
+	red3: "#902515",
+	red2: "#65160a",
+	red1: "#360903",
+	orange9: "#ffdeba",
+	orange8: "#febd79",
+	orange7: "#f69a44",
+	orange6: "#e37c1b",
+	orange5: "#c96100",
+	orange4: "#aa4800",
+	orange3: "#853300",
+	orange2: "#5d2000",
+	orange1: "#320f00",
+	yellow9: "#f0e5a0",
+	yellow8: "#edda5e",
+	yellow7: "#dabe0b",
+	yellow6: "#bd9f00",
+	yellow5: "#a38600",
+	yellow4: "#7d6300",
+	yellow3: "#604a00",
+	yellow2: "#423100",
+	yellow1: "#211800",
+	green9: "#d1ecc1",
+	green8: "#a9d78c",
+	green7: "#86bf60",
+	green6: "#67a73d",
+	green5: "#4d8e23",
+	green4: "#37730f",
+	green3: "#245802",
+	green2: "#153c00",
+	green1: "#091e00",
+	jade9: "#c4eddc",
+	jade8: "#92d8bb",
+	jade7: "#68c09c",
+	jade6: "#46a880",
+	jade5: "#2c8e66",
+	jade4: "#18744f",
+	jade3: "#0a5838",
+	jade2: "#023c24",
+	jade1: "#001f12",
+	blue9: "#d6e5fe",
+	blue8: "#b0cbfc",
+	blue7: "#8cb0f9",
+	blue6: "#6d95ef",
+	blue5: "#537bd9",
+	blue4: "#3b62ba",
+	blue3: "#274996",
+	blue2: "#17306b",
+	blue1: "#0a1839",
+	periwinkle9: "#eadfff",
+	periwinkle8: "#d4c0ff",
+	periwinkle7: "#bca1ff",
+	periwinkle6: "#a183fe",
+	periwinkle5: "#8867e9",
+	periwinkle4: "#6e4fcb",
+	periwinkle3: "#5438a4",
+	periwinkle2: "#382475",
+	periwinkle1: "#1d113e",
+	purple9: "#f5dbff",
+	purple8: "#e6b9ff",
+	purple7: "#d497fc",
+	purple6: "#bf79ed",
+	purple5: "#a75dd7",
+	purple4: "#8b44ba",
+	purple3: "#6d2e95",
+	purple2: "#4b1c6a",
+	purple1: "#270d38",
+	neutral10: "#ffffff",
+	neutral9: "#eeeeee",
+	neutral8: "#c9c9c9",
+	neutral7: "#b0b0b0",
+	neutral6: "#979797",
+	neutral5: "#7e7e7e",
+	neutral4: "#666666",
+	neutral3: "#4d4d4d",
+	neutral2: "#333333",
+	neutral1: "#191919"
+};
 
 const breakpoints = {
 	first: '35rem', 	// 560px
@@ -80,7 +139,7 @@ const breakpoints = {
 	fifth: '95rem',		// 1520px
 	sixth: '110rem',	// 1760px
 	seventh: '150rem'	// 2400px
-}
+};
 
 export const Neutral4 = styled.span`
 	color: ${colors.neutral4};
@@ -223,7 +282,7 @@ export const IntroSectionCellParagraph = styled.p`
 
 /* 
 
-CONTENT
+CONTENT GENERAL
 
 */
 
@@ -276,36 +335,65 @@ export const Heading5 = styled.h5`
 `;
 
 export const Paragraph = styled.p`
-	font-size: 1.125rem;
-	margin-top: 1.5rem;
+	font-size: 1rem;
+	margin-top: 1.25rem;
 	max-width: 35rem;
 	margin-bottom: 1.5rem;
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: 1.125rem;
+	}
 `;
 
 export const ParagraphBig = styled(Paragraph)`
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	max-width: none;
+
+	@media only screen and (min-width: ${breakpoints.second}) {
+		font-size: 1.5rem;
+	}
 `;
 
-export const ContentSection = styled.div`
+export const BigLetter = styled.p`
+	font-family: "Montserrat", sans-serif;
+	font-size: 2.5rem;
+	line-height: 2.75rem;
 	margin: 0 auto;
+`;
+
+export const Image = styled.img`
+	width: 100%;
+`;
+
+export const ImageWithBorder = styled.img`
+	width: 100%;
+	border: 1px solid ${colors.neutral7};
+`;
+
+export const NumberedList = styled.ol``;
+
+export const NumberedListItem = styled.li``;
+
+/*
+
+CONTENT LAYOUT
+
+*/
+
+export const ContentSection = styled.div`
+	margin: 0 2rem;
 	max-width: 60rem;
 	position: relative;
 
-	@media only screen and (min-width: ${breakpoints.second}) {
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		max-width: 60rem;
-	}
-
-	@media only screen and (min-width: ${breakpoints.fifth}) {
+	@media only screen and (min-width: ${breakpoints.third}) {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: 1fr;
 		grid-column-gap: 4rem;
 		grid-row-gap: 4rem;
+		margin: 4rem auto 0;
 		max-width: 90rem;
 	}
 `;
@@ -313,31 +401,23 @@ export const ContentSection = styled.div`
 export const ContentSectionTitle = styled.div`
 
 	${Heading2} {
-		position: sticky;
-		top: 1rem;
+		margin-top: 4.5rem;
+
+		@media only screen and (min-width: ${breakpoints.third}) {
+			margin-top: 1rem;
+			position: sticky;
+			top: 1rem;
+		}
 	}
 `;
 
 export const ContentSectionContent = styled.div``;
 
-export const ChartLabelDescription = styled.div``;
+/*
 
-export const Content = styled.div`
-	padding: 0 2rem;
-	max-width: 33rem;
-	margin: 0 auto;
-`;
+HEADER
 
-export const ContentFullSize = styled.div`
-	padding: 2rem 2rem 0;
-	margin: 0 auto;
-`;
-
-export const ContentWide = styled.div`
-	width: 90%;
-	max-width: 50rem;
-	margin: 0 auto;
-`;
+*/
 
 export const Title = styled(Heading1)`
 	color: ${colors.neutral9};
@@ -394,24 +474,7 @@ export const Etymology = styled.p`
 	width: 100%;
 `;
 
-export const Subtitle = styled(Heading2)`
-	margin-top: 0;
-`;
-
-export const Image = styled.img`
-	width: 100%;
-`;
-
-export const ImageWithBorder = styled.img`
-	width: 100%;
-	border: 1px solid ${colors.neutral7};
-`;
-
-export const NumberedList = styled.ol``;
-
-export const NumberedListItem = styled.li``;
-
-/* 
+/*
 
 CHART
 
@@ -679,46 +742,79 @@ export const ChartCellTertiaryLine = styled.div`
 
 export const ChartCellSecondLineItem = styled.div``;
 
-export const ToC = styled.div``;
+/*
 
-export const ToCList = styled.div``;
+INTRODUCTION and EXPLAINER
 
-export const ToCTitle = styled(Heading5)`
-	margin-bottom: 0.5rem;
+*/
+
+export const CategoryCardWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	margin: 3rem 0;
+	max-width: 35rem;
 `;
 
-export const ToCItem = styled.div``;
-
-export const BigLetter = styled.p`
-	font-family: "Montserrat", sans-serif;
+export const CategoryCardSymbol = styled.div`
+	align-items: center;
+	background-color: ${(props) => (props.color ? colors[props.color] : colors.neutral2)};
+	border-radius: 50%;
+	display: flex;
+	flex: 0 0 4.5rem;
 	font-size: 2.5rem;
-	line-height: 2.75rem;
-	margin: 0 auto;
+	height: 4.5rem;
+	line-height: 1.5;
+	margin-right: 1rem;
+	justify-content: center;
+
+	${InlineV} {
+		color: ${colors.neutral10};
+	}
 `;
 
-export const BigLetterTable = styled.span`
-	font-family: "Montserrat", sans-serif;
-	font-size: 1.5rem;
-	line-height: 2.25rem;
+export const CategoryCardContent = styled.div`
+	display: flex;
+	flex-direction: column;
 `;
 
-export const BigQuoteText = styled.div`
-	background: ${colors.green5};
-	color: ${colors.neutral9};
-	font-family: "Vixa Geometric Bold", "Montserrat", sans-serif;
-	font-variant-ligatures: discretionary-ligatures;
+export const CategoryCardTitle = styled(Heading4)`
+	color: ${(props) => (props.color ? colors[props.color] : colors.neutral2)};
+	margin: 0 0 0.25rem 0;
+`;
+
+export const CategoryCardText = styled(Paragraph)`
+	margin: 0;
+`;
+
+export const MethodCardWrapper = styled.div``;
+
+export const MethodCardTitle = styled(Heading4)`
+	margin-bottom: 1.25rem;
+`;
+
+export const MethodCardCharacters = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+export const MethodCardCharacter = styled.div`
+	align-items: center;
+	background-color: ${(props) => (props.color ? colors[props.color] : colors.neutral2)};
+	border-radius: 50%;
+	display: flex;
+	flex: 0 0 4.5rem;
 	font-size: 2.5rem;
-	line-height: 3.75rem;
-	margin-top: 2rem;
-	padding: 1rem 2rem;
+	height: 4.5rem;
+	line-height: 1.5;
+	margin-right: 1rem;
+	justify-content: center;
+
+	${InlineV} {
+		color: ${colors.neutral10};
+	}
 `;
 
-export const BigQuoteCaption = styled.div`
-	color: ${colors.neutral4};
-	font-size: 0.75rem;
-	margin-top: 0.5rem;
-	margin-bottom: 2rem;
-`;
+export const MethodCardBody = styled.div``;
 
 export const EgyptianCharacter = styled(BigLetter)`
 	font-size: 6rem;
@@ -729,25 +825,4 @@ export const EgyptianCharacter = styled(BigLetter)`
 
 export const StyledProtoSemiticAleph = styled(ProtoSemiticAleph)`
 	width: 22px;
-`;
-
-export const CharacterCardColumn = styled.div`
-    flex: 1 1 50%;
-
-    :not(:last-child) {
-        margin-bottom: 1.65rem;
-    }
-
-    @media only screen and (min-width: 35rem) {
-
-        :not(:last-child) {
-            border-right: 1px solid #ddd;
-            padding-right: 2rem;
-            margin-bottom: 0;
-        }
-    
-        :not(:first-child) {
-            padding-left: 2rem;
-        }
-    }
 `;

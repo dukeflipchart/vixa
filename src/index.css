@@ -2,6 +2,8 @@
 
 @font-face {
 	font-family: 'Vixa Geometric Bold';
+	font-weight: normal;
+	font-style: normal;
 	src: url(./fonts/VixaGeometric-Bold.otf) format('opentype');
 }
 
