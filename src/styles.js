@@ -383,17 +383,21 @@ CONTENT LAYOUT
 */
 
 export const ContentSection = styled.div`
-	margin: 0 2rem;
+	margin: 0;
 	max-width: 60rem;
+	padding: 0 2rem;
 	position: relative;
 
 	@media only screen and (min-width: ${breakpoints.third}) {
+		margin: 4rem auto 0;
+	}
+
+	@media only screen and (min-width: ${breakpoints.fourth}) {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: 1fr;
 		grid-column-gap: 4rem;
 		grid-row-gap: 4rem;
-		margin: 4rem auto 0;
 		max-width: 90rem;
 	}
 `;
@@ -558,10 +562,6 @@ export const ChartTitle = styled(Heading2)`
 	margin: 0;
 	padding: 0 2rem 3rem;
 	text-align: center;
-
-	${InlineV} {
-		color: ${colors.purple7};
-	}
 
 	@media only screen and (min-width: ${breakpoints.second}) {
 		font-size: 3rem;

@@ -532,7 +532,7 @@ class Page extends React.Component {
 							title = "Voiceless fricatives"
 							characters = {[
 								{ character: "f", color: "red4" },
-								{ character: "θ", color: "red4" },
+								{ character: "θ", color: "orange4" },
 								{ character: "s", color: "yellow4" },
 								{ character: "ṣ", color: "green4" },
 								{ character: "š", color: "jade4" },
@@ -543,54 +543,116 @@ class Page extends React.Component {
 							articulationDescription = "Articulators approach each other, producing turbulent airflow. Vocal cords don’t vibrate. They are used by many languages."
 							shapeDescription = "Fricatives are denoted by a descender on the right."
 						/>
-						<Heading4>Pharyngealized voiceless fricatives</Heading4>
-						<BigLetter><InlineV>Ṡ</InlineV></BigLetter>
-						<Paragraph>Voiceless fricatives, articulated with a constricted pharynx. Used by Arabic.</Paragraph>
-						<Paragraph>Pharyngealized voiceless fricatives are denoted by an descender on the right, signifying a fricative, and a tail and dot on the right, signifying pharyngealization.</Paragraph>
-						<Heading4>Voiced fricatives</Heading4>
-						<BigLetter><InlineV>v z ž ǧ</InlineV></BigLetter>
-						<Paragraph>Articulators approach each other, producing turbulent airflow. Vocal chords vibrate. Used by many languages.</Paragraph>
-						<Paragraph>Voiced fricatives are denoted with an ascender on the left, signifying voicing, and a descender on the right, signifying a fricative.</Paragraph>
-						<Heading4>Pharyngealized voiced fricatives</Heading4>
-						<BigLetter><InlineV>Ż</InlineV></BigLetter>
-						<Paragraph>Voiced fricatives, articulated with a constricted pharynx. Used by Arabic.</Paragraph>
-						<Paragraph>Pharyngealized voiced fricatives are denoted by an ascender on the left, signifying voicing, a descender on the right, signifying a fricative, and a tail and dot on the right, signifying pharyngealization.</Paragraph>
-						<Heading4>Approximants</Heading4>
-						<BigLetter><InlineV>r y w</InlineV></BigLetter>
-						<Paragraph>Produced when the articulators approach each other, but not close enough to produce turbulent airflow. Very common, often used sounds.</Paragraph>
-						<Paragraph>Approximants are denoted by a descender on the right, with an added horizontal line.</Paragraph>
-						<Heading4>Lateral approximant</Heading4>
-						<BigLetter><InlineV>l</InlineV></BigLetter>
-						<Paragraph>Produced when the articulators block airstream in the middle, but allow air to flow along the sides of the tongue. Very common.</Paragraph>
-						<Paragraph>The lateral approximant is a unique, irregular letter. In most languages, there is only one lateral approximant, so it's not necessary to indicate where the articulation occurs. Thus, the lateral approximant does not conform to the alveolar base shape. This irregularity is a drawback, but it allows its shape to be very simple.</Paragraph>
-						<Heading4>Voiceless affricates</Heading4>
-						<BigLetter><InlineV>c č</InlineV></BigLetter>
-						<Paragraph>Begins as a plosive and releases as a fricative. Vocal cords don’t vibrate. These sounds appear in lots of alphabets, yet they are rarely used.</Paragraph>
-						<Paragraph>An affricate is denoted with a descender on the left.</Paragraph>
-						<Heading4>Aspirated voiceless affricates</Heading4>
-						<BigLetter><InlineV>C Č</InlineV></BigLetter>
-						<Paragraph>Voiceless affricates, released with a short burst of breath.</Paragraph>
-						<Paragraph>As with plosives and fricatives, the left ascender signifies voicing.</Paragraph>
-						<Heading4>Voiced affricates</Heading4>
-						<BigLetter><InlineV>ź j</InlineV></BigLetter>
-						<Paragraph>Begins as a plosive and releases as a fricative. Vocal cords vibrate. Used even less frequently than voiceless affricates.</Paragraph>
-						<Paragraph>As with plosives and fricatives, a right tail denotes aspiration.</Paragraph>
-						<Heading4>Murmured affricates</Heading4>
-						<BigLetter><InlineV>Z J</InlineV></BigLetter>
-						<Paragraph>Voiced affricates, with the vocal folds adjusted to let more air escape.</Paragraph>
-						<Paragraph>As with plosives and fricatives, a left ascender denotes voicing, and the right tail denotes a murmured consonant.</Paragraph>
-						<Heading4>Pharyngealized voiceless affricates</Heading4>
-						<BigLetter><InlineV>Ź Đ</InlineV></BigLetter>
-						<Paragraph>Voiceless affricates, articulated with a constricted pharynx. Used by Arabic.</Paragraph>
-						<Paragraph>As with plosives and fricatives, a left ascender denotes voicing, and the right tail with dot denotes a pharyngealized consonant.</Paragraph>
-						<Heading4>Trills and taps</Heading4>
-						<BigLetter><InlineV>ŕ</InlineV></BigLetter>
-						<Paragraph>Articulators vibrate, or are thrown against another. Very rare. Used by some European languages, for example Spanish.</Paragraph>
-						<Paragraph>Trills have an ascender on the left, with an added horizontal line.</Paragraph>
-						<Heading4>Aspirated taps</Heading4>
-						<BigLetter><InlineV>Ŕ Ṛ</InlineV></BigLetter>
-						<Paragraph>Voiced taps or flaps. Very rare. Used by, for example, Hindustani languages.</Paragraph>
-						<Paragraph>As with plosives and fricatives, a right tail denotes aspiration.</Paragraph>
+						<MethodCard
+							title = "Pharyngealized voiceless fricatives"
+							characters = {[
+								{ character: "Ṡ", color: "yellow4" }
+							]}
+							articulationDescription = "Voiceless fricatives, articulated with a constricted pharynx. Used by Arabic."
+							shapeDescription = "Pharyngealized voiceless fricatives are denoted by an descender on the right, signifying a fricative, and a tail and dot on the right, signifying pharyngealization."
+						/>
+						<MethodCard
+							title = "Voiced fricatives"
+							characters = {[
+								{ character: "v", color: "red4" },
+								{ character: "ð", color: "orange4" },
+								{ character: "z", color: "yellow4" },
+								{ character: "ẓ", color: "green4" },
+								{ character: "ž", color: "jade4" },
+								{ character: "ǧ", color: "blue4" },
+								{ character: "γ", color: "periwinkle4" }
+							]}
+							articulationDescription = "Articulators approach each other, producing turbulent airflow. Vocal cords vibrate. Used by many languages."
+							shapeDescription = "Voiced fricatives are denoted with an ascender on the left, signifying voicing, and a descender on the right, signifying a fricative."
+						/>
+						<MethodCard
+							title = "Pharyngealized voiced fricatives"
+							characters = {[
+								{ character: "Ż", color: "yellow4" }
+							]}
+							articulationDescription = "Voiced fricatives, articulated with a constricted pharynx. Used by Arabic."
+							shapeDescription = "Pharyngealized voiced fricatives are denoted by an ascender on the left, signifying voicing, a descender on the right, signifying a fricative, and a tail and dot on the right, signifying pharyngealization."
+						/>
+						<MethodCard
+							title = "Approximants"
+							characters = {[
+								{ character: "r", color: "yellow4" },
+								{ character: "y", color: "jade4" },
+								{ character: "w", color: "blue4" }
+							]}
+							articulationDescription = "Articulators approach each other, but not close enough to produce turbulent airflow. Very common, often used sounds."
+							shapeDescription = "Approximants are denoted by a descender on the right, with an added horizontal line."
+						/>
+						<MethodCard
+							title = "Lateral approximant"
+							characters = {[
+								{ character: "l", color: "yellow4" }
+							]}
+							articulationDescription = "Articulators block airstream in the middle, but allow air to flow along the sides of the tongue. Very common."
+							shapeDescription = "The lateral approximant is a unique, irregular letter. In most languages, there is only one lateral approximant, so it's not necessary to indicate where the articulation occurs. Thus, the lateral approximant does not conform to the alveolar base shape. This irregularity is a drawback, but it allows this shape to be very simple."
+						/>
+						<MethodCard
+							title = "Voiceless affricates"
+							characters = {[
+								{ character: "c", color: "yellow4" },
+								{ character: "č", color: "blue4" }
+							]}
+							articulationDescription = "Affricates begin as a plosive and release as a fricative. Vocal cords don’t vibrate. These sounds appear in lots of alphabets, yet they are rarely used."
+							shapeDescription = "An affricate is denoted with a descender on the left."
+						/>
+						<MethodCard
+							title = "Aspirated voiceless affricates"
+							characters = {[
+								{ character: "C", color: "yellow4" },
+								{ character: "Č", color: "blue4" }
+							]}
+							articulationDescription = "Voiceless affricates, released with a short burst of breath."
+							shapeDescription = "As with plosives and fricatives, a right tail denotes aspiration."
+						/>
+						<MethodCard
+							title = "Voiced affricates"
+							characters = {[
+								{ character: "ź", color: "yellow4" },
+								{ character: "j", color: "blue4" }
+							]}
+							articulationDescription = "Affricates begin as a plosive and release as a fricative. Vocal cords vibrate. Used even less frequently than voiceless affricates."
+							shapeDescription = "As with plosives and fricatives, the left ascender signifies voicing."
+						/>
+						<MethodCard
+							title = "Murmured affricates"
+							characters = {[
+								{ character: "Z", color: "yellow4" },
+								{ character: "J", color: "blue4" }
+							]}
+							articulationDescription = "Voiced affricates, with the vocal folds adjusted to let more air escape."
+							shapeDescription = "As with plosives and fricatives, a left ascender denotes voicing, and the right tail denotes a murmured consonant."
+						/>
+						<MethodCard
+							title = "Pharyngealized voiceless affricates"
+							characters = {[
+								{ character: "Ź", color: "yellow4" },
+								{ character: "Đ", color: "blue4" }
+							]}
+							articulationDescription = "Voiceless affricates, articulated with a constricted pharynx. Used by Arabic."
+							shapeDescription = "As with plosives and fricatives, a left ascender denotes voicing, and the right tail with dot denotes a pharyngealized consonant."
+						/>
+						<MethodCard
+							title = "Trills and taps"
+							characters = {[
+								{ character: "ŕ", color: "yellow4" }
+							]}
+							articulationDescription = "Articulators vibrate, or are thrown against another. Very rare. Used by some Indo-European languages, for example Spanish, Hindi and Urdu."
+							shapeDescription = "Trills have an ascender on the left, with an added horizontal line."
+						/>
+						<MethodCard
+							title = "Aspirated taps"
+							characters = {[
+								{ character: "Ŕ", color: "yellow4" },
+								{ character: "Ṛ", color: "green4" }
+							]}
+							articulationDescription = "Voiced taps or flaps. Very rare. Used by, for example, Hindustani languages."
+							shapeDescription = "As with plosives and fricatives, a right tail denotes aspiration."
+						/>
 					</ContentSectionContent>
 				</ContentSection>
 			</Canvas>
