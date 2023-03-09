@@ -151,13 +151,13 @@ export const Canvas = styled.div`
 `;
 
 export const Header = styled.div`
-	animation: ${ScrollGradient} 45s ease infinite;
+	animation: ${ScrollGradient} 20s ease infinite;
 	background: ${colors.purple5};
 	background: linear-gradient(
 			100deg,
 			${colors.purple5} 0%,
 			${colors.blue5} 67%,
-			${colors.green5} 100%
+			${colors.jade5} 100%
 		);
 	background-size: 300% 100%;
   	color: ${colors.neutral9};

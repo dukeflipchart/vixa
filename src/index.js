@@ -655,6 +655,24 @@ class Page extends React.Component {
 						/>
 					</ContentSectionContent>
 				</ContentSection>
+				<ContentSection>
+					<ContentSectionTitle>
+						<Heading2><InlineV>kwesčənz end ensərz</InlineV><br />Questions and answers</Heading2>
+					</ContentSectionTitle>
+					<ContentSectionContent>
+						<Heading3>Why did you make this?</Heading3>
+						<Paragraph>Short answer: for fun.</Paragraph>
+						<Paragraph>Longer answer: I designed the first version of Vixa for worldbuilding. I'm a Dungeon Master in a tabletop role-playing game, and it seemed like fun to make up an alphabet for one of the fictional nations in my story. Then I just kept working on it and improving it because it kept being fun. I was always very interested in languages, so it seemed like an interesting research topic to try to make it universal. At some point, I realized the only way to actually check it works is to try it, so I started writing all my notes in Vixa. I also wanted to learn type design, so it seemed like a logical next step to make a font for it. Then I made this website.</Paragraph>
+						<Paragraph>I think part of what kept me going is that this hobby feels pretty unique. I think there are few people in the world with the exact set of skills that I used to make Vixa. This project is in the intersection of linguistics, user experience design, type design, and calligraphy.</Paragraph>
+						<Heading3>How much time did you spend on it?</Heading3>
+						<Paragraph>I designed the first version of Vixa sometime around June 2021. So - a couple of years. I've been working on it in my spare time.</Paragraph>
+						<Heading3>Is Vixa like the IPA (International Phonetic Alphabet)?</Heading3>
+						<Paragraph>It is somewhat like the IPA. The IPA also aims to be universal, and it also has featural parts. But there are lots of differences.</Paragraph>
+						<Paragraph>One of the biggest ones is practicality. Vixa was designed to actually be used for reading, typing, and writing by hand. For this, letterforms have to remain simple. To keep letterforms simple, I made a conscious decision to not support <em>every</em> language, but instead keep the scope at <em>most</em> languages, and targets the languages people speak the most. The IPA is truly universal, but it is also pretty complicated, which comes with drawbacks for practicality.</Paragraph>
+						<Paragraph>Another difference is that the IPA is based on the Latin alphabet. Vixa is not. The reason why some Vixa letterforms still resemble Latin letters is part coincidence, part convergent evolution: like the Carolingian minuscule the Latin lowercase emerged from, Vixa was designed to be easy to write by hand, without lifting the pen.</Paragraph>
+						<Paragraph>Also, unlike the IPA, Vixa is fully featural (with the sole exception of the lateral approximant). It has a consistent internal logic of letter shapes that correspond to sound features.</Paragraph>
+					</ContentSectionContent>
+				</ContentSection>
 			</Canvas>
 		);
 	}
