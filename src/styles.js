@@ -795,6 +795,8 @@ export const MethodCardTitle = styled(Heading4)`
 export const MethodCardCharacters = styled.div`
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: -1rem;
 `;
 
 export const MethodCardCharacter = styled.div`
@@ -806,6 +808,7 @@ export const MethodCardCharacter = styled.div`
 	font-size: 2.5rem;
 	height: 4.5rem;
 	line-height: 1.5;
+	margin-bottom: 1rem;
 	margin-right: 1rem;
 	justify-content: center;
 

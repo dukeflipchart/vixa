@@ -399,7 +399,7 @@ class Page extends React.Component {
 					</ContentSectionTitle>
 					<ContentSectionContent>
 						<ParagraphBig>Each part of Vixa’s letters tells you something about the sound they represent. Here's how the features of the letters correspond to the phonological properties of the sounds.</ParagraphBig>
-						<Heading3>Letter bases tell you <em>where</em> sounds are produced</Heading3>
+						<Heading3><InlineV>letər béysəz tel yu wər sáundz ǎr prədyusd</InlineV><br/>Letter bases tell you <em>where</em> sounds are produced</Heading3>
 						<Paragraph>All Vixa letters contain a letter <em>base</em>. This letter base tells you the place of articulation. Humans can articulate sounds in various places in the mouth, from the lips all the way to the throat.</Paragraph>
 						<CategoryCard
 							color = "red4"
@@ -449,7 +449,7 @@ class Page extends React.Component {
 							title = "Glottal"
 							text = "Articulated using the glottis, the opening of the vocal folds."
 						/>
-						<Heading3>Additional letter features tell you <em>how</em>  the sounds are produced</Heading3>
+						<Heading3><InlineV>əddišənəl letər fičərz tel yu háw sáundz ǎr prədyusd</InlineV><br/>Additional letter features tell you <em>how</em> sounds are produced</Heading3>
 						<Paragraph>Letters can contain additional features, attached to the letter base. These show details about the <em>method</em> of articulation.</Paragraph>
 						<MethodCard
 							title = "Voiceless plosives"
