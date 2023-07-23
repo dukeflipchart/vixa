@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/vixa/static/css/main.cc913bb3.css",
-    "main.js": "/vixa/static/js/main.3d32d33b.js",
+    "main.css": "/vixa/static/css/main.bb78be3a.css",
+    "main.js": "/vixa/static/js/main.4c0da8ea.js",
     "static/media/header4.png": "/vixa/static/media/header4.eb5cdebd2487efb3d4ca.png",
     "static/media/header-pattern.png": "/vixa/static/media/header-pattern.7c4bc367b7400de58e46.png",
-    "static/media/VixaGeometric-Bold.otf": "/vixa/static/media/VixaGeometric-Bold.8ee504480724d1af7b4f.otf",
+    "static/media/VixaGeometric-Bold.otf": "/vixa/static/media/VixaGeometric-Bold.07b3e2935eab8d434bfc.otf",
     "index.html": "/vixa/index.html",
-    "main.cc913bb3.css.map": "/vixa/static/css/main.cc913bb3.css.map",
-    "main.3d32d33b.js.map": "/vixa/static/js/main.3d32d33b.js.map"
+    "main.bb78be3a.css.map": "/vixa/static/css/main.bb78be3a.css.map",
+    "main.4c0da8ea.js.map": "/vixa/static/js/main.4c0da8ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc913bb3.css",
-    "static/js/main.3d32d33b.js"
+    "static/css/main.bb78be3a.css",
+    "static/js/main.4c0da8ea.js"
   ]
 }
